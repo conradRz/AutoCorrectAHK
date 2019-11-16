@@ -11,6 +11,8 @@
 ;			   a normal noun too.
 ;               - Some names such as "Will", are removed, due to it being a verb 
 ;                   too. 
+;               - Do remember that you can make particular hotstrings context
+;                   sensitive. 
 ; Sep 13 2007: Added more misspellings.
 ;              Added fix for -ign -> -ing that ignores words like "sign".
 ;              Added word beginnings/endings sections to cover more options.
@@ -52,6 +54,7 @@
 ; 
 ; CONTENTS
 ; 
+;   To Do
 ;   Settings
 ;   AUto-COrrect TWo COnsecutive CApitals (commented out by default)
 ;   Win+H code
@@ -61,6 +64,7 @@
 ;   Accented English words
 ;   Common Misspellings - the main list
 ;   Ambiguous entries - commented out
+;   Hotstrings added to the script by the user via the Win+H hotkey
 ;------------------------------------------------------------------------------
 
 ;------------------------------------------------------------------------------
@@ -30475,9 +30479,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Coz::Because
 ::Coz,::Because,
 ::coz,::because,
-;-------------------------------------------------------------------------------
-; Anything below this point was added to the script by the user via the Win+H hotkey.
-;-------------------------------------------------------------------------------
 ::daniel::Daniel
 ::etc::etc.
 ::mr::Mr 
@@ -30518,3 +30519,4 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::judaism::Judaism
 ::confucianism::Confucianism
 ::new years::New Year's Eve
+::btw::by the way
