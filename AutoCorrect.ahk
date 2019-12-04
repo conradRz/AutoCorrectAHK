@@ -5406,7 +5406,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pashto::Pashto
 ::persian::Persian
 ::pitjantjatjara::Pitjantjatjara
-::polish::Polish
+;::polish::Polish
 ::portuguese::Portuguese
 ::proto-slavic::Proto-Slavic
 ::quenya::Quenya
@@ -5523,7 +5523,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nicholas::Nicholas
 ::ezra::Ezra
 ::colton::Colton
-::angel::Angel
+;::angel::Angel
 ::brayden::Brayden
 ::jordan::Jordan
 ::dominic::Dominic
@@ -5599,7 +5599,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::jesus::Jesus
 ::calvin::Calvin
 ::abel::Abel
-::king::King
+;::king::King
 ::camden::Camden
 ::amir::Amir
 ::blake::Blake
@@ -5653,9 +5653,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::messiah::Messiah
 ::zion::Zion
 ::maximus::Maximus
-::river::River
+;::river::RiverRiver 
 ::zane::Zane
-::mark::Mark
+;::mark::Mark
 ::brooks::Brooks
 ::nicolas::Nicolas
 ::paxton::Paxton
@@ -5706,20 +5706,20 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sean::Sean
 ::adriel::Adriel
 ::riley::Riley
-::archer::Archer
-::legend::Legend
+;::archer::Archer
+;::legend::Legend
 ::erick::Erick
 ::enzo::Enzo
 ::corbin::Corbin
 ::francisco::Francisco
 ::dallas::Dallas
 ::emilio::Emilio
-::gunner::Gunner
+;::gunner::Gunner
 ::simon::Simon
 ::andre::Andre
 ::walter::Walter
 ::damien::Damien
-::chance::Chance
+;::chance::Chance
 ::phoenix::Phoenix
 ::colt::Colt
 ::tanner::Tanner
@@ -6726,7 +6726,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::giselle::Giselle
 ::lilah::Lilah
 ::melissa::Melissa
-::river::River
+;::river::River
 ::kate::Kate
 ::adelaide::Adelaide
 ::charlee::Charlee
@@ -25021,7 +25021,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::libiaz::Libiaz
 ::lowicz::Lowicz
 ::olkusz::Olkusz
-::police::Police
+;::police::Police
 ::poznan::Poznan
 ::radlin::Radlin
 ::rawicz::Rawicz
@@ -27394,7 +27394,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pando::Pando
 ::rocha::Rocha
 ::salto::Salto
-::young::Young
+;::young::Young
 ::kihei::Kihei
 ::pasco::Pasco
 ::lacey::Lacey
@@ -27436,7 +27436,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::piqua::Piqua
 ::parma::Parma
 ::niles::Niles
-::green::Green
+;::green::Green
 ::berea::Berea
 ::akron::Akron
 ::utica::Utica
@@ -29656,7 +29656,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::saky::Saky
 ::sumy::Sumy
 ::puma::Puma
-::same::Same
+;::same::Same
 ::wete::Wete
 ::lugu::Lugu
 ::puli::Puli
@@ -29690,7 +29690,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sfax::Sfax
 ::mary::Mary
 ::kaka::Kaka
-::same::Same
+;::same::Same
 ::dili::Dili
 ::suai::Suai
 ::loei::Loei
@@ -29836,7 +29836,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::moss::Moss
 ::oslo::Oslo
 ::beek::Beek
-::best::Best
+;::best::Best
 ::born::Born
 ::elst::Elst
 ::goes::Goes
@@ -30114,7 +30114,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::suar::Suar
 ::taki::Taki
 ::teni::Teni
-::than::Than
+;::than::Than
 ::tonk::Tonk
 ::tuni::Tuni
 ::tura::Tura
@@ -30254,7 +30254,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::loja::Loja
 ::mula::Mula
 ::onda::Onda
-::rota::Rota
+;::rota::Rota
 ::tías::Tías
 ::suez::Suez
 ::bush::Bush
@@ -30293,7 +30293,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lahr::Lahr
 ::leer::Leer
 ::marl::Marl
-::much::Much
+;::much::Much
 ::olpe::Olpe
 ::rees::Rees
 ::roth::Roth
@@ -30306,7 +30306,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::werl::Werl
 ::brno::Brno
 ::cheb::Cheb
-::most::Most
+;::most::Most
 ::zlín::Zlín
 ::yara::Yara
 ::ipís::Ipís
@@ -30871,7 +30871,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::alex::Alex
 ::paul::Paul
 ::lucie::Lucie
-::  :: ;removes double space if done by mistake
+;::  :: ;removes double space if done by mistake, but then it affects browsing and stuff...
 ::quora::Quora
 ::coz::because
 ::Coz::Because
@@ -30901,7 +30901,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::alex::Alex
 ::paul::Paul
 ::lucie::Lucie
-::  :: ;removes double space if done by mistake
+;::  :: ;removes double space if done by mistake
 ::quora::Quora
 ::coz::because
 ::Coz::Because
@@ -30924,3 +30924,18 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::thinkpad::ThinkPad
 ::portinion::portion
 ::easly::easily
+::likley::likely
+::yp::YP
+::hermes::Hermes
+::ralph::Ralph
+::beens::beans
+::it'::it's
+::that'::that's
+::pareto::Pareto
+::didn'::didn't
+::preasumably::presumably
+::don'::don't
+::appripiately::appropriately
+::you'e::you're
+::hte::the
+::they'e::they're
