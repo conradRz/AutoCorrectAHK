@@ -30204,7 +30204,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lucé::Lucé
 ::lyon::Lyon
 ::metz::Metz
-::nice::Nice
+;::nice::Nice
 ::orly::Orly
 ::osny::Osny
 ::rezé::Rezé
@@ -30239,7 +30239,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::poio::Poio
 ::reus::Reus
 ::rubí::Rubí
-::salt::Salt
+;::salt::Salt
 ::sama::Sama
 ::vigo::Vigo
 ::adra::Adra
@@ -30939,3 +30939,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::you'e::you're
 ::hte::the
 ::they'e::they're
+::pc::PC
+::text books::textbooks
+::text book::textbook
+::vba::VBA
+::ourput::output
