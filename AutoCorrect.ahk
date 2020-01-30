@@ -5562,7 +5562,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::micah::Micah
 ::vincent::Vincent
 ::weston::Weston
-::miles::Miles
+;::miles::Miles
 ::wesley::Wesley
 ::nathaniel::Nathaniel
 ::harrison::Harrison
@@ -5737,7 +5737,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rafael::Rafael
 ::nash::Nash
 ::beckham::Beckham
-::cash::Cash
+;::cash::Cash
 ::karson::Karson
 ::rylan::Rylan
 ::reid::Reid
@@ -6029,7 +6029,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mekhi::Mekhi
 ::memphis::Memphis
 ::cayson::Cayson
-::conrad::Conrad
+::conrad ::Conrad ;with extra space, so that it doesn't get replaced in email addresses
 ::kaison::Kaison
 ::kyree::Kyree
 ::soren::Soren
@@ -6527,7 +6527,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hailey::Hailey
 ::eva::Eva
 ::emilia::Emilia
-::autumn::Autumn
+;::autumn::Autumn
 ::quinn::Quinn
 ::nevaeh::Nevaeh
 ::piper::Piper
@@ -6671,7 +6671,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rebecca::Rebecca
 ::brooklynn::Brooklynn
 ::brynlee::Brynlee
-::summer::Summer
+;::summer::Summer
 ::sloane::Sloane
 ::leila::Leila
 ::sienna::Sienna
@@ -6705,7 +6705,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::delaney::Delaney
 ::camille::Camille
 ::vivienne::Vivienne
-::hope::Hope
+;::hope::Hope
 ::mckenna::Mckenna
 ::gemma::Gemma
 ::olive::Olive
@@ -6901,7 +6901,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::raven::Raven
 ::zariah::Zariah
 ::leslie::Leslie
-::winter::Winter
+;::winter::Winter
 ::abby::Abby
 ::mabel::Mabel
 ::sierra::Sierra
@@ -6967,7 +6967,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kassidy::Kassidy
 ::charley::Charley
 ::virginia::Virginia
-::kara::Kara
+;::kara::Kara
 ::helena::Helena
 ::sasha::Sasha
 ::julie::Julie
@@ -7269,7 +7269,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dalary::Dalary
 ::zaniyah::Zaniyah
 ::kaelyn::Kaelyn
-::sky::Sky
+;::sky::Sky
 ::jewel::Jewel
 ::joselyn::Joselyn
 ::madalynn::Madalynn
@@ -24299,7 +24299,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::oxnard::Oxnard
 ::orinda::Orinda
 ::orcutt::Orcutt
-::orange::Orange
+;::orange::Orange
 ::oakley::Oakley
 ::novato::Novato
 ::nipomo::Nipomo
@@ -24374,7 +24374,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::albany::Albany
 ::summit::Summit
 ::rahway::Rahway
-::orange::Orange
+;::orange::Orange
 ::nutley::Nutley
 ::newark::Newark
 ::mahwah::Mahwah
@@ -24433,7 +24433,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::peoria::Peoria
 ::ottawa::Ottawa
 ::oswego::Oswego
-::normal::Normal
+;::normal::Normal
 ::morton::Morton
 ::moline::Moline
 ::mokena::Mokena
@@ -26434,7 +26434,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nantes::Nantes
 ::nevers::Nevers
 ::olivet::Olivet
-::orange::Orange
+;::orange::Orange
 ::pantin::Pantin
 ::pessac::Pessac
 ::poissy::Poissy
@@ -27284,7 +27284,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::melton::Melton
 ::mosman::Mosman
 ::nerang::Nerang
-::orange::Orange
+;::orange::Orange
 ::sydney::Sydney
 ::albany::Albany
 ::darwin::Darwin
@@ -29839,8 +29839,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ;::best::Best
 ::born::Born
 ::elst::Elst
-::goes::Goes
-::leek::Leek
+;::goes::Goes
+;::leek::Leek
 ::nuth::Nuth
 ::tiel::Tiel
 ::uden::Uden
@@ -29894,7 +29894,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::peto::Peto
 ::uman::Uman
 ::xico::Xico
-::male::Male
+;::male::Male
 ::aleg::Aleg
 ::atar::Atar
 ::néma::Néma
@@ -29904,7 +29904,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kati::Kati
 ::cair::Cair
 ::safi::Safi
-::sale::Sale
+;::sale::Sale
 ::taza::Taza
 ::zaïo::Zaïo
 ::brak::Brak
@@ -29937,7 +29937,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::meru::Meru
 ::molo::Molo
 ::gujo::Gujo
-::date::Date
+;::date::Date
 ::mito::Mito
 ::naka::Naka
 ::oami::Oami
@@ -30178,10 +30178,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bath::Bath
 ::bury::Bury
 ::hull::Hull
-::leek::Leek
+;::leek::Leek
 ::rhyl::Rhyl
 ::ryde::Ryde
-::sale::Sale
+;::sale::Sale
 ::ware::Ware
 ::yate::Yate
 ::york::York
@@ -30853,7 +30853,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::e.g::e.g.
 ::ou::OU
 ::poland::Poland
-::conrad::Conrad
 ::firefox::Firefox
 ::ebooks::eBooks 
 ::autoit::autoIt
@@ -30866,7 +30865,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yt::YouTube
 ::self employment::self-employment
 ::advancehow::advance how 
-::gmail::Gmail
+::gmail ::Gmail ;with extra space, so that it doesn't get replaced in email addresses
 ::english::English
 ::alex::Alex
 ::paul::Paul
@@ -30883,7 +30882,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::e.g::e.g.
 ::ou::OU
 ::poland::Poland
-::conrad::Conrad
 ::firefox::Firefox
 ::ebooks::eBooks 
 ::autoit::autoIt
@@ -30896,7 +30894,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yt::YouTube
 ::self employment::self-employment
 ::advancehow::advance how 
-::gmail::Gmail
 ::english::English
 ::alex::Alex
 ::paul::Paul
@@ -30944,3 +30941,30 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::text book::textbook
 ::vba::VBA
 ::ourput::output
+::maek::make
+::youre::you're
+::Ebay::eBay
+::paypal::PayPal
+:: i:: I
+::i::I
+::pls::please
+::tset::test
+::edinburgh::Edinburgh
+::jan::Jan
+::btls::bottles
+::btl::bottle
+::typping::typing
+::ful::full
+::placce::place
+::fre::free
+::fornt::front
+::bllue::blue
+::lisst::list
+::chreck::check
+::hihg::high
+::wont::won't
+::linux::Linux
+::tshirt::t-shirt
+::kepe::keep
+::develp::develop
+::perosn::person
