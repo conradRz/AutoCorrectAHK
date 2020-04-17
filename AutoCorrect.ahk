@@ -1,6 +1,9 @@
 ;------------------------------------------------------------------------------
 ; CHANGELOG:
 ; 
+; April 05 2020: https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines#The_Machine-Readable_List
+;				added
+;
 ; March 27 2020: Created a list of permutation out of 10000 most popular English words
 ;					by shifting all possible combinations of letters which are next to
 ;					eachother. That created 41417 permutations.
@@ -71,6 +74,7 @@
 ;   Ambiguous entries - commented out
 ;   Personal hotkeys of github user: denolfe
 ;	Permutations generated from the wordlist
+;	from https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines#The_Machine-Readable_List
 ;   Hotstrings added to the script by the user via the Win+H hotkey
 ;------------------------------------------------------------------------------
 
@@ -171,7 +175,7 @@ return
 ; Fix for -ign instead of -ing.
 ; Words to exclude: (could probably do this by return without rewrite)
 ; From: http://www.morewords.com/e nds-with/gn/
-;------------------------------------------------------------------------------
+;------------------------------------------------------------------------------	   
 #Hotstring B0  ; Turns off automatic backspacing for the following hotstrings.
 ::align::
 ::antiforeign::
@@ -211,13 +215,9 @@ return
 ::unbenign::
 ::verisign::
 return  ; This makes the above hotstrings do nothing so that they override the ign->ing rule below.
-
 #Hotstring B  ; Turn back on automatic backspacing for all subsequent hotstrings.
 :?:ign::ing
-
-;------------------------------------------------------------------------------
 ; Word endings
-;------------------------------------------------------------------------------
 :?:bilites::bilities
 :?:bilties::bilities
 :?:blities::bilities
@@ -233,10 +233,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :?:sice::sive
 :?:t eh:: the
 :?:t hem:: them
-
-;------------------------------------------------------------------------------
 ; Word beginnings
-;------------------------------------------------------------------------------
 :*:abondon::abandon
 :*:abreviat::abbreviat
 :*:accomadat::accommodat
@@ -320,19 +317,14 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :*:supercede::supersede
 :*:superceed::supersede
 :*:weild::wield
-;------------------------------------------------------------------------------
 ; Word middles
-;------------------------------------------------------------------------------
 :?*:compatab::compatib  ; Covers incompat* and compat*
 :?*:catagor::categor  ; Covers subcatagories and catagories.
-
-;------------------------------------------------------------------------------
 ; Accented English words, from, amongst others,
 ; http://en.wikipedia.org/wiki/List_of_English_words_with_diacritics
 ; I have included all the ones compatible with reasonable codepages, and placed
 ; those that may often not be accented either from a clash with an unaccented 
 ; word (resume), or because the unaccented version is now common (cafe).
-;------------------------------------------------------------------------------
 ::aesop::Æsop
 ::a bas::à bas
 ::a la::à la
@@ -620,10 +612,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::vis a vis::vis à vis
 ::vis-a-vis::vis-à-vis
 ::voila::voilà 
-
-;------------------------------------------------------------------------------
 ; Common Misspellings - the main list
-;------------------------------------------------------------------------------
 ::htp:::http:
 ::http:\\::http://
 ::httpL::http:
@@ -5024,11 +5013,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::zeebra::zebra
 ::sionist::Zionist
 ::sionists::Zionists
-
-;------------------------------------------------------------------------------
 ; Ambiguous entries.  Where desired, pick the one that's best for you, edit,
 ; and move into the above list or, preferably, the autocorrect user file.
-;------------------------------------------------------------------------------
 /*
 :*:cooperat::coöperat
 ::(c)::©
@@ -5071,7 +5057,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::belives::believes, beliefs
 ::boaut::bout, boat, about
 ::Bon::Bön
-
 ::assasined::assassinated Broken by ":*:assasin::", but no great loss.
 ::Bootes::Boötes
 ::bric-a-brac::bric-à-brac
@@ -5293,10 +5278,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :?:oology::oölogy
 :?:t he:: the  ; Can't use this. Needs to be cleverer.
 */
-
-;-------------------------------------------------------------------------------
 ;  Capitalise dates
-;-------------------------------------------------------------------------------
 ::monday::Monday
 ::tuesday::Tuesday
 ::wednesday::Wednesday
@@ -5316,9 +5298,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::october::October
 ::november::November
 ::december::December
-;-------------------------------------------------------------------------------
 ; Languages. Auto generated in Excel. Added by Conrad
-;-------------------------------------------------------------------------------
 ::abkhaz::Abkhaz
 ::adyghe::Adyghe
 ::afrikaans::Afrikaans
@@ -5462,9 +5442,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yiddish::Yiddish
 ::zazaki::Zazaki
 ::zulu::Zulu
-;-------------------------------------------------------------------------------
 ; Male names. Auto generated in Excel. Source: https://www.babble.com/pregnancy/1000-most-popular-boy-names/ 15/Nov/19. Added by Conrad
-;-------------------------------------------------------------------------------
 ::liam::Liam
 ::noah::Noah
 ::william::William
@@ -5592,7 +5570,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::emmett::Emmett
 ::justin::Justin
 ::kai::Kai
-::max::Max
+;::max::Max
 ::diego::Diego
 ::luca::Luca
 ::ryker::Ryker
@@ -5655,7 +5633,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dean::Dean
 ::zayden::Zayden
 ::preston::Preston
-::august::August
 ::oscar::Oscar
 ::jeremy::Jeremy
 ::alejandro::Alejandro
@@ -6462,9 +6439,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yisroel::Yisroel
 ::howard::Howard
 ::jaxx::Jaxx
-;-------------------------------------------------------------------------------
 ; Female names. Auto generated in Excel. Source: https://www.babble.com/pregnancy/1000-most-popular-girl-names/ Accessed 15/Nov/19. Added by Conrad
-;-------------------------------------------------------------------------------
 ::emma::Emma
 ::olivia::Olivia
 ::ava::Ava
@@ -6475,10 +6450,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::amelia::Amelia
 ::evelyn::Evelyn
 ::abigail::Abigail
-::harper::Harper
 ::emily::Emily
 ::elizabeth::Elizabeth
-::avery::Avery
 ::sofia::Sofia
 ::ella::Ella
 ::madison::Madison
@@ -6489,7 +6462,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::chloe::Chloe
 ::camila::Camila
 ::penelope::Penelope
-::riley::Riley
 ::layla::Layla
 ::lillian::Lillian
 ::nora::Nora
@@ -6511,7 +6483,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ellie::Ellie
 ::paisley::Paisley
 ::audrey::Audrey
-::skylar::Skylar
 ::violet::Violet
 ::claire::Claire
 ::bella::Bella
@@ -6540,7 +6511,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::eva::Eva
 ::emilia::Emilia
 ;::autumn::Autumn
-::quinn::Quinn
 ::nevaeh::Nevaeh
 ::piper::Piper
 ::ruby::Ruby
@@ -6553,16 +6523,13 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::aubree::Aubree
 ::arianna::Arianna
 ::eliana::Eliana
-::peyton::Peyton
 ::melanie::Melanie
 ::gianna::Gianna
 ::isabelle::Isabelle
 ::julia::Julia
 ::valentina::Valentina
-::nova::Nova
 ::clara::Clara
 ::vivian::Vivian
-::reagan::Reagan
 ::mackenzie::Mackenzie
 ::madeline::Madeline
 ::brielle::Brielle
@@ -6576,10 +6543,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::liliana::Liliana
 ::jade::Jade
 ::maria::Maria
-::taylor::Taylor
 ::hadley::Hadley
 ::kylie::Kylie
-::emery::Emery
 ::adalynn::Adalynn
 ::natalia::Natalia
 ::annabelle::Annabelle
@@ -6603,27 +6568,19 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::norah::Norah
 ::khloe::Khloe
 ::kayla::Kayla
-::eden::Eden
 ::eliza::Eliza
 ::rose::Rose
-::ariel::Ariel
 ::melody::Melody
-::alexis::Alexis
 ::isabel::Isabel
 ::sydney::Sydney
 ::juliana::Juliana
 ::lauren::Lauren
 ::iris::Iris
-::emerson::Emerson
-::london::London
-::morgan::Morgan
 ::lilly::Lilly
-::charlie::Charlie
 ::aliyah::Aliyah
 ::valeria::Valeria
 ::arabella::Arabella
 ::sara::Sara
-::finley::Finley
 ::trinity::Trinity
 ::ryleigh::Ryleigh
 ::jordyn::Jordyn
@@ -6635,7 +6592,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cecilia::Cecilia
 ::anastasia::Anastasia
 ::daisy::Daisy
-::reese::Reese
 ::laila::Laila
 ::mya::Mya
 ::amy::Amy
@@ -6653,7 +6609,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::alina::Alina
 ::mckenzie::Mckenzie
 ::callie::Callie
-::payton::Payton
 ::eloise::Eloise
 ::brooke::Brooke
 ::londyn::Londyn
@@ -6666,17 +6621,13 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::angelina::Angelina
 ::presley::Presley
 ::josie::Josie
-::harley::Harley
 ::adelyn::Adelyn
 ::vanessa::Vanessa
 ::makayla::Makayla
-::parker::Parker
 ::juliette::Juliette
 ::amara::Amara
-::marley::Marley
 ::lila::Lila
 ::ana::Ana
-::rowan::Rowan
 ::alana::Alana
 ::michelle::Michelle
 ::malia::Malia
@@ -6688,16 +6639,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::leila::Leila
 ::sienna::Sienna
 ::adriana::Adriana
-::sawyer::Sawyer
-::kendall::Kendall
 ::juliet::Juliet
 ::destiny::Destiny
 ::alayna::Alayna
 ::elliana::Elliana
 ::diana::Diana
-::hayden::Hayden
 ::ayla::Ayla
-::dakota::Dakota
 ::angela::Angela
 ::noelle::Noelle
 ::rosalie::Rosalie
@@ -6708,7 +6655,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::emersyn::Emersyn
 ::georgia::Georgia
 ::selena::Selena
-::june::June
 ::daleyza::Daleyza
 ::tessa::Tessa
 ::maggie::Maggie
@@ -6732,7 +6678,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ruth::Ruth
 ::amiyah::Amiyah
 ::evangeline::Evangeline
-::blake::Blake
 ::thea::Thea
 ::amina::Amina
 ::giselle::Giselle
@@ -6756,7 +6701,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ember::Ember
 ::lilliana::Lilliana
 ::aniyah::Aniyah
-::logan::Logan
 ::kamila::Kamila
 ::brynn::Brynn
 ::ariella::Ariella
@@ -6771,9 +6715,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lena::Lena
 ::freya::Freya
 ::adelynn::Adelynn
-::lyric::Lyric
 ::camilla::Camilla
-::sage::Sage
 ::jennifer::Jennifer
 ::paislee::Paislee
 ::talia::Talia
@@ -6817,17 +6759,14 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::angel::Angel
 ::danielle::Danielle
 ::ainsley::Ainsley
-::dylan::Dylan
 ::kiara::Kiara
 ::millie::Millie
-::jordan::Jordan
 ::maddison::Maddison
 ::rylie::Rylie
 ::alicia::Alicia
 ::maeve::Maeve
 ::margot::Margot
 ::kylee::Kylee
-::phoenix::Phoenix
 ::heidi::Heidi
 ::zuri::Zuri
 ::alondra::Alondra
@@ -6847,7 +6786,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::esmeralda::Esmeralda
 ::chelsea::Chelsea
 ::alison::Alison
-::skyler::Skyler
 ::magnolia::Magnolia
 ::daphne::Daphne
 ::jenna::Jenna
@@ -6867,14 +6805,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nadia::Nadia
 ::amber::Amber
 ::gia::Gia
-::kamryn::Kamryn
 ::yaretzi::Yaretzi
 ::carmen::Carmen
 ::jimena::Jimena
 ::erin::Erin
 ::christina::Christina
 ::katie::Katie
-::ryan::Ryan
 ::viviana::Viviana
 ::alexia::Alexia
 ::anaya::Anaya
@@ -6883,11 +6819,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ophelia::Ophelia
 ::regina::Regina
 ::helen::Helen
-::remington::Remington
 ::camryn::Camryn
 ::cadence::Cadence
 ::royalty::Royalty
-::amari::Amari
 ::kathryn::Kathryn
 ::skye::Skye
 ::emely::Emely
@@ -6907,9 +6841,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::carolina::Carolina
 ::kennedi::Kennedi
 ::nylah::Nylah
-::tatum::Tatum
 ::alani::Alani
-::lennon::Lennon
 ::raven::Raven
 ::zariah::Zariah
 ::leslie::Leslie
@@ -6917,7 +6849,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::abby::Abby
 ::mabel::Mabel
 ::sierra::Sierra
-::april::April
 ::willa::Willa
 ::carly::Carly
 ::jolene::Jolene
@@ -6931,14 +6862,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::celeste::Celeste
 ::wren::Wren
 ::charleigh::Charleigh
-::leighton::Leighton
 ::annabella::Annabella
 ::jayleen::Jayleen
 ::braelyn::Braelyn
 ::ashlyn::Ashlyn
 ::jazlyn::Jazlyn
 ::mira::Mira
-::oakley::Oakley
 ::malaysia::Malaysia
 ::edith::Edith
 ::avianna::Avianna
@@ -6964,7 +6893,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nia::Nia
 ::liana::Liana
 ::megan::Megan
-::justice::Justice
 ::bethany::Bethany
 ::alejandra::Alejandra
 ::janelle::Janelle
@@ -6984,7 +6912,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sasha::Sasha
 ::julie::Julie
 ::michaela::Michaela
-::carter::Carter
 ::matilda::Matilda
 ::kehlani::Kehlani
 ::henley::Henley
@@ -6997,9 +6924,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::danna::Danna
 ::colette::Colette
 ::baylee::Baylee
-::elliott::Elliott
 ::ivanna::Ivanna
-::cameron::Cameron
 ::celine::Celine
 ::alayah::Alayah
 ::hanna::Hanna
@@ -7029,7 +6954,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::milani::Milani
 ::savanna::Savanna
 ::karsyn::Karsyn
-::rory::Rory
 ::giuliana::Giuliana
 ::lauryn::Lauryn
 ::liberty::Liberty
@@ -7041,12 +6965,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::jillian::Jillian
 ::anne::Anne
 ::haylee::Haylee
-::dallas::Dallas
 ::azalea::Azalea
 ::jayda::Jayda
 ::tiffany::Tiffany
 ::avah::Avah
-::shiloh::Shiloh
 ::bailee::Bailee
 ::jazmine::Jazmine
 ::esme::Esme
@@ -7066,20 +6988,16 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::anika::Anika
 ::janiyah::Janiyah
 ::dorothy::Dorothy
-::sutton::Sutton
 ::julieta::Julieta
 ::kimber::Kimber
-::remy::Remy
 ::cassandra::Cassandra
 ::rebekah::Rebekah
 ::collins::Collins
-::elliot::Elliot
 ::emmy::Emmy
 ::sloan::Sloan
 ::hayley::Hayley
 ::amalia::Amalia
 ::jemma::Jemma
-::jamie::Jamie
 ::melina::Melina
 ::leyla::Leyla
 ::jaylah::Jaylah
@@ -7099,7 +7017,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::greta::Greta
 ::maren::Maren
 ::alena::Alena
-::emory::Emory
 ::alaia::Alaia
 ::cynthia::Cynthia
 ::addisyn::Addisyn
@@ -7121,15 +7038,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mae::Mae
 ::zahra::Zahra
 ::kailey::Kailey
-::jessie::Jessie
 ::tiana::Tiana
 ::amirah::Amirah
 ::madalyn::Madalyn
 ::alaya::Alaya
 ::lilyana::Lilyana
 ::julissa::Julissa
-::armani::Armani
-::lennox::Lennox
 ::lillie::Lillie
 ::jolie::Jolie
 ::laney::Laney
@@ -7158,7 +7072,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::braylee::Braylee
 ::milana::Milana
 ::addilynn::Addilynn
-::royal::Royal
 ::chaya::Chaya
 ::frida::Frida
 ::bonnie::Bonnie
@@ -7168,7 +7081,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::malaya::Malaya
 ::mina::Mina
 ::emerie::Emerie
-::reign::Reign
 ::zaylee::Zaylee
 ::annika::Annika
 ::kenia::Kenia
@@ -7182,7 +7094,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kadence::Kadence
 ::mikaela::Mikaela
 ::jaelyn::Jaelyn
-::briar::Briar
 ::kaylie::Kaylie
 ::teresa::Teresa
 ::bria::Bria
@@ -7201,10 +7112,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ellen::Ellen
 ::meadow::Meadow
 ::amiya::Amiya
-::ellis::Ellis
 ::elora::Elora
-::milan::Milan
-::hunter::Hunter
 ::princess::Princess
 ::leanna::Leanna
 ::nathalie::Nathalie
@@ -7248,7 +7156,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ryann::Ryann
 ::lexie::Lexie
 ::thalia::Thalia
-::karter::Karter
 ::annabel::Annabel
 ::christine::Christine
 ::estella::Estella
@@ -7256,19 +7163,15 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::adele::Adele
 ::aya::Aya
 ::estelle::Estelle
-::landry::Landry
 ::tori::Tori
 ::perla::Perla
 ::lailah::Lailah
 ::miah::Miah
-::rylan::Rylan
 ::angelique::Angelique
 ::avalynn::Avalynn
 ::romina::Romina
-::ari::Ari
 ::jaycee::Jaycee
 ::jaylene::Jaylene
-::kai::Kai
 ::louise::Louise
 ::mavis::Mavis
 ::scarlette::Scarlette
@@ -7290,7 +7193,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::isabela::Isabela
 ::karlee::Karlee
 ::aubriella::Aubriella
-::azariah::Azariah
 ::tinley::Tinley
 ::dream::Dream
 ::claudia::Claudia
@@ -7308,7 +7210,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::carolyn::Carolyn
 ::jaylee::Jaylee
 ::zoie::Zoie
-::frankie::Frankie
 ::andi::Andi
 ::judith::Judith
 ::paula::Paula
@@ -7380,7 +7281,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::alannah::Alannah
 ::blaire::Blaire
 ::brenda::Brenda
-::casey::Casey
 ::selene::Selene
 ::lizbeth::Lizbeth
 ::adrienne::Adrienne
@@ -7392,12 +7292,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bexley::Bexley
 ::joslyn::Joslyn
 ::maliah::Maliah
-::zion::Zion
 ::breanna::Breanna
 ::melania::Melania
 ::estrella::Estrella
 ::ingrid::Ingrid
-::jayden::Jayden
 ::kaya::Kaya
 ::kaylin::Kaylin
 ::harmoni::Harmoni
@@ -7439,14 +7337,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::adilynn::Adilynn
 ::anabelle::Anabelle
 ::egypt::Egypt
-::spencer::Spencer
 ::tegan::Tegan
 ::aranza::Aranza
 ::vada::Vada
 ::emerald::Emerald
 ::florence::Florence
 ::marlowe::Marlowe
-::micah::Micah
 ::sonia::Sonia
 ::sunny::Sunny
 ::tara::Tara
@@ -7465,9 +7361,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::monserrat::Monserrat
 ::zendaya::Zendaya
 ::alora::Alora
-;-------------------------------------------------------------------------------
 ; List of countries. Auto generated in Excel. Source: https://www.worldometers.info/geography/alphabetical-list-of-countries/ Accessed 15/Nov/19. Added by Conrad
-;-------------------------------------------------------------------------------
 ::afghanistan::Afghanistan
 ::albania::Albania
 ::algeria::Algeria
@@ -7502,7 +7396,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cameroon::Cameroon
 ::canada::Canada
 ::central african republic::Central African Republic
-::chad::Chad
 ::chile::Chile
 ::china::China
 ::colombia::Colombia
@@ -7519,7 +7412,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dominica::Dominica
 ::dominican republic::Dominican Republic
 ::ecuador::Ecuador
-::egypt::Egypt
 ::el salvador::El Salvador
 ::equatorial guinea::Equatorial Guinea
 ::eritrea::Eritrea
@@ -7531,7 +7423,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::france::France
 ::gabon::Gabon
 ::gambia::Gambia
-::georgia::Georgia
 ::germany::Germany
 ::ghana::Ghana
 ::greece::Greece
@@ -7545,18 +7436,14 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::honduras::Honduras
 ::hungary::Hungary
 ::iceland::Iceland
-::india::India
 ::indonesia::Indonesia
 ::iran::Iran
 ::iraq::Iraq
 ::ireland::Ireland
-::israel::Israel
 ::italy::Italy
 ::jamaica::Jamaica
 ::japan::Japan
-::jordan::Jordan
 ::kazakhstan::Kazakhstan
-::kenya::Kenya
 ::kiribati::Kiribati
 ::kuwait::Kuwait
 ::kyrgyzstan::Kyrgyzstan
@@ -7571,7 +7458,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::luxembourg::Luxembourg
 ::madagascar::Madagascar
 ::malawi::Malawi
-::malaysia::Malaysia
 ::maldives::Maldives
 ::mali::Mali
 ::malta::Malta
@@ -7663,9 +7549,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yemen::Yemen
 ::zambia::Zambia
 ::zimbabwe::Zimbabwe
-;------------------------------------------------------------------------------
 ; cities above 15,000 inhabitants (22793 cities)
-;------------------------------------------------------------------------------
 ::hot springs national park::Hot Springs National Park
 ::city of milford (balance)::City of Milford (balance)
 ::pereyaslav-khmel’nyts’kyy::Pereyaslav-Khmel’nyts’kyy
@@ -7931,7 +7815,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::san bernardino contla::San Bernardino Contla
 ::san miguel de cozumel::San Miguel de Cozumel
 ::cuautepec de hinojosa::Cuautepec de Hinojosa
-::teotihuacán de arista::Teotihuacán de Arista
 ::santa cruz xoxocotlán::Santa Cruz Xoxocotlán
 ::tepatlaxco de hidalgo::Tepatlaxco de Hidalgo
 ::san miguel xico viejo::San Miguel Xico Viejo
@@ -8265,10 +8148,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ciudad lópez mateos::Ciudad López Mateos
 ::izúcar de matamoros::Izúcar de Matamoros
 ::magdalena contreras::Magdalena Contreras
-::naucalpan de juárez::Naucalpan de Juárez
 ::san salvador atenco::San Salvador Atenco
 ::santiago tulantepec::Santiago Tulantepec
-::venustiano carranza::Venustiano Carranza
 ::xicotepec de juárez::Xicotepec de Juárez
 ::sidi yahia el gharb::Sidi Yahia El Gharb
 ::higashimurayama-shi::Higashimurayama-shi
@@ -8872,7 +8753,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::new philadelphia::New Philadelphia
 ::mayfield heights::Mayfield Heights
 ::garfield heights::Garfield Heights
-::saratoga springs::Saratoga Springs
 ::rockville centre::Rockville Centre
 ::north massapequa::North Massapequa
 ::north amityville::North Amityville
@@ -8936,7 +8816,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::novyye kuz’minki::Novyye Kuz’minki
 ::pavlovskiy posad::Pavlovskiy Posad
 ::novo-peredelkino::Novo-Peredelkino
-::saint petersburg::Saint Petersburg
 ::staraya derevnya::Staraya Derevnya
 ::vyshniy volochëk::Vyshniy Volochëk
 ::yelizavetinskaya::Yelizavetinskaya
@@ -8978,7 +8857,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::general escobedo::General Escobedo
 ::huetamo de núñez::Huetamo de Núñez
 ::san pedro madera::San Pedro Madera
-::san buenaventura::San Buenaventura
 ::vicente guerrero::Vicente Guerrero
 ::heroica alvarado::Heroica Alvarado
 ::ciudad fernández::Ciudad Fernández
@@ -9267,7 +9145,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::staryy malgobek::Staryy Malgobek
 ::kochubeyevskoye::Kochubeyevskoye
 ::novaya balakhna::Novaya Balakhna
-::blagoveshchensk::Blagoveshchensk
 ::bryukhovetskaya::Bryukhovetskaya
 ::goryachevodskiy::Goryachevodskiy
 ::kirovo-chepetsk::Kirovo-Chepetsk
@@ -9334,7 +9211,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::chiapa de corzo::Chiapa de Corzo
 ::ciudad victoria::Ciudad Victoria
 ::cuautla morelos::Cuautla Morelos
-::emiliano zapata::Emiliano Zapata
 ::ixtac zoquitlán::Ixtac Zoquitlán
 ::jalpa de méndez::Jalpa de Méndez
 ::lerdo de tejada::Lerdo de Tejada
@@ -9622,7 +9498,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::corpus christi::Corpus Christi
 ::hendersonville::Hendersonville
 ::goodlettsville::Goodlettsville
-::mount pleasant::Mount Pleasant
 ::south vineland::South Vineland
 ::roanoke rapids::Roanoke Rapids
 ::elizabeth city::Elizabeth City
@@ -9976,7 +9851,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ciego de ávila::Ciego de Ávila
 ::jesús menéndez::Jesús Menéndez
 ::unión de reyes::Unión de Reyes
-::ciudad bolívar::Ciudad Bolívar
 ::ciénaga de oro::Ciénaga de Oro
 ::zhu cheng city::Zhu Cheng City
 ::oroqen zizhiqi::Oroqen Zizhiqi
@@ -10113,7 +9987,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::spring valley::Spring Valley
 ::commerce city::Commerce City
 ::thousand oaks::Thousand Oaks
-::spring valley::Spring Valley
 ::santa clarita::Santa Clarita
 ::santa barbara::Santa Barbara
 ::san francisco::San Francisco
@@ -10148,7 +10021,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bowling green::Bowling Green
 ::valley stream::Valley Stream
 ::staten island::Staten Island
-::spring valley::Spring Valley
 ::north babylon::North Babylon
 ::niagara falls::Niagara Falls
 ::new york city::New York City
@@ -10191,11 +10063,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::fuquay-varina::Fuquay-Varina
 ::west gulfport::West Gulfport
 ::ocean springs::Ocean Springs
-::saint charles::Saint Charles
 ::west elkridge::West Elkridge
 ::south bel air::South Bel Air
 ::silver spring::Silver Spring
-::saint charles::Saint Charles
 ::north potomac::North Potomac
 ::north bel air::North Bel Air
 ::maryland city::Maryland City
@@ -10203,7 +10073,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nicholasville::Nicholasville
 ::jeffersontown::Jeffersontown
 ::elizabethtown::Elizabethtown
-::bowling green::Bowling Green
 ::overland park::Overland Park
 ::junction city::Junction City
 ::warner robins::Warner Robins
@@ -10273,7 +10142,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ayutuxtepeque::Ayutuxtepeque
 ::cuscatancingo::Cuscatancingo
 ::quezaltepeque::Quezaltepeque
-::san francisco::San Francisco
 ::sensuntepeque::Sensuntepeque
 ::ndibène dahra::Ndibène Dahra
 ::zlaté moravce::Zlaté Moravce
@@ -10326,7 +10194,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::volgorechensk::Volgorechensk
 ::altuf’yevskiy::Altuf’yevskiy
 ::yegorlykskaya::Yegorlykskaya
-::zheleznogorsk::Zheleznogorsk
 ::zheleznovodsk::Zheleznovodsk
 ::backa palanka::Backa Palanka
 ::câmpia turzii::Câmpia Turzii
@@ -10365,10 +10232,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::general tinio::General Tinio
 ::general trias::General Trias
 ::la castellana::La Castellana
-::san francisco::San Francisco
 ::san ildefonso::San Ildefonso
 ::san marcelino::San Marcelino
-::santa barbara::Santa Barbara
 ::la concepción::La Concepción
 ::san miguelito::San Miguelito
 ::pukekohe east::Pukekohe East
@@ -10562,7 +10427,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::newton mearns::Newton Mearns
 ::northallerton::Northallerton
 ::north shields::North Shields
-::saint andrews::Saint Andrews
 ::sittingbourne::Sittingbourne
 ::south elmsall::South Elmsall
 ::south shields::South Shields
@@ -10589,7 +10453,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::saint-gratien::Saint-Gratien
 ::saint-nazaire::Saint-Nazaire
 ::saint-quentin::Saint-Quentin
-::saint-raphaël::Saint-Raphaël
 ::sarreguemines::Sarreguemines
 ::tournefeuille::Tournefeuille
 ::villefontaine::Villefontaine
@@ -10622,7 +10485,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mers el kebir::Mers el Kebir
 ::oued el abtal::Oued el Abtal
 ::sidi mérouane::Sidi Mérouane
-::san cristóbal::San Cristóbal
 ::santo domingo::Santo Domingo
 ::frederiksberg::Frederiksberg
 ::frederikshavn::Frederikshavn
@@ -10676,9 +10538,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::palma soriano::Palma Soriano
 ::pinar del río::Pinar del Río
 ::san cristobal::San Cristobal
-::santo domingo::Santo Domingo
 ::calle blancos::Calle Blancos
-::san francisco::San Francisco
 ::dos quebradas::Dos Quebradas
 ::floridablanca::Floridablanca
 ::girardot city::Girardot City
@@ -10706,7 +10566,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::prince albert::Prince Albert
 ::port colborne::Port Colborne
 ::pointe-claire::Pointe-Claire
-::niagara falls::Niagara Falls
 ::fort st. john::Fort St. John
 ::fort mcmurray::Fort McMurray
 ::drummondville::Drummondville
@@ -10790,7 +10649,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::caleta olivia::Caleta Olivia
 ::marcos juárez::Marcos Juárez
 ::puerto madryn::Puerto Madryn
-::san francisco::San Francisco
 ::venado tuerto::Venado Tuerto
 ::villa allende::Villa Allende
 ::villa dolores::Villa Dolores
@@ -10835,7 +10693,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::spanish fork::Spanish Fork
 ::south jordan::South Jordan
 ::brigham city::Brigham City
-::four corners::Four Corners
 ::forest grove::Forest Grove
 ::north platte::North Platte
 ::fort collins::Fort Collins
@@ -10875,13 +10732,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::steubenville::Steubenville
 ::south euclid::South Euclid
 ::north canton::North Canton
-::mount vernon::Mount Vernon
 ::white plains::White Plains
 ::west babylon::West Babylon
 ::poughkeepsie::Poughkeepsie
 ::port chester::Port Chester
 ::new rochelle::New Rochelle
-::mount vernon::Mount Vernon
 ::johnson city::Johnson City
 ::gloversville::Gloversville
 ::farmingville::Farmingville
@@ -10896,7 +10751,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::grand island::Grand Island
 ::new brighton::New Brighton
 ::eden prairie::Eden Prairie
-::apple valley::Apple Valley
 ::lincoln park::Lincoln Park
 ::grand rapids::Grand Rapids
 ::forest hills::Forest Hills
@@ -10917,7 +10771,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::melrose park::Melrose Park
 ::libertyville::Libertyville
 ::hanover park::Hanover Park
-::elmwood park::Elmwood Park
 ::crystal lake::Crystal Lake
 ::carol stream::Carol Stream
 ::calumet city::Calumet City
@@ -10929,7 +10782,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::brushy creek::Brushy Creek
 ::murfreesboro::Murfreesboro
 ::mount juliet::Mount Juliet
-::johnson city::Johnson City
 ::collierville::Collierville
 ::wade hampton::Wade Hampton
 ::simpsonville::Simpsonville
@@ -10978,30 +10830,24 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lake charles::Lake Charles
 ::bossier city::Bossier City
 ::madisonville::Madisonville
-::independence::Independence
 ::hopkinsville::Hopkinsville
 ::indianapolis::Indianapolis
 ::broad ripple::Broad Ripple
-::mount vernon::Mount Vernon
-::jacksonville::Jacksonville
 ::granite city::Granite City
 ::edwardsville::Edwardsville
 ::collinsville::Collinsville
-::fayetteville::Fayetteville
 ::douglasville::Douglasville
 ::cartersville::Cartersville
 ::winter haven::Winter Haven
 ::the villages::The Villages
 ::the hammocks::The Hammocks
 ::palmetto bay::Palmetto Bay
-::palm springs::Palm Springs
 ::ormond beach::Ormond Beach
 ::oakland park::Oakland Park
 ::myrtle grove::Myrtle Grove
 ::meadow woods::Meadow Woods
 ::leisure city::Leisure City
 ::lehigh acres::Lehigh Acres
-::jacksonville::Jacksonville
 ::ives estates::Ives Estates
 ::delray beach::Delray Beach
 ::cutler ridge::Cutler Ridge
@@ -11009,12 +10855,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::country walk::Country Walk
 ::coral gables::Coral Gables
 ::boca del mar::Boca Del Mar
-::bloomingdale::Bloomingdale
 ::west memphis::West Memphis
 ::russellville::Russellville
-::jacksonville::Jacksonville
 ::forrest city::Forrest City
-::fayetteville::Fayetteville
 ::center point::Center Point
 ::amvrosiyivka::Amvrosiyivka
 ::bakhchysaray::Bakhchysaray
@@ -11034,7 +10877,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::taoyuan city::Taoyuan City
 ::hualien city::Hualien City
 ::point fortin::Point Fortin
-::san fernando::San Fernando
 ::bahçelievler::Bahçelievler
 ::büyükçekmece::Büyükçekmece
 ::kizilcahamam::Kizilcahamam
@@ -11157,7 +10999,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::águas santas::Águas Santas
 ::rio de mouro::Rio de Mouro
 ::bani suhayla::Bani Suhayla
-::saint-pierre::Saint-Pierre
 ::praga pólnoc::Praga Pólnoc
 ::jelenia góra::Jelenia Góra
 ::zdunska wola::Zdunska Wola
@@ -11188,14 +11029,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mendez-nuñez::Mendez-Nuñez
 ::palayan city::Palayan City
 ::pinamungahan::Pinamungahan
-::san fernando::San Fernando
 ::san leonardo::San Leonardo
 ::telabastagan::Telabastagan
 ::port moresby::Port Moresby
 ::la rinconada::La Rinconada
 ::chincha alta::Chincha Alta
 ::huancavelica::Huancavelica
-::san clemente::San Clemente
 ::bagua grande::Bagua Grande
 ::querecotillo::Querecotillo
 ::tambo grande::Tambo Grande
@@ -11269,10 +11108,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tecamachalco::Tecamachalco
 ::tlalnepantla::Tlalnepantla
 ::villahermosa::Villahermosa
-::san fernando::San Fernando
 ::saint pierre::Saint Pierre
-::sainte-marie::Sainte-Marie
-::saint-joseph::Saint-Joseph
 ::dalandzadgad::Dalandzadgad
 ::pyin oo lwin::Pyin Oo Lwin
 ::taungdwingyi::Taungdwingyi
@@ -11474,8 +11310,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bognor regis::Bognor Regis
 ::briton ferry::Briton Ferry
 ::burgess hill::Burgess Hill
-::chesterfield::Chesterfield
-::christchurch::Christchurch
 ::kingswinford::Kingswinford
 ::loughborough::Loughborough
 ::macclesfield::Macclesfield
@@ -11540,12 +11374,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::alcantarilla::Alcantarilla
 ::almendralejo::Almendralejo
 ::dos hermanas::Dos Hermanas
-::la rinconada::La Rinconada
 ::lora del río::Lora del Río
 ::massamagrell::Massamagrell
 ::puente-genil::Puente-Genil
 ::realejo alto::Realejo Alto
-::san fernando::San Fernando
 ::torremolinos::Torremolinos
 ::vélez-málaga::Vélez-Málaga
 ::al jamaliyah::Al Jamaliyah
@@ -11678,7 +11510,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sainte-julie::Sainte-Julie
 ::port alberni::Port Alberni
 ::pitt meadows::Pitt Meadows
-::peterborough::Peterborough
 ::medicine hat::Medicine Hat
 ::lloydminster::Lloydminster
 ::l'assomption::L'Assomption
@@ -11762,7 +11593,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::guayaramerín::Guayaramerín
 ::kuala belait::Kuala Belait
 ::madinat ‘isá::Madinat ‘Isá
-::dimitrovgrad::Dimitrovgrad
 ::stara zagora::Stara Zagora
 ::blankenberge::Blankenberge
 ::destelbergen::Destelbergen
@@ -11887,7 +11717,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::castle rock::Castle Rock
 ::yorba linda::Yorba Linda
 ::willowbrook::Willowbrook
-::westminster::Westminster
 ::west covina::West Covina
 ::west carson::West Carson
 ::watsonville::Watsonville
@@ -11942,7 +11771,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lindenhurst::Lindenhurst
 ::kiryas joel::Kiryas Joel
 ::irondequoit::Irondequoit
-::garden city::Garden City
 ::floral park::Floral Park
 ::eastchester::Eastchester
 ::east meadow::East Meadow
@@ -11964,9 +11792,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::maple grove::Maple Grove
 ::forest lake::Forest Lake
 ::coon rapids::Coon Rapids
-::bloomington::Bloomington
-::garden city::Garden City
-::springfield::Springfield
 ::southbridge::Southbridge
 ::northampton::Northampton
 ::newburyport::Newburyport
@@ -11990,7 +11815,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bourbonnais::Bourbonnais
 ::bolingbrook::Bolingbrook
 ::blue island::Blue Island
-::bloomington::Bloomington
 ::bensenville::Bensenville
 ::cedar falls::Cedar Falls
 ::willimantic::Willimantic
@@ -12003,7 +11827,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::channelview::Channelview
 ::canyon lake::Canyon Lake
 ::brownsville::Brownsville
-::springfield::Springfield
 ::spring hill::Spring Hill
 ::shelbyville::Shelbyville
 ::greeneville::Greeneville
@@ -12012,11 +11835,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::summerville::Summerville
 ::spartanburg::Spartanburg
 ::goose creek::Goose Creek
-::springfield::Springfield
 ::drexel hill::Drexel Hill
-::springfield::Springfield
 ::forest park::Forest Park
-::centerville::Centerville
 ::beavercreek::Beavercreek
 ::ocean acres::Ocean Acres
 ::maple shade::Maple Shade
@@ -12030,10 +11850,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::chapel hill::Chapel Hill
 ::hattiesburg::Hattiesburg
 ::warrensburg::Warrensburg
-::springfield::Springfield
 ::kansas city::Kansas City
 ::creve coeur::Creve Coeur
-::westminster::Westminster
 ::takoma park::Takoma Park
 ::hyattsville::Hyattsville
 ::hunt valley::Hunt Valley
@@ -12044,23 +11862,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::baton rouge::Baton Rouge
 ::fort thomas::Fort Thomas
 ::leavenworth::Leavenworth
-::kansas city::Kansas City
 ::terre haute::Terre Haute
-::shelbyville::Shelbyville
-::clarksville::Clarksville
-::bloomington::Bloomington
 ::upper alton::Upper Alton
-::springfield::Springfield
-::thomasville::Thomasville
 ::stockbridge::Stockbridge
-::gainesville::Gainesville
-::forest park::Forest Park
 ::winter park::Winter Park
-::westchester::Westchester
 ::three lakes::Three Lakes
 ::tallahassee::Tallahassee
-::spring hill::Spring Hill
-::saint cloud::Saint Cloud
 ::punta gorda::Punta Gorda
 ::port orange::Port Orange
 ::panama city::Panama City
@@ -12072,14 +11879,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lake butler::Lake Butler
 ::haines city::Haines City
 ::golden gate::Golden Gate
-::gainesville::Gainesville
 ::fort pierce::Fort Pierce
 ::dania beach::Dania Beach
 ::cooper city::Cooper City
 ::citrus park::Citrus Park
 ::casselberry::Casselberry
 ::carrollwood::Carrollwood
-::brownsville::Brownsville
 ::belle glade::Belle Glade
 ::little rock::Little Rock
 ::hot springs::Hot Springs
@@ -12266,10 +12071,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::târgu neamt::Târgu Neamt
 ::saint-andré::Saint-André
 ::saint-denis::Saint-Denis
-::saint-louis::Saint-Louis
 ::encarnación::Encarnación
 ::san antonio::San Antonio
-::san lorenzo::San Lorenzo
 ::villa elisa::Villa Elisa
 ::villa hayes::Villa Hayes
 ::alcabideche::Alcabideche
@@ -12316,14 +12119,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ozamiz city::Ozamiz City
 ::pinamalayan::Pinamalayan
 ::quezon city::Quezon City
-::san antonio::San Antonio
 ::san mariano::San Mariano
 ::san narciso::San Narciso
 ::san nicolas::San Nicolas
 ::san pascual::San Pascual
-::santa maria::Santa Maria
 ::santo tomas::Santo Tomas
-::san vicente::San Vicente
 ::tarlac city::Tarlac City
 ::mount hagen::Mount Hagen
 ::andahuaylas::Andahuaylas
@@ -12376,7 +12176,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tanah merah::Tanah Merah
 ::teluk intan::Teluk Intan
 ::george town::George Town
-::butterworth::Butterworth
 ::kuala pilah::Kuala Pilah
 ::bagan serai::Bagan Serai
 ::kuala lipis::Kuala Lipis
@@ -12462,7 +12261,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::shemonaikha::Shemonaikha
 ::taldykorgan::Taldykorgan
 ::zhezqazghan::Zhezqazghan
-::george town::George Town
 ::kuwait city::Kuwait City
 ::al mahbulah::Al Mahbulah
 ::changnyeong::Changnyeong
@@ -12699,7 +12497,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pétionville::Pétionville
 ::el progreso::El Progreso
 ::potrerillos::Potrerillos
-::san lorenzo::San Lorenzo
 ::tegucigalpa::Tegucigalpa
 ::jocotenango::Jocotenango
 ::mazatenango::Mazatenango
@@ -12740,12 +12537,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::leatherhead::Leatherhead
 ::musselburgh::Musselburgh
 ::newtownards::Newtownards
-::northampton::Northampton
 ::potters bar::Potters Bar
 ::rawtenstall::Rawtenstall
 ::rottingdean::Rottingdean
 ::saint neots::Saint Neots
-::scarborough::Scarborough
 ::southampton::Southampton
 ::stalybridge::Stalybridge
 ::stourbridge::Stourbridge
@@ -12776,8 +12571,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::romainville::Romainville
 ::saint-avold::Saint-Avold
 ::saint-cloud::Saint-Cloud
-::saint-denis::Saint-Denis
-::saint-louis::Saint-Louis
 ::saint-mandé::Saint-Mandé
 ::tourlaville::Tourlaville
 ::villemomble::Villemomble
@@ -12796,7 +12589,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::carabanchel::Carabanchel
 ::fuenlabrada::Fuenlabrada
 ::hondarribia::Hondarribia
-::guadalajara::Guadalajara
 ::majadahonda::Majadahonda
 ::palafrugell::Palafrugell
 ::portugalete::Portugalete
@@ -12811,7 +12603,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::los barrios::Los Barrios
 ::puertollano::Puertollano
 ::puerto real::Puerto Real
-::santa lucía::Santa Lucía
 ::villajoyosa::Villajoyosa
 ::ad dilinjat::Ad Dilinjat
 ::al kharijah::Al Kharijah
@@ -12821,12 +12612,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bur safajah::Bur Safajah
 ::diyarb najm::Diyarb Najm
 ::eloy alfaro::Eloy Alfaro
-::la libertad::La Libertad
 ::montecristi::Montecristi
 ::pedro carbo::Pedro Carbo
 ::rosa zarate::Rosa Zarate
 ::samborondón::Samborondón
-::san gabriel::San Gabriel
 ::santa elena::Santa Elena
 ::’aïn benian::’Aïn Benian
 ::aïn fakroun::Aïn Fakroun
@@ -12851,7 +12640,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sidi moussa::Sidi Moussa
 ::tamanrasset::Tamanrasset
 ::tizi rached::Tizi Rached
-::bella vista::Bella Vista
 ::monte plata::Monte Plata
 ::albertslund::Albertslund
 ::nørresundby::Nørresundby
@@ -12946,14 +12734,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::wittenberge::Wittenberge
 ::zweibrücken::Zweibrücken
 ::ceský tešín::Ceský Tešín
-::santa maria::Santa Maria
 ::bahía honda::Bahía Honda
 ::campechuela::Campechuela
 ::cumanayagua::Cumanayagua
 ::encrucijada::Encrucijada
 ::manicaragua::Manicaragua
-::santa clara::Santa Clara
-::san vicente::San Vicente
 ::bucaramanga::Bucaramanga
 ::campoalegre::Campoalegre
 ::chimichagua::Chimichagua
@@ -12963,8 +12748,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::piedecuesta::Piedecuesta
 ::puerto asís::Puerto Asís
 ::sabanalarga::Sabanalarga
-::san jacinto::San Jacinto
-::santa lucía::Santa Lucía
 ::santa marta::Santa Marta
 ::santo tomás::Santo Tomás
 ::gongzhuling::Gongzhuling
@@ -12992,15 +12775,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::los ángeles::Los Ángeles
 ::panguipulli::Panguipulli
 ::puente alto::Puente Alto
-::san antonio::San Antonio
-::san vicente::San Vicente
 ::bingerville::Bingerville
 ::biel/bienne::Biel/Bienne
 ::kreuzlingen::Kreuzlingen
 ::steffisburg::Steffisburg
 ::brazzaville::Brazzaville
 ::west island::West Island
-::scarborough::Scarborough
 ::yellowknife::Yellowknife
 ::thunder bay::Thunder Bay
 ::sorel-tracy::Sorel-Tracy
@@ -13064,7 +12844,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::porto união::Porto União
 ::ruy barbosa::Ruy Barbosa
 ::santa luzia::Santa Luzia
-::santa maria::Santa Maria
 ::santo amaro::Santo Amaro
 ::santo andré::Santo André
 ::são fidélis::São Fidélis
@@ -13104,7 +12883,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::porto calvo::Porto Calvo
 ::rio formoso::Rio Formoso
 ::salinópolis::Salinópolis
-::santa luzia::Santa Luzia
 ::villamontes::Villamontes
 ::dassa-zoumé::Dassa-Zoumé
 ::al muharraq::Al Muharraq
@@ -13119,7 +12897,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::la louvière::La Louvière
 ::middelkerke::Middelkerke
 ::tessenderlo::Tessenderlo
-::zwijndrecht::Zwijndrecht
 ::cox’s bazar::Cox’s Bazar
 ::burhanuddin::Burhanuddin
 ::par naogaon::Par Naogaon
@@ -13130,7 +12907,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mingelchaur::Mingelchaur
 ::yelenendorf::Yelenendorf
 ::dzhalilabad::Dzhalilabad
-::forest lake::Forest Lake
 ::broken hill::Broken Hill
 ::carlingford::Carlingford
 ::castle hill::Castle Hill
@@ -13144,22 +12920,15 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::warrnambool::Warrnambool
 ::alta gracia::Alta Gracia
 ::arroyo seco::Arroyo Seco
-::bella vista::Bella Vista
 ::embarcación::Embarcación
-::jesús maría::Jesús María
 ::río segundo::Río Segundo
 ::río tercero::Río Tercero
-::santa lucía::Santa Lucía
 ::villa maría::Villa María
-::villa nueva::Villa Nueva
 ::yerba buena::Yerba Buena
 ::el soberbio::El Soberbio
 ::puerto rico::Puerto Rico
 ::reconquista::Reconquista
 ::resistencia::Resistencia
-::san lorenzo::San Lorenzo
-::santa elena::Santa Elena
-::san vicente::San Vicente
 ::n’dalatando::N’dalatando
 ::patos fshat::Patos Fshat
 ::gjirokastër::Gjirokastër
@@ -13222,7 +12991,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yangirabot::Yangirabot
 ::shahrisabz::Shahrisabz
 ::montevideo::Montevideo
-::san carlos::San Carlos
 ::tacuarembó::Tacuarembó
 ::west hills::West Hills
 ::university::University
@@ -13257,7 +13025,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::enterprise::Enterprise
 ::rio rancho::Rio Rancho
 ::las cruces::Las Cruces
-::farmington::Farmington
 ::alamogordo::Alamogordo
 ::dodge city::Dodge City
 ::southglenn::Southglenn
@@ -13274,7 +13041,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::santa cruz::Santa Cruz
 ::san rafael::San Rafael
 ::san marcos::San Marcos
-::san carlos::San Carlos
 ::sacramento::Sacramento
 ::ridgecrest::Ridgecrest
 ::pleasanton::Pleasanton
@@ -13305,7 +13071,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::new berlin::New Berlin
 ::marshfield::Marshfield
 ::janesville::Janesville
-::greenfield::Greenfield
 ::germantown::Germantown
 ::eau claire::Eau Claire
 ::brookfield::Brookfield
@@ -13328,15 +13093,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::youngstown::Youngstown
 ::willoughby::Willoughby
 ::perrysburg::Perrysburg
-::marysville::Marysville
 ::brook park::Brook Park
 ::austintown::Austintown
 ::west islip::West Islip
 ::ronkonkoma::Ronkonkoma
-::middletown::Middletown
 ::massapequa::Massapequa
 ::mamaroneck::Mamaroneck
-::long beach::Long Beach
 ::lackawanna::Lackawanna
 ::kings park::Kings Park
 ::huntington::Huntington
@@ -13346,7 +13108,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::centereach::Centereach
 ::binghamton::Binghamton
 ::woodbridge::Woodbridge
-::union city::Union City
 ::sayreville::Sayreville
 ::rutherford::Rutherford
 ::plainfield::Plainfield
@@ -13358,7 +13119,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hackensack::Hackensack
 ::bloomfield::Bloomfield
 ::belleville::Belleville
-::portsmouth::Portsmouth
 ::manchester::Manchester
 ::west fargo::West Fargo
 ::kirksville::Kirksville
@@ -13368,7 +13128,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::northfield::Northfield
 ::minnetonka::Minnetonka
 ::lino lakes::Lino Lakes
-::farmington::Farmington
 ::chanhassen::Chanhassen
 ::burnsville::Burnsville
 ::albert lea::Albert Lea
@@ -13381,7 +13140,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::birmingham::Birmingham
 ::allen park::Allen Park
 ::waterville::Waterville
-::winchester::Winchester
 ::wilmington::Wilmington
 ::somerville::Somerville
 ::shrewsbury::Shrewsbury
@@ -13389,25 +13147,20 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::marblehead::Marblehead
 ::longmeadow::Longmeadow
 ::leominster::Leominster
-::greenfield::Greenfield
 ::gloucester::Gloucester
 ::framingham::Framingham
 ::fall river::Fall River
 ::chelmsford::Chelmsford
-::burlington::Burlington
 ::barnstable::Barnstable
 ::valparaiso::Valparaiso
 ::south bend::South Bend
 ::logansport::Logansport
-::huntington::Huntington
 ::fort wayne::Fort Wayne
-::washington::Washington
 ::villa park::Villa Park
 ::streamwood::Streamwood
 ::schaumburg::Schaumburg
 ::round lake::Round Lake
 ::romeoville::Romeoville
-::plainfield::Plainfield
 ::park ridge::Park Ridge
 ::oak forest::Oak Forest
 ::northbrook::Northbrook
@@ -13417,14 +13170,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::homer glen::Homer Glen
 ::glen ellyn::Glen Ellyn
 ::crest hill::Crest Hill
-::brookfield::Brookfield
 ::bridgeview::Bridgeview
 ::sioux city::Sioux City
 ::mason city::Mason City
 ::fort dodge::Fort Dodge
-::des moines::Des Moines
 ::coralville::Coralville
-::burlington::Burlington
 ::bettendorf::Bettendorf
 ::west haven::West Haven
 ::huntsville::Huntsville
@@ -13437,80 +13187,53 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cedar hill::Cedar Hill
 ::carrollton::Carrollton
 ::atascocita::Atascocita
-::morristown::Morristown
-::germantown::Germantown
 ::east ridge::East Ridge
 ::cookeville::Cookeville
 ::seven oaks::Seven Oaks
-::greenville::Greenville
 ::charleston::Charleston
-::stillwater::Stillwater
 ::ponca city::Ponca City
 ::zanesville::Zanesville
 ::springboro::Springboro
-::portsmouth::Portsmouth
-::middletown::Middletown
 ::miamisburg::Miamisburg
 ::grove city::Grove City
 ::cincinnati::Cincinnati
 ::toms river::Toms River
 ::pennsauken::Pennsauken
 ::lindenwold::Lindenwold
-::wilmington::Wilmington
 ::laurinburg::Laurinburg
 ::kannapolis::Kannapolis
 ::hope mills::Hope Mills
 ::high point::High Point
-::greenville::Greenville
 ::greensboro::Greensboro
-::burlington::Burlington
 ::starkville::Starkville
 ::pascagoula::Pascagoula
-::greenville::Greenville
 ::clarksdale::Clarksdale
 ::wentzville::Wentzville
-::manchester::Manchester
 ::florissant::Florissant
-::farmington::Farmington
-::south gate::South Gate
 ::pikesville::Pikesville
 ::perry hall::Perry Hall
 ::lake shore::Lake Shore
 ::hagerstown::Hagerstown
 ::glassmanor::Glassmanor
-::germantown::Germantown
 ::eldersburg::Eldersburg
-::cumberland::Cumberland
 ::beltsville::Beltsville
 ::aspen hill::Aspen Hill
 ::shreveport::Shreveport
 ::shenandoah::Shenandoah
 ::new iberia::New Iberia
 ::bayou cane::Bayou Cane
-::alexandria::Alexandria
-::winchester::Winchester
-::louisville::Louisville
-::georgetown::Georgetown
 ::fern creek::Fern Creek
-::burlington::Burlington
 ::hutchinson::Hutchinson
 ::great bend::Great Bend
-::plainfield::Plainfield
-::new castle::New Castle
 ::new albany::New Albany
-::greenfield::Greenfield
 ::evansville::Evansville
 ::brownsburg::Brownsburg
-::charleston::Charleston
 ::carbondale::Carbondale
-::belleville::Belleville
-::union city::Union City
 ::sugar hill::Sugar Hill
 ::statesboro::Statesboro
 ::snellville::Snellville
 ::hinesville::Hinesville
 ::east point::East Point
-::carrollton::Carrollton
 ::brookhaven::Brookhaven
 ::alpharetta::Alpharetta
 ::wellington::Wellington
@@ -13534,18 +13257,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cantonment::Cantonment
 ::boca raton::Boca Raton
 ::allapattah::Allapattah
-::wilmington::Wilmington
-::middletown::Middletown
 ::springdale::Springdale
 ::pine bluff::Pine Bluff
 ::fort smith::Fort Smith
 ::tuscaloosa::Tuscaloosa
 ::trussville::Trussville
 ::prattville::Prattville
-::montgomery::Montgomery
-::huntsville::Huntsville
-::enterprise::Enterprise
-::birmingham::Birmingham
 ::bundibugyo::Bundibugyo
 ::busembatia::Busembatia
 ::bwizibwera::Bwizibwera
@@ -13653,7 +13370,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tallkalakh::Tallkalakh
 ::ahuachapán::Ahuachapán
 ::chalchuapa::Chalchuapa
-::san marcos::San Marcos
 ::san martín::San Martín
 ::san miguel::San Miguel
 ::paramaribo::Paramaribo
@@ -13664,7 +13380,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ceerigaabo::Ceerigaabo
 ::guinguinéo::Guinguinéo
 ::ziguinchor::Ziguinchor
-::san marino::San Marino
 ::bratislava::Bratislava
 ::nové zámky::Nové Zámky
 ::ružomberok::Ružomberok
@@ -13724,7 +13439,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::strezhevoy::Strezhevoy
 ::sukhoy log::Sukhoy Log
 ::tarko-sale::Tarko-Sale
-::moskovskiy::Moskovskiy
 ::neftekumsk::Neftekumsk
 ::vasil’yevo::Vasil’yevo
 ::akhtubinsk::Akhtubinsk
@@ -13816,7 +13530,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::novi pazar::Novi Pazar
 ::sighi?oara::Sighi?oara
 ::alba iulia::Alba Iulia
-::alexandria::Alexandria
 ::baia sprie::Baia Sprie
 ::caransebes::Caransebes
 ::gheorgheni::Gheorgheni
@@ -13883,7 +13596,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::buenavista::Buenavista
 ::cabadbaran::Cabadbaran
 ::cabayangan::Cabayangan
-::candelaria::Candelaria
 ::catbalogan::Catbalogan
 ::compostela::Compostela
 ::concepcion::Concepcion
@@ -13905,9 +13617,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pandacaqui::Pandacaqui
 ::pulupandan::Pulupandan
 ::roxas city::Roxas City
-::san miguel::San Miguel
-::santa cruz::Santa Cruz
-::santa rosa::Santa Rosa
 ::popondetta::Popondetta
 ::san isidro::San Isidro
 ::yanacancha::Yanacancha
@@ -13920,7 +13629,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::al buraymi::Al Buraymi
 ::upper hutt::Upper Hutt
 ::lower hutt::Lower Hutt
-::wellington::Wellington
 ::bhairahawa::Bhairahawa
 ::biratnagar::Biratnagar
 ::dadeldhura::Dadeldhura
@@ -13943,7 +13651,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::leiderdorp::Leiderdorp
 ::lindenholt::Lindenholt
 ::maastricht::Maastricht
-::middelburg::Middelburg
 ::nederweert::Nederweert
 ::nieuwegein::Nieuwegein
 ::oegstgeest::Oegstgeest
@@ -13963,7 +13670,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::chinandega::Chinandega
 ::el crucero::El Crucero
 ::río blanco::Río Blanco
-::san marcos::San Marcos
 ::benin city::Benin City
 ::bode saadu::Bode Saadu
 ::dutsen wai::Dutsen Wai
@@ -13988,25 +13694,19 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::parit raja::Parit Raja
 ::batu pahat::Batu Pahat
 ::venceremos::Venceremos
-::san isidro::San Isidro
 ::manzanillo::Manzanillo
 ::guacamayas::Guacamayas
 ::apatzingán::Apatzingán
-::compostela::Compostela
 ::cuauhtémoc::Cuauhtémoc
 ::guanajuato::Guanajuato
 ::hermosillo::Hermosillo
 ::huatabampo::Huatabampo
 ::los mochis::Los Mochis
-::manzanillo::Manzanillo
 ::nochistlán::Nochistlán
 ::puruándiro::Puruándiro
 ::río grande::Río Grande
-::san felipe::San Felipe
 ::sombrerete::Sombrerete
 ::zapotiltic::Zapotiltic
-::buenavista::Buenavista
-::cuauhtémoc::Cuauhtémoc
 ::agua dulce::Agua Dulce
 ::axochiapan::Axochiapan
 ::banderilla::Banderilla
@@ -14024,7 +13724,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::minatitlan::Minatitlan
 ::motozintla::Motozintla
 ::pijijiapan::Pijijiapan
-::río blanco::Río Blanco
 ::moyotzingo::Moyotzingo
 ::teloloapan::Teloloapan
 ::teoloyucan::Teoloyucan
@@ -14063,8 +13762,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bani walid::Bani Walid
 ::masallatah::Masallatah
 ::daugavpils::Daugavpils
-::luxembourg::Luxembourg
-::greenville::Greenville
 ::new yekepa::New Yekepa
 ::batticaloa::Batticaloa
 ::katunayaka::Katunayaka
@@ -14401,7 +14098,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::valabhipur::Valabhipur
 ::vijayawada::Vijayawada
 ::villupuram::Villupuram
-::wellington::Wellington
 ::keelakarai::Keelakarai
 ::bené beraq::Bené Beraq
 ::bet she’an::Bet She’an
@@ -14459,7 +14155,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::virovitica::Virovitica
 ::el paraíso::El Paraíso
 ::villanueva::Villanueva
-::georgetown::Georgetown
 ::alotenango::Alotenango
 ::chiquimula::Chiquimula
 ::coatepeque::Coatepeque
@@ -14467,7 +14162,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ostuncalco::Ostuncalco
 ::retalhuleu::Retalhuleu
 ::san benito::San Benito
-::san marcos::San Marcos
 ::korydallós::Korydallós
 ::ptolema?da::Ptolema?da
 ::áno liósia::Áno Liósia
@@ -14490,7 +14184,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::billericay::Billericay
 ::billingham::Billingham
 ::birkenhead::Birkenhead
-::birmingham::Birmingham
 ::bridgwater::Bridgwater
 ::bromsgrove::Bromsgrove
 ::brownhills::Brownhills
@@ -14500,7 +14193,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::carshalton::Carshalton
 ::castleford::Castleford
 ::chapletown::Chapletown
-::chelmsford::Chelmsford
 ::cheltenham::Cheltenham
 ::chichester::Chichester
 ::chippenham::Chippenham
@@ -14511,10 +14203,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kilwinning::Kilwinning
 ::letchworth::Letchworth
 ::litherland::Litherland
-::livingston::Livingston
 ::long eaton::Long Eaton
 ::maidenhead::Maidenhead
-::manchester::Manchester
 ::mexborough::Mexborough
 ::motherwell::Motherwell
 ::new malden::New Malden
@@ -14523,24 +14213,19 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pontefract::Pontefract
 ::pontypridd::Pontypridd
 ::portishead::Portishead
-::portsmouth::Portsmouth
 ::ramsbottom::Ramsbottom
 ::rutherglen::Rutherglen
 ::st austell::St Austell
 ::scunthorpe::Scunthorpe
-::shrewsbury::Shrewsbury
 ::spennymoor::Spennymoor
 ::stowmarket::Stowmarket
 ::warminster::Warminster
 ::warrington::Warrington
-::washington::Washington
 ::wednesbury::Wednesbury
-::wellington::Wellington
 ::whitefield::Whitefield
 ::whitehaven::Whitehaven
 ::whitstable::Whitstable
 ::willenhall::Willenhall
-::winchester::Winchester
 ::workington::Workington
 ::libreville::Libreville
 ::la defense::La Defense
@@ -14604,11 +14289,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pontevedra::Pontevedra
 ::ponteareas::Ponteareas
 ::errenteria::Errenteria
-::valladolid::Valladolid
 ::viladecans::Viladecans
 ::villaverde::Villaverde
 ::benetússer::Benetússer
-::candelaria::Candelaria
 ::carcaixent::Carcaixent
 ::don benito::Don Benito
 ::fuengirola::Fuengirola
@@ -14616,7 +14299,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::manzanares::Manzanares
 ::maspalomas::Maspalomas
 ::pozoblanco::Pozoblanco
-::san isidro::San Isidro
 ::san javier::San Javier
 ::santa pola::Santa Pola
 ::torrevieja::Torrevieja
@@ -14624,7 +14306,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ain sukhna::Ain Sukhna
 ::abu qurqas::Abu Qurqas
 ::al balyana::Al Balyana
-::alexandria::Alexandria
 ::al khankah::Al Khankah
 ::al manshah::Al Manshah
 ::al qanayat::Al Qanayat
@@ -14642,7 +14323,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nueva loja::Nueva Loja
 ::la troncal::La Troncal
 ::portoviejo::Portoviejo
-::santa rosa::Santa Rosa
 ::aïn bessem::Aïn Bessem
 ::’aïn deheb::’Aïn Deheb
 ::aïn el bya::Aïn el Bya
@@ -14665,7 +14345,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tizi ouzou::Tizi Ouzou
 ::boca chica::Boca Chica
 ::punta cana::Punta Cana
-::río grande::Río Grande
 ::fredericia::Fredericia
 ::kalundborg::Kalundborg
 ::copenhagen::Copenhagen
@@ -14707,7 +14386,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::eimsbüttel::Eimsbüttel
 ::marienthal::Marienthal
 ::hamminkeln::Hamminkeln
-::heidelberg::Heidelberg
 ::herrenberg::Herrenberg
 ::heusweiler::Heusweiler
 ::hildesheim::Hildesheim
@@ -14790,36 +14468,23 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::guantánamo::Guantánamo
 ::jatibonico::Jatibonico
 ::jovellanos::Jovellanos
-::manzanillo::Manzanillo
 ::media luna::Media Luna
 ::san germán::San Germán
 ::vertientes::Vertientes
 ::curridabat::Curridabat
 ::puntarenas::Puntarenas
-::san felipe::San Felipe
-::san isidro::San Isidro
-::san miguel::San Miguel
-::san rafael::San Rafael
 ::caicedonia::Caicedonia
-::candelaria::Candelaria
 ::chiriguaná::Chiriguaná
-::el cerrito::El Cerrito
 ::facatativá::Facatativá
 ::fusagasuga::Fusagasuga
 ::la tebaida::La Tebaida
 ::los patios::Los Patios
-::manzanares::Manzanares
-::montenegro::Montenegro
 ::belalcazar::Belalcazar
 ::roldanillo::Roldanillo
 ::san andrés::San Andrés
-::san carlos::San Carlos
-::san marcos::San Marcos
-::san martín::San Martín
 ::san onofre::San Onofre
 ::valledupar::Valledupar
 ::villamaría::Villamaría
-::villanueva::Villanueva
 ::liupanshui::Liupanshui
 ::shangri-la::Shangri-La
 ::baishishan::Baishishan
@@ -14858,15 +14523,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::la pintana::La Pintana
 ::las animas::Las Animas
 ::collipulli::Collipulli
-::concepción::Concepción
 ::nacimiento::Nacimiento
-::san carlos::San Carlos
-::san felipe::San Felipe
-::san javier::San Javier
-::santa cruz::Santa Cruz
 ::talcahuano::Talcahuano
 ::valparaíso::Valparaíso
-::villarrica::Villarrica
 ::abengourou::Abengourou
 ::bongouanou::Bongouanou
 ::bellinzona::Bellinzona
@@ -14896,13 +14555,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mont-royal::Mont-Royal
 ::lethbridge::Lethbridge
 ::la prairie::La Prairie
-::huntsville::Huntsville
 ::chilliwack::Chilliwack
-::burlington::Burlington
 ::brockville::Brockville
 ::boisbriand::Boisbriand
 ::blainville::Blainville
-::belleville::Belleville
 ::abbotsford::Abbotsford
 ::navahrudak::Navahrudak
 ::asipovichy::Asipovichy
@@ -14927,7 +14583,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::diamantino::Diamantino
 ::embu guaçu::Embu Guaçu
 ::entre rios::Entre Rios
-::esmeraldas::Esmeraldas
 ::guapimirim::Guapimirim
 ::guaramirim::Guaramirim
 ::guaranésia::Guaranésia
@@ -14949,7 +14604,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mogi-gaucu::Mogi-Gaucu
 ::mogi mirim::Mogi Mirim
 ::monte alto::Monte Alto
-::montenegro::Montenegro
 ::muzambinho::Muzambinho
 ::navegantes::Navegantes
 ::nepomuceno::Nepomuceno
@@ -14966,8 +14620,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rio bonito::Rio Bonito
 ::rio do sul::Rio do Sul
 ::rio grande::Rio Grande
-::sacramento::Sacramento
-::santa rosa::Santa Rosa
 ::são carlos::São Carlos
 ::são manuel::São Manuel
 ::são marcos::São Marcos
@@ -14979,7 +14631,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tapiramutá::Tapiramutá
 ::uberlândia::Uberlândia
 ::uruguaiana::Uruguaiana
-::valparaíso::Valparaíso
 ::vespasiano::Vespasiano
 ::vila velha::Vila Velha
 ::votorantim::Votorantim
@@ -14999,9 +14650,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::parnamirim::Parnamirim
 ::pentecoste::Pentecoste
 ::piracuruca::Piracuruca
-::santa cruz::Santa Cruz
 ::santa inês::Santa Inês
-::santa rita::Santa Rita
 ::kralendijk::Kralendijk
 ::cochabamba::Cochabamba
 ::malanville::Malanville
@@ -15052,7 +14701,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::logan city::Logan City
 ::north ryde::North Ryde
 ::palmerston::Palmerston
-::cheltenham::Cheltenham
 ::caboolture::Caboolture
 ::camberwell::Camberwell
 ::wollongong::Wollongong
@@ -15081,19 +14729,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::las breñas::Las Breñas
 ::punta alta::Punta Alta
 ::río cuarto::Río Cuarto
-::san martín::San Martín
-::san rafael::San Rafael
-::santa rosa::Santa Rosa
 ::santo tomé::Santo Tomé
 ::tafí viejo::Tafí Viejo
 ::avellaneda::Avellaneda
 ::colegiales::Colegiales
 ::corrientes::Corrientes
 ::montecarlo::Montecarlo
-::pontevedra::Pontevedra
-::san isidro::San Isidro
-::san javier::San Javier
-::santo tomé::Santo Tomé
 ::caluquembe::Caluquembe
 ::fier-çifçi::Fier-Çifçi
 ::the valley::The Valley
@@ -15216,7 +14857,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::san ramon::San Ramon
 ::san pedro::San Pedro
 ::san pablo::San Pablo
-::san mateo::San Mateo
 ::san dimas::San Dimas
 ::san diego::San Diego
 ::san bruno::San Bruno
@@ -15275,7 +14915,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::green bay::Green Bay
 ::fitchburg::Fitchburg
 ::caledonia::Caledonia
-::watertown::Watertown
 ::brookings::Brookings
 ::pawtucket::Pawtucket
 ::pottstown::Pottstown
@@ -15283,7 +14922,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lancaster::Lancaster
 ::johnstown::Johnstown
 ::hermitage::Hermitage
-::bethlehem::Bethlehem
 ::allentown::Allentown
 ::wadsworth::Wadsworth
 ::twinsburg::Twinsburg
@@ -15292,22 +14930,16 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mansfield::Mansfield
 ::cleveland::Cleveland
 ::brunswick::Brunswick
-::barberton::Barberton
 ::avon lake::Avon Lake
 ::ashtabula::Ashtabula
-::watertown::Watertown
 ::uniondale::Uniondale
-::tonawanda::Tonawanda
 ::smithtown::Smithtown
 ::scarsdale::Scarsdale
 ::rotterdam::Rotterdam
 ::roosevelt::Roosevelt
 ::rochester::Rochester
-::plainview::Plainview
 ::peekskill::Peekskill
-::oceanside::Oceanside
 ::manhattan::Manhattan
-::levittown::Levittown
 ::jamestown::Jamestown
 ::hempstead::Hempstead
 ::hauppauge::Hauppauge
@@ -15315,30 +14947,20 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dix hills::Dix Hills
 ::deer park::Deer Park
 ::the bronx::The Bronx
-::brentwood::Brentwood
 ::bay shore::Bay Shore
 ::amsterdam::Amsterdam
 ::westfield::Westfield
 ::ridgewood::Ridgewood
-::montclair::Montclair
 ::maplewood::Maplewood
 ::lyndhurst::Lyndhurst
 ::irvington::Irvington
 ::hopatcong::Hopatcong
-::hawthorne::Hawthorne
 ::fair lawn::Fair Lawn
-::englewood::Englewood
-::elizabeth::Elizabeth
-::rochester::Rochester
 ::merrimack::Merrimack
 ::papillion::Papillion
-::jamestown::Jamestown
 ::shoreview::Shoreview
-::roseville::Roseville
 ::rosemount::Rosemount
-::rochester::Rochester
 ::richfield::Richfield
-::maplewood::Maplewood
 ::lakeville::Lakeville
 ::faribault::Faribault
 ::elk river::Elk River
@@ -15347,36 +14969,26 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::waterford::Waterford
 ::southgate::Southgate
 ::royal oak::Royal Oak
-::roseville::Roseville
 ::marquette::Marquette
 ::kalamazoo::Kalamazoo
 ::hamtramck::Hamtramck
 ::ann arbor::Ann Arbor
 ::allendale::Allendale
 ::westbrook::Westbrook
-::brunswick::Brunswick
 ::biddeford::Biddeford
-::worcester::Worcester
-::westfield::Westfield
 ::wellesley::Wellesley
-::watertown::Watertown
 ::wakefield::Wakefield
 ::tewksbury::Tewksbury
 ::stoughton::Stoughton
-::mansfield::Mansfield
 ::lexington::Lexington
 ::haverhill::Haverhill
-::fitchburg::Fitchburg
 ::fairhaven::Fairhaven
 ::cambridge::Cambridge
 ::brookline::Brookline
 ::braintree::Braintree
 ::billerica::Billerica
 ::attleboro::Attleboro
-::arlington::Arlington
-::westfield::Westfield
 ::mishawaka::Mishawaka
-::lafayette::Lafayette
 ::frankfort::Frankfort
 ::yorkville::Yorkville
 ::woodstock::Woodstock
@@ -15387,7 +14999,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::la grange::La Grange
 ::grayslake::Grayslake
 ::galesburg::Galesburg
-::frankfort::Frankfort
 ::deerfield::Deerfield
 ::champaign::Champaign
 ::belvidere::Belvidere
@@ -15399,11 +15010,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::harlingen::Harlingen
 ::grapevine::Grapevine
 ::galveston::Galveston
-::dickinson::Dickinson
-::deer park::Deer Park
 ::corsicana::Corsicana
 ::brownwood::Brownwood
-::arlington::Arlington
 ::tullahoma::Tullahoma
 ::oak ridge::Oak Ridge
 ::nashville::Nashville
@@ -15412,10 +15020,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::knoxville::Knoxville
 ::kingsport::Kingsport
 ::dyersburg::Dyersburg
-::cleveland::Cleveland
-::brentwood::Brentwood
 ::rock hill::Rock Hill
-::lexington::Lexington
 ::greenwood::Greenwood
 ::tahlequah::Tahlequah
 ::mcalester::McAlester
@@ -15423,10 +15028,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::chickasha::Chickasha
 ::whitehall::Whitehall
 ::white oak::White Oak
-::riverside::Riverside
-::lancaster::Lancaster
 ::kettering::Kettering
-::fairfield::Fairfield
 ::millville::Millville
 ::glassboro::Glassboro
 ::bridgeton::Bridgeton
@@ -15434,72 +15036,50 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::morganton::Morganton
 ::mint hill::Mint Hill
 ::lumberton::Lumberton
-::lexington::Lexington
-::henderson::Henderson
 ::goldsboro::Goldsboro
 ::cornelius::Cornelius
-::charlotte::Charlotte
 ::asheville::Asheville
 ::albemarle::Albemarle
 ::vicksburg::Vicksburg
 ::southaven::Southaven
 ::ridgeland::Ridgeland
 ::horn lake::Horn Lake
-::greenwood::Greenwood
 ::st. louis::St. Louis
 ::mehlville::Mehlville
 ::hazelwood::Hazelwood
 ::grandview::Grandview
 ::gladstone::Gladstone
-::white oak::White Oak
-::salisbury::Salisbury
 ::rossville::Rossville
 ::rockville::Rockville
 ::parkville::Parkville
 ::oxon hill::Oxon Hill
 ::ilchester::Ilchester
 ::greenbelt::Greenbelt
-::frederick::Frederick
 ::calverton::Calverton
 ::baltimore::Baltimore
 ::annapolis::Annapolis
 ::terrytown::Terrytown
 ::opelousas::Opelousas
-::lafayette::Lafayette
 ::chalmette::Chalmette
 ::owensboro::Owensboro
-::lexington::Lexington
 ::ironville::Ironville
-::henderson::Henderson
-::frankfort::Frankfort
-::covington::Covington
-::pittsburg::Pittsburg
-::manhattan::Manhattan
 ::vincennes::Vincennes
-::greenwood::Greenwood
-::woodstock::Woodstock
 ::st. marys::St. Marys
 ::riverdale::Riverdale
 ::mcdonough::McDonough
-::la grange::La Grange
 ::kingsland::Kingsland
-::brunswick::Brunswick
 ::westchase::Westchase
-::sebastian::Sebastian
 ::rockledge::Rockledge
 ::riverview::Riverview
-::princeton::Princeton
 ::poinciana::Poinciana
 ::pinecrest::Pinecrest
 ::pensacola::Pensacola
 ::palm city::Palm City
 ::opa-locka::Opa-locka
-::oak ridge::Oak Ridge
 ::melbourne::Melbourne
 ::kissimmee::Kissimmee
 ::immokalee::Immokalee
 ::homestead::Homestead
-::hollywood::Hollywood
 ::edgewater::Edgewater
 ::east lake::East Lake
 ::crestview::Crestview
@@ -15656,7 +15236,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tallbisah::Tallbisah
 ::aguilares::Aguilares
 ::mejicanos::Mejicanos
-::santa ana::Santa Ana
 ::sonsonate::Sonsonate
 ::sonzacate::Sonzacate
 ::soyapango::Soyapango
@@ -15670,8 +15249,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::port loko::Port Loko
 ::prievidza::Prievidza
 ::ljubljana::Ljubljana
-::jamestown::Jamestown
-::singapore::Singapore
 ::ängelholm::Ängelholm
 ::falköping::Falköping
 ::härnösand::Härnösand
@@ -15833,7 +15410,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::volgograd::Volgograd
 ::volzhskiy::Volzhskiy
 ::yaroslavl::Yaroslavl
-::zarechnyy::Zarechnyy
 ::zernograd::Zernograd
 ::zherdevka::Zherdevka
 ::zhirnovsk::Zhirnovsk
@@ -15874,12 +15450,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::carnaxide::Carnaxide
 ::quarteira::Quarteira
 ::bayt jala::Bayt Jala
-::bethlehem::Bethlehem
 ::qabatiyah::Qabatiyah
 ::qalqilyah::Qalqilyah
 ::al burayj::Al Burayj
 ::vega baja::Vega Baja
-::levittown::Levittown
 ::aguadilla::Aguadilla
 ::adamstown::Adamstown
 ::andrychów::Andrychów
@@ -15996,30 +15570,23 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::peñaranda::Peñaranda
 ::polomolok::Polomolok
 ::port area::Port Area
-::san mateo::San Mateo
-::san pablo::San Pablo
-::san pedro::San Pedro
 ::san simon::San Simon
-::santa ana::Santa Ana
 ::sitangkai::Sitangkai
 ::talacogon::Talacogon
 ::victorias::Victorias
 ::zamboanga::Zamboanga
 ::paramonga::Paramonga
-::santa ana::Santa Ana
 ::tambopata::Tambopata
 ::zarumilla::Zarumilla
 ::la breita::La Breita
 ::cajamarca::Cajamarca
 ::ferreñafe::Ferreñafe
-::guadalupe::Guadalupe
 ::moyobamba::Moyobamba
 ::pacasmayo::Pacasmayo
 ::aguadulce::Aguadulce
 ::la cabima::La Cabima
 ::as suwayq::As Suwayq
 ::waitakere::Waitakere
-::cambridge::Cambridge
 ::whangarei::Whangarei
 ::ashburton::Ashburton
 ::whakatane::Whakatane
@@ -16040,7 +15607,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::stavanger::Stavanger
 ::steinkjer::Steinkjer
 ::trondheim::Trondheim
-::amsterdam::Amsterdam
 ::apeldoorn::Apeldoorn
 ::barneveld::Barneveld
 ::beuningen::Beuningen
@@ -16055,7 +15621,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::gorinchem::Gorinchem
 ::groesbeek::Groesbeek
 ::groningen::Groningen
-::harlingen::Harlingen
 ::heemskerk::Heemskerk
 ::heemstede::Heemstede
 ::hilversum::Hilversum
@@ -16070,7 +15635,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::oldenzaal::Oldenzaal
 ::pijnacker::Pijnacker
 ::purmerend::Purmerend
-::rotterdam::Rotterdam
 ::schijndel::Schijndel
 ::the hague::The Hague
 ::staphorst::Staphorst
@@ -16114,7 +15678,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::comonfort::Comonfort
 ::el grullo::El Grullo
 ::fresnillo::Fresnillo
-::guadalupe::Guadalupe
 ::guamúchil::Guamúchil
 ::jocotepec::Jocotepec
 ::la orilla::La Orilla
@@ -16124,7 +15687,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::monterrey::Monterrey
 ::pátzcuaro::Pátzcuaro
 ::salamanca::Salamanca
-::san pedro::San Pedro
 ::uriangato::Uriangato
 ::villagrán::Villagrán
 ::yurécuaro::Yurécuaro
@@ -16204,7 +15766,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sidi ifni::Sidi Ifni
 ::taroudant::Taroudant
 ::az zintan::Az Zintan
-::al bay?a’::Al Bay?a’
 ::al qubbah::Al Qubbah
 ::jekabpils::Jekabpils
 ::salaspils::Salaspils
@@ -16466,7 +16027,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::begusarai::Begusarai
 ::beri khas::Beri Khas
 ::bhagalpur::Bhagalpur
-::bharatpur::Bharatpur
 ::bharthana::Bharthana
 ::bhatapara::Bhatapara
 ::bhavnagar::Bhavnagar
@@ -16535,7 +16095,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hirekerur::Hirekerur
 ::holalkere::Holalkere
 ::hadagalli::Hadagalli
-::hyderabad::Hyderabad
 ::indergarh::Indergarh
 ::itimadpur::Itimadpur
 ::jagdalpur::Jagdalpur
@@ -16613,7 +16172,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nandurbar::Nandurbar
 ::nanjangud::Nanjangud
 ::narasapur::Narasapur
-::nasirabad::Nasirabad
 ::nasriganj::Nasriganj
 ::nathdwara::Nathdwara
 ::navalgund::Navalgund
@@ -16674,7 +16232,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::shamsabad::Shamsabad
 ::shantipur::Shantipur
 ::sherghati::Sherghati
-::shikarpur::Shikarpur
 ::shiliguri::Shiliguri
 ::shirhatti::Shirhatti
 ::shishgarh::Shishgarh
@@ -16729,7 +16286,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sandyford::Sandyford
 ::celbridge::Celbridge
 ::luimneach::Luimneach
-::waterford::Waterford
 ::kartasura::Kartasura
 ::teluknaga::Teluknaga
 ::baekrajan::Baekrajan
@@ -16825,7 +16381,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cholargós::Cholargós
 ::kórinthos::Kórinthos
 ::moskháton::Moskháton
-::néa ionía::Néa Ionía
 ::néa mákri::Néa Mákri
 ::peristéri::Peristéri
 ::le gosier::Le Gosier
@@ -16860,24 +16415,19 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::blackpool::Blackpool
 ::bletchley::Bletchley
 ::bracknell::Bracknell
-::braintree::Braintree
-::brentwood::Brentwood
 ::brighouse::Brighouse
 ::buckhaven::Buckhaven
 ::burntwood::Burntwood
 ::camberley::Camberley
-::cambridge::Cambridge
 ::clitheroe::Clitheroe
 ::clydebank::Clydebank
 ::coalville::Coalville
 ::isleworth::Isleworth
 ::islington::Islington
 ::johnstone::Johnstone
-::kettering::Kettering
 ::kidsgrove::Kidsgrove
 ::kingswood::Kingswood
 ::kirkcaldy::Kirkcaldy
-::lancaster::Lancaster
 ::leicester::Leicester
 ::lichfield::Lichfield
 ::liverpool::Liverpool
@@ -16886,8 +16436,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::longfield::Longfield
 ::lowestoft::Lowestoft
 ::maidstone::Maidstone
-::mansfield::Mansfield
-::middleton::Middleton
 ::morecambe::Morecambe
 ::newmarket::Newmarket
 ::northwich::Northwich
@@ -16901,20 +16449,16 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::prestatyn::Prestatyn
 ::prestwich::Prestwich
 ::prestwick::Prestwick
-::rochester::Rochester
 ::rotherham::Rotherham
 ::st albans::St Albans
 ::st helens::St Helens
-::salisbury::Salisbury
 ::sevenoaks::Sevenoaks
 ::sheffield::Sheffield
 ::southport::Southport
 ::stevenage::Stevenage
 ::stockport::Stockport
-::wakefield::Wakefield
 ::weybridge::Weybridge
 ::wokingham::Wokingham
-::worcester::Worcester
 ::lambaréné::Lambaréné
 ::tchibanga::Tchibanga
 ::abbeville::Abbeville
@@ -16952,12 +16496,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::périgueux::Périgueux
 ::perpignan::Perpignan
 ::rochefort::Rochefort
-::saint-leu::Saint-Leu
 ::sarcelles::Sarcelles
 ::tourcoing::Tourcoing
 ::vallauris::Vallauris
 ::villejuif::Villejuif
-::vincennes::Vincennes
 ::vitrolles::Vitrolles
 ::wasquehal::Wasquehal
 ::wattrelos::Wattrelos
@@ -16972,10 +16514,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bahir dar::Bahir Dar
 ::dire dawa::Dire Dawa
 ::kombolcha::Kombolcha
-::salamanca::Salamanca
 ::les corts::les Corts
 ::barbastro::Barbastro
-::barcelona::Barcelona
 ::benavente::Benavente
 ::benicarló::Benicarló
 ::calahorra::Calahorra
@@ -16991,7 +16531,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::moratalaz::Moratalaz
 ::plasencia::Plasencia
 ::redondela::Redondela
-::salamanca::Salamanca
 ::santander::Santander
 ::santurtzi::Santurtzi
 ::barakaldo::Barakaldo
@@ -17028,7 +16567,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::al bawiti::Al Bawiti
 ::al fayyum::Al Fayyum
 ::al qurayn::Al Qurayn
-::al qusayr::Al Qusayr
 ::port said::Port Said
 ::kafr saqr::Kafr Saqr
 ::kawm umbu::Kawm Umbu
@@ -17067,7 +16605,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::boumerdas::Boumerdas
 ::bayaguana::Bayaguana
 ::constanza::Constanza
-::esperanza::Esperanza
 ::jarabacoa::Jarabacoa
 ::la romana::La Romana
 ::quisqueya::Quisqueya
@@ -17220,30 +16757,22 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::caibarién::Caibarién
 ::camajuaní::Camajuaní
 ::cifuentes::Cifuentes
-::esmeralda::Esmeralda
 ::florencia::Florencia
 ::la sierpe::La Sierpe
 ::las tunas::Las Tunas
 ::ranchuelo::Ranchuelo
 ::río cauto::Río Cauto
-::venezuela::Venezuela
 ::chacarita::Chacarita
-::guadalupe::Guadalupe
-::san diego::San Diego
-::san pablo::San Pablo
-::san pedro::San Pedro
 ::siquirres::Siquirres
 ::turrialba::Turrialba
 ::aguachica::Aguachica
 ::andalucía::Andalucía
 ::aracataca::Aracataca
 ::barrancas::Barrancas
-::cartagena::Cartagena
 ::chaparral::Chaparral
 ::chigorodó::Chigorodó
 ::chinchiná::Chinchiná
 ::el charco::El Charco
-::florencia::Florencia
 ::fundación::Fundación
 ::la dorada::La Dorada
 ::manizales::Manizales
@@ -17288,7 +16817,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::guangshui::Guangshui
 ::guangzhou::Guangzhou
 ::jiaojiang::Jiaojiang
-::chengyang::Chengyang
 ::hongjiang::Hongjiang
 ::huaicheng::Huaicheng
 ::dingcheng::Dingcheng
@@ -17314,7 +16842,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::shouguang::Shouguang
 ::songjiang::Songjiang
 ::taozhuang::Taozhuang
-::tongchuan::Tongchuan
 ::huangshan::Huangshan
 ::xiangyang::Xiangyang
 ::xiazhuang::Xiazhuang
@@ -17337,7 +16864,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bangangté::Bangangté
 ::mutengene::Mutengene
 ::tcholliré::Tcholliré
-::cartagena::Cartagena
 ::cauquenes::Cauquenes
 ::coihaique::Coihaique
 ::frutillar::Frutillar
@@ -17368,16 +16894,13 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::gbadolite::Gbadolite
 ::kisangani::Kisangani
 ::jonquière::Jonquière
-::woodstock::Woodstock
 ::westmount::Westmount
-::vancouver::Vancouver
 ::stratford::Stratford
 ::sept-îles::Sept-Îles
 ::saskatoon::Saskatoon
 ::pickering::Pickering
 ::penticton::Penticton
 ::north bay::North Bay
-::newmarket::Newmarket
 ::moose jaw::Moose Jaw
 ::miramichi::Miramichi
 ::mascouche::Mascouche
@@ -17390,7 +16913,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cranbrook::Cranbrook
 ::courtenay::Courtenay
 ::coquitlam::Coquitlam
-::cambridge::Cambridge
 ::brantford::Brantford
 ::malinovka::Malinovka
 ::hlybokaye::Hlybokaye
@@ -17478,7 +17000,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::promissão::Promissão
 ::queimados::Queimados
 ::rancharia::Rancharia
-::rio claro::Rio Claro
 ::rio negro::Rio Negro
 ::rio pardo::Rio Pardo
 ::rubiataba::Rubiataba
@@ -17509,7 +17030,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::garanhuns::Garanhuns
 ::guarabira::Guarabira
 ::horizonte::Horizonte
-::itabaiana::Itabaiana
 ::itaitinga::Itaitinga
 ::itapipoca::Itapipoca
 ::jaguaribe::Jaguaribe
@@ -17561,8 +17081,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::vilvoorde::Vilvoorde
 ::bhandaria::Bhandaria
 ::madaripur::Madaripur
-::nawabganj::Nawabganj
-::nabinagar::Nabinagar
 ::tungipara::Tungipara
 ::badarganj::Badarganj
 ::bandarban::Bandarban
@@ -17584,35 +17102,25 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mariehamn::Mariehamn
 ::thornbury::Thornbury
 ::willetton::Willetton
-::st albans::St Albans
 ::glen iris::Glen Iris
 ::paramatta::Paramatta
 ::carindale::Carindale
 ::bankstown::Bankstown
 ::blacktown::Blacktown
-::brunswick::Brunswick
 ::bundaberg::Bundaberg
 ::caloundra::Caloundra
 ::caringbah::Caringbah
 ::dandenong::Dandenong
-::deer park::Deer Park
 ::devonport::Devonport
 ::doncaster::Doncaster
 ::frankston::Frankston
-::gladstone::Gladstone
 ::granville::Granville
-::liverpool::Liverpool
-::melbourne::Melbourne
 ::mill park::Mill Park
-::newcastle::Newcastle
 ::northcote::Northcote
 ::reservoir::Reservoir
-::southport::Southport
 ::sunnybank::Sunnybank
-::thornbury::Thornbury
 ::toowoomba::Toowoomba
 ::traralgon::Traralgon
-::woodridge::Woodridge
 ::busselton::Busselton
 ::fremantle::Fremantle
 ::geraldton::Geraldton
@@ -17624,7 +17132,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::schwechat::Schwechat
 ::wolfsberg::Wolfsberg
 ::pago pago::Pago Pago
-::aguilares::Aguilares
 ::alderetes::Alderetes
 ::carcarañá::Carcarañá
 ::chacabuco::Chacabuco
@@ -17632,7 +17139,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::chivilcoy::Chivilcoy
 ::cutral-có::Cutral-Có
 ::el bolsón::El Bolsón
-::esperanza::Esperanza
 ::laboulaye::Laboulaye
 ::la calera::La Calera
 ::olavarría::Olavarría
@@ -17640,16 +17146,13 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::quitilipi::Quitilipi
 ::san jorge::San Jorge
 ::san justo::San Justo
-::san pedro::San Pedro
 ::sunchales::Sunchales
 ::concordia::Concordia
 ::gualeguay::Gualeguay
-::san pedro::San Pedro
 ::villaguay::Villaguay
 ::catumbela::Catumbela
 ::ejmiatsin::Ejmiatsin
 ::hats’avan::Hats’avan
-::jalalabad::Jalalabad
 ::sar-e pul::Sar-e Pul
 ::abu dhabi::Abu Dhabi
 ::adh dhayd::Adh Dhayd
@@ -17684,7 +17187,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::richmond::Richmond
 ::umkomaas::Umkomaas
 ::upington::Upington
-::virginia::Virginia
 ::dzaoudzi::Dzaoudzi
 ::zinjibar::Zinjibar
 ::glogovac::Glogovac
@@ -17757,7 +17259,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kane‘ohe::Kane‘ohe
 ::sheridan::Sheridan
 ::gillette::Gillette
-::cheyenne::Cheyenne
 ::tumwater::Tumwater
 ::spanaway::Spanaway
 ::richland::Richland
@@ -17802,7 +17303,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::carlsbad::Carlsbad
 ::thornton::Thornton
 ::montrose::Montrose
-::lakewood::Lakewood
 ::fountain::Fountain
 ::brighton::Brighton
 ::woodland::Woodland
@@ -17819,11 +17319,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rosemont::Rosemont
 ::rosemead::Rosemead
 ::rosamond::Rosamond
-::richmond::Richmond
 ::redlands::Redlands
 ::petaluma::Petaluma
 ::pasadena::Pasadena
-::paradise::Paradise
 ::palmdale::Palmdale
 ::pacifica::Pacifica
 ::oroville::Oroville
@@ -17834,7 +17332,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::milpitas::Milpitas
 ::millbrae::Millbrae
 ::martinez::Martinez
-::highland::Highland
 ::hesperia::Hesperia
 ::hercules::Hercules
 ::glendora::Glendora
@@ -17845,7 +17342,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::coronado::Coronado
 ::corcoran::Corcoran
 ::cerritos::Cerritos
-::carlsbad::Carlsbad
 ::campbell::Campbell
 ::calexico::Calexico
 ::bostonia::Bostonia
@@ -17856,15 +17352,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::alhambra::Alhambra
 ::adelanto::Adelanto
 ::surprise::Surprise
-::sun city::Sun City
 ::san luis::San Luis
 ::rio rico::Rio Rico
 ::prescott::Prescott
 ::maricopa::Maricopa
 ::goodyear::Goodyear
-::glendale::Glendale
-::florence::Florence
-::chandler::Chandler
 ::fillmore::Fillmore
 ::cheshire::Cheshire
 ::branford::Branford
@@ -17873,10 +17365,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::superior::Superior
 ::onalaska::Onalaska
 ::kaukauna::Kaukauna
-::franklin::Franklin
 ::appleton::Appleton
-::mitchell::Mitchell
-::aberdeen::Aberdeen
 ::westerly::Westerly
 ::cranston::Cranston
 ::coventry::Coventry
@@ -17888,7 +17377,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::westlake::Westlake
 ::sylvania::Sylvania
 ::sandusky::Sandusky
-::lakewood::Lakewood
 ::hilliard::Hilliard
 ::eastlake::Eastlake
 ::delaware::Delaware
@@ -17897,7 +17385,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::alliance::Alliance
 ::woodmere::Woodmere
 ::westbury::Westbury
-::syracuse::Syracuse
 ::sayville::Sayville
 ::ossining::Ossining
 ::newburgh::Newburgh
@@ -17905,21 +17392,16 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::melville::Melville
 ::lynbrook::Lynbrook
 ::lockport::Lockport
-::kingston::Kingston
 ::holbrook::Holbrook
-::harrison::Harrison
 ::freeport::Freeport
 ::cortland::Cortland
 ::copiague::Copiague
-::brooklyn::Brooklyn
-::brighton::Brighton
 ::bethpage::Bethpage
 ::bellmore::Bellmore
 ::somerset::Somerset
 ::secaucus::Secaucus
 ::paterson::Paterson
 ::marlboro::Marlboro
-::lakewood::Lakewood
 ::hillside::Hillside
 ::garfield::Garfield
 ::fort lee::Fort Lee
@@ -17928,7 +17410,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::la vista::La Vista
 ::hastings::Hastings
 ::columbus::Columbus
-::bellevue::Bellevue
 ::woodbury::Woodbury
 ::shakopee::Shakopee
 ::red wing::Red Wing
@@ -17936,7 +17417,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::owatonna::Owatonna
 ::new hope::New Hope
 ::moorhead::Moorhead
-::hastings::Hastings
 ::ham lake::Ham Lake
 ::champlin::Champlin
 ::westland::Westland
@@ -17946,45 +17426,30 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ferndale::Ferndale
 ::dearborn::Dearborn
 ::bay city::Bay City
-::portland::Portland
-::lewiston::Lewiston
 ::yarmouth::Yarmouth
 ::winthrop::Winthrop
 ::weymouth::Weymouth
 ::westford::Westford
 ::stoneham::Stoneham
-::somerset::Somerset
 ::rockland::Rockland
-::randolph::Randolph
-::lawrence::Lawrence
-::franklin::Franklin
 ::chicopee::Chicopee
 ::brockton::Brockton
 ::amesbury::Amesbury
 ::abington::Abington
-::highland::Highland
 ::griffith::Griffith
-::anderson::Anderson
 ::wilmette::Wilmette
-::wheeling::Wheeling
-::westmont::Westmont
 ::waukegan::Waukegan
 ::sycamore::Sycamore
-::sterling::Sterling
 ::rockford::Rockford
 ::palatine::Palatine
-::oak park::Oak Park
 ::oak lawn::Oak Lawn
 ::matteson::Matteson
-::lockport::Lockport
 ::kankakee::Kankakee
 ::homewood::Homewood
 ::hinsdale::Hinsdale
 ::glenview::Glenview
-::freeport::Freeport
 ::evanston::Evanston
 ::elmhurst::Elmhurst
-::danville::Danville
 ::bellwood::Bellwood
 ::bartlett::Bartlett
 ::waterloo::Waterloo
@@ -17996,24 +17461,17 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::burleson::Burleson
 ::benbrook::Benbrook
 ::bellaire::Bellaire
-::beaumont::Beaumont
 ::angleton::Angleton
 ::gallatin::Gallatin
-::franklin::Franklin
 ::farragut::Farragut
 ::columbia::Columbia
-::bartlett::Bartlett
 ::socastee::Socastee
-::florence::Florence
-::columbia::Columbia
-::anderson::Anderson
 ::muskogee::Muskogee
 ::del city::Del City
 ::vandalia::Vandalia
 ::trotwood::Trotwood
 ::hamilton::Hamilton
 ::fairborn::Fairborn
-::columbus::Columbus
 ::vineland::Vineland
 ::new bern::New Bern
 ::matthews::Matthews
@@ -18022,9 +17480,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::clemmons::Clemmons
 ::carrboro::Carrboro
 ::asheboro::Asheboro
-::meridian::Meridian
 ::gulfport::Gulfport
-::columbus::Columbus
 ::wildwood::Wildwood
 ::sikeston::Sikeston
 ::overland::Overland
@@ -18033,47 +17489,31 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kirkwood::Kirkwood
 ::hannibal::Hannibal
 ::ferguson::Ferguson
-::columbia::Columbia
 ::woodlawn::Woodlawn
 ::suitland::Suitland
 ::seabrook::Seabrook
 ::rosedale::Rosedale
-::pasadena::Pasadena
 ::lochearn::Lochearn
 ::landover::Landover
-::ferndale::Ferndale
 ::fairland::Fairland
 ::elkridge::Elkridge
 ::edgewood::Edgewood
 ::damascus::Damascus
-::columbia::Columbia
 ::cloverly::Cloverly
 ::bethesda::Bethesda
 ::metairie::Metairie
-::richmond::Richmond
 ::radcliff::Radcliff
 ::highview::Highview
-::florence::Florence
 ::erlanger::Erlanger
-::danville::Danville
-::lawrence::Lawrence
-::richmond::Richmond
-::lawrence::Lawrence
-::columbus::Columbus
-::o'fallon::O'Fallon
 ::valdosta::Valdosta
-::savannah::Savannah
-::martinez::Martinez
 ::marietta::Marietta
 ::mableton::Mableton
 ::kennesaw::Kennesaw
 ::dunwoody::Dunwoody
-::columbus::Columbus
 ::americus::Americus
 ::seminole::Seminole
 ::sarasota::Sarasota
 ::pinewood::Pinewood
-::parkland::Parkland
 ::palm bay::Palm Bay
 ::maitland::Maitland
 ::leesburg::Leesburg
@@ -18087,8 +17527,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::maumelle::Maumelle
 ::prichard::Prichard
 ::hueytown::Hueytown
-::homewood::Homewood
-::florence::Florence
 ::fairhope::Fairhope
 ::bessemer::Bessemer
 ::adjumani::Adjumani
@@ -18101,7 +17539,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::okhtyrka::Okhtyrka
 ::bakhmach::Bakhmach
 ::berehove::Berehove
-::????????::????????
 ::bohuslav::Bohuslav
 ::boryslav::Boryslav
 ::cherkasy::Cherkasy
@@ -18174,7 +17611,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hengchun::Hengchun
 ::taichung::Taichung
 ::funafuti::Funafuti
-::paradise::Paradise
 ::tunapuna::Tunapuna
 ::atasehir::Atasehir
 ::akçaabat::Akçaabat
@@ -18292,7 +17728,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::moussoro::Moussoro
 ::am timan::Am Timan
 ::al ?arak::Al ?arak
-::damascus::Damascus
 ::tartouss::Tartouss
 ::acajutla::Acajutla
 ::ilopango::Ilopango
@@ -18305,7 +17740,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kédougou::Kédougou
 ::freetown::Freetown
 ::segbwema::Segbwema
-::waterloo::Waterloo
 ::handlová::Handlová
 ::hlohovec::Hlohovec
 ::pieštany::Pieštany
@@ -18335,7 +17769,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tandalti::Tandalti
 ::omdurman::Omdurman
 ::zalingei::Zalingei
-::victoria::Victoria
 ::ad dilam::Ad Dilam
 ::al ba?ah::Al Ba?ah
 ::al hufuf::Al Hufuf
@@ -18551,7 +17984,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::san juan::San Juan
 ::mayagüez::Mayagüez
 ::guaynabo::Guaynabo
-::carolina::Carolina
 ::braniewo::Braniewo
 ::brodnica::Brodnica
 ::chodziez::Chodziez
@@ -18633,7 +18065,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::talagang::Talagang
 ::utmanzai::Utmanzai
 ::zafarwal::Zafarwal
-::khairpur::Khairpur
 ::malingao::Malingao
 ::alaminos::Alaminos
 ::antipolo::Antipolo
@@ -18663,7 +18094,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mansalay::Mansalay
 ::masantol::Masantol
 ::masinloc::Masinloc
-::mercedes::Mercedes
 ::midsayap::Midsayap
 ::noveleta::Noveleta
 ::olongapo::Olongapo
@@ -18675,18 +18105,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::polangui::Polangui
 ::sablayan::Sablayan
 ::sampaloc::Sampaloc
-::san jose::San Jose
-::san juan::San Juan
-::san luis::San Luis
-::santiago::Santiago
 ::sorsogon::Sorsogon
 ::surallah::Surallah
 ::tacurong::Tacurong
 ::tagoloan::Tagoloan
 ::talavera::Talavera
 ::urdaneta::Urdaneta
-::valencia::Valencia
-::victoria::Victoria
 ::punaauia::Punaauia
 ::arequipa::Arequipa
 ::ayacucho::Ayacucho
@@ -18699,10 +18123,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::catacaos::Catacaos
 ::chiclayo::Chiclayo
 ::chimbote::Chimbote
-::la unión::La Unión
 ::pimentel::Pimentel
 ::pucallpa::Pucallpa
-::trujillo::Trujillo
 ::arraiján::Arraiján
 ::chilibre::Chilibre
 ::pedregal::Pedregal
@@ -18714,8 +18136,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tauranga::Tauranga
 ::gisborne::Gisborne
 ::auckland::Auckland
-::hamilton::Hamilton
-::hastings::Hastings
 ::wanganui::Wanganui
 ::darchula::Darchula
 ::dhankuta::Dhankuta
@@ -18777,7 +18197,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pankshin::Pankshin
 ::potiskum::Potiskum
 ::tambuwal::Tambuwal
-::kingston::Kingston
 ::alaghsas::Alaghsas
 ::tessaoua::Tessaoua
 ::lüderitz::Lüderitz
@@ -18796,7 +18215,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::keningau::Keningau
 ::sandakan::Sandakan
 ::beaufort::Beaufort
-::victoria::Victoria
 ::semporna::Semporna
 ::jerantut::Jerantut
 ::acámbaro::Acámbaro
@@ -18816,7 +18234,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::petatlán::Petatlán
 ::rosarito::Rosarito
 ::saltillo::Saltillo
-::santiago::Santiago
 ::tesistán::Tesistán
 ::huilango::Huilango
 ::acayucan::Acayucan
@@ -18843,7 +18260,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tehuacán::Tehuacán
 ::tizayuca::Tizayuca
 ::tultepec::Tultepec
-::veracruz::Veracruz
 ::yautepec::Yautepec
 ::zacatlán::Zacatlán
 ::zumpango::Zumpango
@@ -18852,7 +18268,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mangochi::Mangochi
 ::curepipe::Curepipe
 ::valletta::Valletta
-::plymouth::Plymouth
 ::sélibaby::Sélibaby
 ::zouerate::Zouerate
 ::ulaangom::Ulaangom
@@ -18875,7 +18290,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::gostivar::Gostivar
 ::kumanovo::Kumanovo
 ::negotino::Negotino
-::????????::????????
 ::strumica::Strumica
 ::alarobia::Alarobia
 ::ambilobe::Ambilobe
@@ -18898,7 +18312,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dubasari::Dubasari
 ::floresti::Floresti
 ::hîncesti::Hîncesti
-::slobozia::Slobozia
 ::straseni::Straseni
 ::boujniba::Boujniba
 ::skhirate::Skhirate
@@ -18930,7 +18343,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mafeteng::Mafeteng
 ::maputsoe::Maputsoe
 ::buchanan::Buchanan
-::monrovia::Monrovia
 ::voinjama::Voinjama
 ::beruwala::Beruwala
 ::dambulla::Dambulla
@@ -19051,7 +18463,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hirakata::Hirakata
 ::ikedacho::Ikedacho
 ::ishigaki::Ishigaki
-::ishikawa::Ishikawa
 ::itoigawa::Itoigawa
 ::iwatsuki::Iwatsuki
 ::kakegawa::Kakegawa
@@ -19118,7 +18529,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::russeifa::Russeifa
 ::qir moav::Qir Moav
 ::‘anjarah::‘Anjarah
-::kingston::Kingston
 ::linstead::Linstead
 ::portmore::Portmore
 ::paolo vi::Paolo VI
@@ -19139,7 +18549,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::collegno::Collegno
 ::ercolano::Ercolano
 ::fabriano::Fabriano
-::florence::Florence
 ::frascati::Frascati
 ::galatina::Galatina
 ::giussano::Giussano
@@ -19377,7 +18786,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::jagadhri::Jagadhri
 ::jahazpur::Jahazpur
 ::jaitaran::Jaitaran
-::jalalpur::Jalalpur
 ::jamadoba::Jamadoba
 ::jamalpur::Jamalpur
 ::jambusar::Jambusar
@@ -19570,7 +18978,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::todabhim::Todabhim
 ::tuensang::Tuensang
 ::tuljapur::Tuljapur
-::tulsipur::Tulsipur
 ::turaiyur::Turaiyur
 ::udaipura::Udaipura
 ::udalguri::Udalguri
@@ -19737,7 +19144,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ferndown::Ferndown
 ::surbiton::Surbiton
 ::aberdare::Aberdare
-::aberdeen::Aberdeen
 ::abergele::Abergele
 ::abingdon::Abingdon
 ::aldridge::Aldridge
@@ -19761,9 +19167,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bramhall::Bramhall
 ::bredbury::Bredbury
 ::bridgend::Bridgend
-::brighton::Brighton
 ::camborne::Camborne
-::carlisle::Carlisle
 ::caterham::Caterham
 ::cheshunt::Cheshunt
 ::clevedon::Clevedon
@@ -19781,7 +19185,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::penicuik::Penicuik
 ::penzance::Penzance
 ::peterlee::Peterlee
-::plymouth::Plymouth
 ::ramsgate::Ramsgate
 ::rawmarsh::Rawmarsh
 ::rayleigh::Rayleigh
@@ -19803,7 +19206,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::uckfield::Uckfield
 ::wallasey::Wallasey
 ::wallsend::Wallsend
-::weymouth::Weymouth
 ::whickham::Whickham
 ::wickford::Wickford
 ::wilmslow::Wilmslow
@@ -19897,7 +19299,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::illescas::Illescas
 ::a coruña::A Coruña
 ::móstoles::Móstoles
-::palencia::Palencia
 ::pamplona::Pamplona
 ::ripollet::Ripollet
 ::sabadell::Sabadell
@@ -19926,7 +19327,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::l'eliana::L'Eliana
 ::la nucia::la Nucia
 ::la oliva::La Oliva
-::la unión::La Unión
 ::maracena::Maracena
 ::marbella::Marbella
 ::marchena::Marchena
@@ -19936,7 +19336,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::orihuela::Orihuela
 ::paiporta::Paiporta
 ::pollença::Pollença
-::valencia::Valencia
 ::az zarqa::Az Zarqa
 ::al bajur::Al Bajur
 ::al fashn::Al Fashn
@@ -19982,7 +19381,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::el malah::El Malah
 ::es senia::Es Senia
 ::ghardaïa::Ghardaïa
-::hammamet::Hammamet
 ::laghouat::Laghouat
 ::mansoûra::Mansoûra
 ::megarine::Megarine
@@ -20012,7 +19410,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::slagelse::Slagelse
 ::stenløse::Stenløse
 ::taastrup::Taastrup
-::djibouti::Djibouti
 ::tadjoura::Tadjoura
 ::albstadt::Albstadt
 ::arnsberg::Arnsberg
@@ -20164,8 +19561,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::artemisa::Artemisa
 ::calimete::Calimete
 ::camagüey::Camagüey
-::cárdenas::Cárdenas
-::colombia::Colombia
 ::guáimaro::Guáimaro
 ::guanajay::Guanajay
 ::la salud::La Salud
@@ -20173,16 +19568,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nuevitas::Nuevitas
 ::placetas::Placetas
 ::remedios::Remedios
-::san luis::San Luis
 ::sibanicú::Sibanicú
-::trinidad::Trinidad
 ::varadero::Varadero
 ::yaguajay::Yaguajay
 ::alajuela::Alajuela
 ::guápiles::Guápiles
-::mercedes::Mercedes
 ::san josé::San José
-::san juan::San Juan
 ::apartadó::Apartadó
 ::ariguaní::Ariguaní
 ::caucasia::Caucasia
@@ -20194,21 +19585,17 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::el retén::El Retén
 ::envigado::Envigado
 ::la plata::La Plata
-::la unión::La Unión
 ::magangué::Magangué
 ::medellín::Medellín
 ::montería::Montería
 ::mosquera::Mosquera
-::pamplona::Pamplona
 ::pitalito::Pitalito
 ::quimbaya::Quimbaya
 ::ríohacha::Ríohacha
 ::rionegro::Rionegro
 ::riosucio::Riosucio
-::sabaneta::Sabaneta
 ::salamina::Salamina
 ::sogamoso::Sogamoso
-::zaragoza::Zaragoza
 ::songling::Songling
 ::baicheng::Baicheng
 ::chaoyang::Chaoyang
@@ -20244,7 +19631,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::zhaodong::Zhaodong
 ::zhaoyuan::Zhaoyuan
 ::zhaozhou::Zhaozhou
-::songling::Songling
 ::zhoushan::Zhoushan
 ::jiangyou::Jiangyou
 ::cangzhou::Cangzhou
@@ -20279,7 +19665,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::jiangmen::Jiangmen
 ::jiangyan::Jiangyan
 ::jiaozhou::Jiaozhou
-::jincheng::Jincheng
 ::jinchang::Jinchang
 ::jingling::Jingling
 ::jingzhou::Jingzhou
@@ -20301,7 +19686,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::zhijiang::Zhijiang
 ::mianyang::Mianyang
 ::minggang::Minggang
-::mingshui::Mingshui
 ::nanchang::Nanchang
 ::nanchong::Nanchong
 ::neijiang::Neijiang
@@ -20310,7 +19694,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hongqiao::Hongqiao
 ::qingyuan::Qingyuan
 ::qingquan::Qingquan
-::jinjiang::Jinjiang
 ::quanzhou::Quanzhou
 ::shanghai::Shanghai
 ::shanting::Shanting
@@ -20332,9 +19715,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::xianyang::Xianyang
 ::xiaoshan::Xiaoshan
 ::zijinglu::Zijinglu
-::feicheng::Feicheng
 ::shangmei::Shangmei
-::hancheng::Hancheng
 ::xuanzhou::Xuanzhou
 ::xunchang::Xunchang
 ::shangrao::Shangrao
@@ -20368,19 +19749,15 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::meïganga::Meïganga
 ::lo prado::Lo Prado
 ::coquimbo::Coquimbo
-::el monte::El Monte
 ::graneros::Graneros
 ::la ligua::La Ligua
-::la unión::La Unión
 ::llaillay::Llaillay
 ::loncoche::Loncoche
 ::peñaflor::Peñaflor
 ::quillota::Quillota
 ::rancagua::Rancagua
-::santiago::Santiago
 ::valdivia::Valdivia
 ::vallenar::Vallenar
-::victoria::Victoria
 ::dimbokro::Dimbokro
 ::sakassou::Sakassou
 ::tiassalé::Tiassalé
@@ -20404,23 +19781,16 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rimouski::Rimouski
 ::winnipeg::Winnipeg
 ::west end::West End
-::waterloo::Waterloo
-::victoria::Victoria
 ::varennes::Varennes
 ::val-d'or::Val-d'Or
 ::saguenay::Saguenay
-::richmond::Richmond
 ::red deer::Red Deer
 ::petawawa::Petawawa
 ::pembroke::Pembroke
-::oakville::Oakville
 ::montréal::Montréal
 ::langford::Langford
-::kirkland::Kirkland
-::kingston::Kingston
 ::kamloops::Kamloops
 ::joliette::Joliette
-::hamilton::Hamilton
 ::gatineau::Gatineau
 ::edmonton::Edmonton
 ::cornwall::Cornwall
@@ -20439,7 +19809,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::vilyeyka::Vilyeyka
 ::gaborone::Gaborone
 ::ramotswa::Ramotswa
-::freeport::Freeport
 ::trindade::Trindade
 ::cambebba::Cambebba
 ::campinas::Campinas
@@ -20467,7 +19836,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::caçapava::Caçapava
 ::caieiras::Caieiras
 ::camaçari::Camaçari
-::campinas::Campinas
 ::capinzal::Capinzal
 ::capivari::Capivari
 ::carandaí::Carandaí
@@ -20536,9 +19904,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::registro::Registro
 ::rio real::Rio Real
 ::rolândia::Rolândia
-::salvador::Salvador
 ::santaluz::Santaluz
-::santiago::Santiago
 ::são josé::São José
 ::são sepé::São Sepé
 ::sapucaia::Sapucaia
@@ -20547,7 +19913,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sorocaba::Sorocaba
 ::teutônia::Teutônia
 ::tremembé::Tremembé
-::trindade::Trindade
 ::ubaitaba::Ubaitaba
 ::umuarama::Umuarama
 ::valinhos::Valinhos
@@ -20555,17 +19920,13 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::acopiara::Acopiara
 ::alenquer::Alenquer
 ::almeirim::Almeirim
-::altamira::Altamira
 ::barbalha::Barbalha
 ::baturité::Baturité
 ::beberibe::Beberibe
 ::bezerros::Bezerros
-::bragança::Bragança
 ::cabedelo::Cabedelo
 ::cajueiro::Cajueiro
 ::capanema::Capanema
-::carolina::Carolina
-::cascavel::Cascavel
 ::cururupu::Cururupu
 ::custódia::Custódia
 ::estreito::Estreito
@@ -20591,7 +19952,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pinheiro::Pinheiro
 ::piripiri::Piripiri
 ::ribeirão::Ribeirão
-::santarém::Santarém
 ::são luís::São Luís
 ::sertânia::Sertânia
 ::teresina::Teresina
@@ -20599,10 +19959,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::timbiras::Timbiras
 ::tomé açu::Tomé Açu
 ::toritama::Toritama
-::trindade::Trindade
-::trinidad::Trinidad
 ::villazón::Villazón
-::hamilton::Hamilton
 ::gustavia::Gustavia
 ::aplahoué::Aplahoué
 ::muramvya::Muramvya
@@ -20643,7 +20000,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::turnhout::Turnhout
 ::verviers::Verviers
 ::walcourt::Walcourt
-::waterloo::Waterloo
 ::westerlo::Westerlo
 ::wetteren::Wetteren
 ::wevelgem::Wevelgem
@@ -20654,7 +20010,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::zwevegem::Zwevegem
 ::satkania::Satkania
 ::dinajpur::Dinajpur
-::faridpur::Faridpur
 ::hajiganj::Hajiganj
 ::kesabpur::Kesabpur
 ::phultala::Phultala
@@ -20665,14 +20020,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::gaurnadi::Gaurnadi
 ::habiganj::Habiganj
 ::kaliganj::Kaliganj
-::mirzapur::Mirzapur
 ::nagarpur::Nagarpur
 ::nalchiti::Nalchiti
 ::pirojpur::Pirojpur
 ::rajshahi::Rajshahi
 ::satkhira::Satkhira
 ::shibganj::Shibganj
-::jamalpur::Jamalpur
 ::gradacac::Gradacac
 ::prijedor::Prijedor
 ::sarajevo::Sarajevo
@@ -20685,12 +20038,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sumqayit::Sumqayit
 ::zaqatala::Zaqatala
 ::beylagan::Beylagan
-::pushkino::Pushkino
 ::lankaran::Lankaran
 ::neftçala::Neftçala
 ::xankandi::Xankandi
 ::bundoora::Bundoora
-::hillside::Hillside
 ::thornlie::Thornlie
 ::carnegie::Carnegie
 ::randwick::Randwick
@@ -20700,25 +20051,20 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bathurst::Bathurst
 ::brisbane::Brisbane
 ::canberra::Canberra
-::carnegie::Carnegie
 ::cessnock::Cessnock
 ::cronulla::Cronulla
 ::earlwood::Earlwood
 ::engadine::Engadine
 ::essendon::Essendon
 ::goulburn::Goulburn
-::griffith::Griffith
 ::katoomba::Katoomba
 ::lilydale::Lilydale
-::maitland::Maitland
 ::maroubra::Maroubra
 ::mulgrave::Mulgrave
 ::narangba::Narangba
-::richmond::Richmond
 ::rowville::Rowville
 ::tamworth::Tamworth
 ::werribee::Werribee
-::adelaide::Adelaide
 ::armadale::Armadale
 ::gosnells::Gosnells
 ::mandurah::Mandurah
@@ -20739,13 +20085,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::monteros::Monteros
 ::morteros::Morteros
 ::plottier::Plottier
-::san juan::San Juan
-::san luis::San Luis
 ::tartagal::Tartagal
 ::unquillo::Unquillo
-::victoria::Victoria
-::la plata::La Plata
-::mercedes::Mercedes
 ::necochea::Necochea
 ::benguela::Benguela
 ::camacupa::Camacupa
@@ -20755,7 +20096,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ashtarak::Ashtarak
 ::vanadzor::Vanadzor
 ::artashat::Artashat
-::asadabad::Asadabad
 ::charikar::Charikar
 ::fayzabad::Fayzabad
 ::ghormach::Ghormach
@@ -20848,7 +20188,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bukhara::Bukhara
 ::muborak::Muborak
 ::artigas::Artigas
-::carmelo::Carmelo
 ::dolores::Dolores
 ::durazno::Durazno
 ::florida::Florida
@@ -20866,17 +20205,13 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pullman::Pullman
 ::olympia::Olympia
 ::kenmore::Kenmore
-::everett::Everett
 ::edmonds::Edmonds
 ::bothell::Bothell
 ::midvale::Midvale
 ::clinton::Clinton
-::redmond::Redmond
 ::newberg::Newberg
 ::medford::Medford
-::lebanon::Lebanon
 ::gresham::Gresham
-::bethany::Bethany
 ::ashland::Ashland
 ::bozeman::Bozeman
 ::rexburg::Rexburg
@@ -20890,7 +20225,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lubbock::Lubbock
 ::el paso::El Paso
 ::del rio::Del Rio
-::whitney::Whitney
 ::pahrump::Pahrump
 ::fernley::Fernley
 ::roswell::Roswell
@@ -20898,7 +20232,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::durango::Durango
 ::clifton::Clifton
 ::yucaipa::Yucaipa
-::windsor::Windsor
 ::turlock::Turlock
 ::truckee::Truckee
 ::stanton::Stanton
@@ -20934,206 +20267,135 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::barstow::Barstow
 ::banning::Banning
 ::atwater::Atwater
-::ashland::Ashland
 ::artesia::Artesia
 ::arcadia::Arcadia
 ::antioch::Antioch
 ::anaheim::Anaheim
 ::alameda::Alameda
-::phoenix::Phoenix
 ::nogales::Nogales
 ::kingman::Kingman
 ::gilbert::Gilbert
-::douglas::Douglas
 ::buckeye::Buckeye
-::bristol::Bristol
 ::ansonia::Ansonia
 ::weirton::Weirton
 ::oshkosh::Oshkosh
 ::muskego::Muskego
 ::menasha::Menasha
-::madison::Madison
 ::kenosha::Kenosha
 ::de pere::De Pere
 ::rutland::Rutland
 ::warwick::Warwick
 ::newport::Newport
-::bristol::Bristol
 ::reading::Reading
-::lebanon::Lebanon
 ::baldwin::Baldwin
 ::altoona::Altoona
 ::wooster::Wooster
-::norwalk::Norwalk
 ::gahanna::Gahanna
-::fremont::Fremont
 ::findlay::Findlay
-::ashland::Ashland
 ::yonkers::Yonkers
 ::wantagh::Wantagh
 ::syosset::Syosset
 ::shirley::Shirley
 ::seaford::Seaford
 ::mineola::Mineola
-::merrick::Merrick
-::medford::Medford
-::kenmore::Kenmore
-::jamaica::Jamaica
 ::commack::Commack
 ::buffalo::Buffalo
 ::batavia::Batavia
-::baldwin::Baldwin
 ::amherst::Amherst
 ::wyckoff::Wyckoff
-::trenton::Trenton
 ::teaneck::Teaneck
 ::roselle::Roselle
 ::passaic::Passaic
 ::paramus::Paramus
-::madison::Madison
 ::hoboken::Hoboken
 ::colonia::Colonia
-::clifton::Clifton
 ::bayonne::Bayonne
 ::laconia::Laconia
-::concord::Concord
 ::bedford::Bedford
 ::norfolk::Norfolk
-::lincoln::Lincoln
 ::kearney::Kearney
-::fremont::Fremont
 ::willmar::Willmar
 ::sartell::Sartell
-::oakdale::Oakdale
 ::mankato::Mankato
 ::hopkins::Hopkins
 ::hibbing::Hibbing
 ::fridley::Fridley
-::crystal::Crystal
-::buffalo::Buffalo
 ::andover::Andover
 ::wyoming::Wyoming
 ::waverly::Waverly
-::trenton::Trenton
 ::saginaw::Saginaw
 ::romulus::Romulus
 ::redford::Redford
 ::portage::Portage
 ::pontiac::Pontiac
-::midland::Midland
 ::livonia::Livonia
 ::lansing::Lansing
 ::jenison::Jenison
-::jackson::Jackson
-::holland::Holland
 ::haslett::Haslett
 ::detroit::Detroit
-::clinton::Clinton
 ::augusta::Augusta
 ::waltham::Waltham
 ::taunton::Taunton
 ::swansea::Swansea
 ::sudbury::Sudbury
-::reading::Reading
 ::peabody::Peabody
 ::norwood::Norwood
 ::needham::Needham
 ::milford::Milford
 ::methuen::Methuen
 ::melrose::Melrose
-::medford::Medford
 ::holyoke::Holyoke
 ::hanover::Hanover
 ::grafton::Grafton
 ::gardner::Gardner
-::everett::Everett
 ::danvers::Danvers
-::concord::Concord
-::chelsea::Chelsea
 ::beverly::Beverly
-::belmont::Belmont
-::ashland::Ashland
-::portage::Portage
 ::munster::Munster
-::lebanon::Lebanon
 ::laporte::LaPorte
 ::hammond::Hammond
 ::granger::Granger
 ::elkhart::Elkhart
 ::wheaton::Wheaton
-::roselle::Roselle
 ::mchenry::McHenry
-::maywood::Maywood
 ::lombard::Lombard
-::lansing::Lansing
 ::huntley::Huntley
 ::chicago::Chicago
-::burbank::Burbank
-::bradley::Bradley
-::batavia::Batavia
-::addison::Addison
 ::ottumwa::Ottumwa
 ::dubuque::Dubuque
-::clinton::Clinton
 ::wolcott::Wolcott
-::windsor::Windsor
 ::windham::Windham
-::houston::Houston
 ::garland::Garland
 ::denison::Denison
-::cypress::Cypress
 ::corinth::Corinth
 ::coppell::Coppell
 ::brenham::Brenham
-::bedford::Bedford
 ::baytown::Baytown
 ::abilene::Abilene
-::memphis::Memphis
-::lebanon::Lebanon
-::jackson::Jackson
-::bristol::Bristol
 ::taylors::Taylors
 ::mauldin::Mauldin
 ::hanahan::Hanahan
-::hanover::Hanover
 ::chester::Chester
 ::shawnee::Shawnee
 ::sapulpa::Sapulpa
 ::mustang::Mustang
 ::el reno::El Reno
-::bethany::Bethany
 ::ardmore::Ardmore
-::norwood::Norwood
-::lebanon::Lebanon
-::jackson::Jackson
 ::sanford::Sanford
 ::raleigh::Raleigh
 ::kinston::Kinston
 ::hickory::Hickory
-::concord::Concord
-::clayton::Clayton
 ::natchez::Natchez
-::madison::Madison
-::jackson::Jackson
 ::gautier::Gautier
-::clinton::Clinton
-::brandon::Brandon
 ::sedalia::Sedalia
 ::raytown::Raytown
 ::raymore::Raymore
-::liberty::Liberty
-::concord::Concord
-::clayton::Clayton
 ::ballwin::Ballwin
-::wheaton::Wheaton
 ::waldorf::Waldorf
 ::redland::Redland
 ::potomac::Potomac
 ::odenton::Odenton
-::hanover::Hanover
 ::dundalk::Dundalk
 ::crofton::Crofton
-::clinton::Clinton
 ::chillum::Chillum
 ::arbutus::Arbutus
 ::adelphi::Adelphi
@@ -21141,18 +20403,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::slidell::Slidell
 ::marrero::Marrero
 ::laplace::Laplace
-::hammond::Hammond
-::estelle::Estelle
 ::central::Central
 ::shively::Shively
 ::okolona::Okolona
-::newport::Newport
 ::newburg::Newburg
-::ashland::Ashland
 ::wichita::Wichita
-::shawnee::Shawnee
 ::leawood::Leawood
-::gardner::Gardner
 ::emporia::Emporia
 ::seymour::Seymour
 ::fishers::Fishers
@@ -21161,37 +20417,26 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::decatur::Decatur
 ::cahokia::Cahokia
 ::suwanee::Suwanee
-::roswell::Roswell
-::griffin::Griffin
-::decatur::Decatur
 ::conyers::Conyers
 ::calhoun::Calhoun
-::augusta::Augusta
 ::atlanta::Atlanta
 ::acworth::Acworth
 ::valrico::Valrico
 ::tamiami::Tamiami
 ::tamarac::Tamarac
 ::sunrise::Sunrise
-::sanford::Sanford
-::orlando::Orlando
 ::norland::Norland
 ::navarre::Navarre
 ::miramar::Miramar
-::margate::Margate
 ::lealman::Lealman
-::kendall::Kendall
 ::jupiter::Jupiter
 ::holiday::Holiday
 ::hialeah::Hialeah
 ::flagami::Flagami
 ::dunedin::Dunedin
 ::deltona::Deltona
-::brandon::Brandon
 ::opelika::Opelika
-::madison::Madison
 ::gadsden::Gadsden
-::decatur::Decatur
 ::paducah::Paducah
 ::buwenge::Buwenge
 ::entebbe::Entebbe
@@ -21211,7 +20456,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hadyach::Hadyach
 ::horodok::Horodok
 ::hlukhiv::Hlukhiv
-::horodok::Horodok
 ::izmayil::Izmayil
 ::kharkiv::Kharkiv
 ::kherson::Kherson
@@ -21530,12 +20774,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::derbent::Derbent
 ::divnoye::Divnoye
 ::dmitrov::Dmitrov
-::donetsk::Donetsk
 ::donskoy::Donskoy
 ::dubovka::Dubovka
 ::engel’s::Engel’s
 ::frolovo::Frolovo
-::gagarin::Gagarin
 ::groznyy::Groznyy
 ::gubakha::Gubakha
 ::il’skiy::Il’skiy
@@ -21605,14 +20847,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::teykovo::Teykovo
 ::tikhvin::Tikhvin
 ::torzhok::Torzhok
-::troitsk::Troitsk
 ::tutayev::Tutayev
 ::tuymazy::Tuymazy
 ::uvarovo::Uvarovo
 ::valuyki::Valuyki
 ::vichuga::Vichuga
 ::vidnoye::Vidnoye
-::vnukovo::Vnukovo
 ::volkhov::Volkhov
 ::vologda::Vologda
 ::volzhsk::Volzhsk
@@ -21804,7 +21044,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::saravia::Saravia
 ::hagonoy::Hagonoy
 ::hermosa::Hermosa
-::isabela::Isabela
 ::kabacan::Kabacan
 ::legaspi::Legaspi
 ::lumbang::Lumbang
@@ -21863,7 +21102,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bawshar::Bawshar
 ::salalah::Salalah
 ::rotorua::Rotorua
-::dunedin::Dunedin
 ::mangere::Mangere
 ::porirua::Porirua
 ::dipayal::Dipayal
@@ -21976,7 +21214,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::chapala::Chapala
 ::empalme::Empalme
 ::guasave::Guasave
-::nogales::Nogales
 ::jiménez::Jiménez
 ::la cruz::La Cruz
 ::morelia::Morelia
@@ -21997,7 +21234,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::acajete::Acajete
 ::actopan::Actopan
 ::ajalpan::Ajalpan
-::allende::Allende
 ::apizaco::Apizaco
 ::atlixco::Atlixco
 ::cholula::Cholula
@@ -22010,13 +21246,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::la isla::La Isla
 ::linares::Linares
 ::metepec::Metepec
-::miramar::Miramar
-::nogales::Nogales
 ::orizaba::Orizaba
-::paraiso::Paraiso
 ::polanco::Polanco
 ::reynosa::Reynosa
-::tampico::Tampico
 ::temixco::Temixco
 ::tepeaca::Tepeaca
 ::tizimín::Tizimín
@@ -22048,7 +21280,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ilinden::Ilinden
 ::delcevo::Delcevo
 ::kochani::Kochani
-::???????::???????
 ::ambanja::Ambanja
 ::betioky::Betioky
 ::sambava::Sambava
@@ -22100,7 +21331,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::baalbek::Baalbek
 ::bcharré::Bcharré
 ::djounie::Djounie
-::tripoli::Tripoli
 ::thakhèk::Thakhèk
 ::xam nua::Xam Nua
 ::arkalyk::Arkalyk
@@ -22344,13 +21574,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::vignola::Vignola
 ::viterbo::Viterbo
 ::voghera::Voghera
-::augusta::Augusta
 ::catania::Catania
 ::cosenza::Cosenza
 ::crotone::Crotone
 ::lentini::Lentini
 ::marsala::Marsala
-::messina::Messina
 ::milazzo::Milazzo
 ::niscemi::Niscemi
 ::pachino::Pachino
@@ -22389,7 +21617,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::shirvan::Shirvan
 ::varamin::Varamin
 ::qarchak::Qarchak
-::nurabad::Nurabad
 ::al ?ayy::Al ?ayy
 ::baghdad::Baghdad
 ::baqubah::Baqubah
@@ -22714,7 +21941,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ramgarh::Ramgarh
 ::rampura::Rampura
 ::ranavav::Ranavav
-::ranipur::Ranipur
 ::renukut::Renukut
 ::repalle::Repalle
 ::roorkee::Roorkee
@@ -22772,7 +21998,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cheyyar::Cheyyar
 ::trichur::Trichur
 ::udaipur::Udaipur
-::umarkot::Umarkot
 ::utraula::Utraula
 ::varkala::Varkala
 ::vayalar::Vayalar
@@ -22783,7 +22008,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::vuyyuru::Vuyyuru
 ::zaidpur::Zaidpur
 ::zamania::Zamania
-::douglas::Douglas
 ::bat yam::Bat Yam
 ::h_adera::H_adera
 ::netanya::Netanya
@@ -22791,7 +22015,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sakhnin::Sakhnin
 ::sederot::Sederot
 ::athlone::Athlone
-::dundalk::Dundalk
 ::finglas::Finglas
 ::leixlip::Leixlip
 ::seririt::Seririt
@@ -22833,7 +22056,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sumenep::Sumenep
 ::tabanan::Tabanan
 ::tarakan::Tarakan
-::ternate::Ternate
 ::tomohon::Tomohon
 ::tondano::Tondano
 ::ungaran::Ungaran
@@ -22905,56 +22127,41 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tbilisi::Tbilisi
 ::zugdidi::Zugdidi
 ::deeside::Deeside
-::stanley::Stanley
-::shirley::Shirley
 ::heywood::Heywood
-::brixton::Brixton
 ::erskine::Erskine
 ::yateley::Yateley
 ::telford::Telford
 ::airdrie::Airdrie
-::andover::Andover
 ::ashford::Ashford
 ::baildon::Baildon
 ::banbury::Banbury
 ::barking::Barking
-::bedford::Bedford
 ::belfast::Belfast
-::bentley::Bentley
 ::bingley::Bingley
-::bristol::Bristol
 ::brixham::Brixham
 ::buckley::Buckley
 ::burnley::Burnley
 ::cannock::Cannock
 ::cardiff::Cardiff
 ::chatham::Chatham
-::chelsea::Chelsea
 ::chesham::Chesham
-::chester::Chester
 ::chorley::Chorley
 ::clydach::Clydach
 ::leyland::Leyland
-::lincoln::Lincoln
 ::lisburn::Lisburn
 ::maesteg::Maesteg
 ::maghull::Maghull
-::margate::Margate
 ::mitcham::Mitcham
 ::moreton::Moreton
 ::nailsea::Nailsea
 ::newburn::Newburn
 ::newbury::Newbury
-::newport::Newport
 ::newquay::Newquay
 ::lancing::Lancing
 ::norwich::Norwich
-::paisley::Paisley
 ::penarth::Penarth
 ::polmont::Polmont
 ::prescot::Prescot
-::preston::Preston
-::reading::Reading
 ::redhill::Redhill
 ::reigate::Reigate
 ::renfrew::Renfrew
@@ -22965,16 +22172,13 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rushden::Rushden
 ::salford::Salford
 ::sandown::Sandown
-::seaford::Seaford
 ::shipley::Shipley
 ::staines::Staines
 ::urmston::Urmston
 ::walkden::Walkden
 ::walsall::Walsall
-::warwick::Warwick
 ::watford::Watford
 ::welling::Welling
-::windsor::Windsor
 ::wisbech::Wisbech
 ::worksop::Worksop
 ::wrexham::Wrexham
@@ -22989,7 +22193,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::auxerre::Auxerre
 ::avignon::Avignon
 ::bagneux::Bagneux
-::bayonne::Bayonne
 ::belfort::Belfort
 ::béthune::Béthune
 ::béziers::Béziers
@@ -23059,7 +22262,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::vauréal::Vauréal
 ::vendôme::Vendôme
 ::vierzon::Vierzon
-::stanley::Stanley
 ::lautoka::Lautoka
 ::heinola::Heinola
 ::hollola::Hollola
@@ -23094,7 +22296,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::calella::Calella
 ::camargo::Camargo
 ::coslada::Coslada
-::durango::Durango
 ::erandio::Erandio
 ::hernani::Hernani
 ::lasarte::Lasarte
@@ -23129,25 +22330,20 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::badajoz::Badajoz
 ::cáceres::Cáceres
 ::campiña::Campiña
-::carmona::Carmona
 ::cártama::Cártama
 ::cartaya::Cartaya
 ::cehegín::Cehegín
-::córdoba::Córdoba
 ::cullera::Cullera
 ::daimiel::Daimiel
-::granada::Granada
 ::ingenio::Ingenio
 ::jumilla::Jumilla
 ::la roda::La Roda
 ::lebrija::Lebrija
-::linares::Linares
 ::manacor::Manacor
 ::manises::Manises
 ::melilla::Melilla
 ::mislata::Mislata
 ::moncada::Moncada
-::montijo::Montijo
 ::novelda::Novelda
 ::paterna::Paterna
 ::requena::Requena
@@ -23182,7 +22378,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::otavalo::Otavalo
 ::pelileo::Pelileo
 ::quevedo::Quevedo
-::salinas::Salinas
 ::algiers::Algiers
 ::amizour::Amizour
 ::arhribs::Arhribs
@@ -23301,7 +22496,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::meissen::Meissen
 ::mosbach::Mosbach
 ::münster::Münster
-::munster::Munster
 ::netphen::Netphen
 ::neu-ulm::Neu-Ulm
 ::neuwied::Neuwied
@@ -23378,7 +22572,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cacocum::Cacocum
 ::chambas::Chambas
 ::condado::Condado
-::florida::Florida
 ::fomento::Fomento
 ::holguín::Holguín
 ::jiguaní::Jiguaní
@@ -23389,29 +22582,22 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cartago::Cartago
 ::esparza::Esparza
 ::heredia::Heredia
-::liberia::Liberia
 ::paraíso::Paraíso
 ::patarrá::Patarrá
 ::quesada::Quesada
-::morales::Morales
 ::acacías::Acacías
 ::aguadas::Aguadas
 ::aguazul::Aguazul
 ::anserma::Anserma
-::armenia::Armenia
 ::baranoa::Baranoa
 ::barbosa::Barbosa
 ::calarcá::Calarcá
-::cartago::Cartago
 ::ciénaga::Ciénaga
-::corinto::Corinto
 ::corozal::Corozal
 ::duitama::Duitama
 ::espinal::Espinal
 ::flandes::Flandes
-::florida::Florida
 ::fonseca::Fonseca
-::granada::Granada
 ::guacarí::Guacarí
 ::ipiales::Ipiales
 ::jamundí::Jamundí
@@ -23419,8 +22605,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::la mesa::La Mesa
 ::leticia::Leticia
 ::malambo::Malambo
-::morales::Morales
-::palmira::Palmira
 ::pereira::Pereira
 ::pivijay::Pivijay
 ::popayán::Popayán
@@ -23429,13 +22613,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sahagún::Sahagún
 ::sampués::Sampués
 ::san gil::San Gil
-::segovia::Segovia
-::sevilla::Sevilla
-::socorro::Socorro
-::soledad::Soledad
 ::turbaco::Turbaco
 ::villeta::Villeta
-::viterbo::Viterbo
 ::yarumal::Yarumal
 ::jiashan::Jiashan
 ::shixing::Shixing
@@ -23486,7 +22665,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::baoding::Baoding
 ::baoying::Baoying
 ::beijing::Beijing
-::binzhou::Binzhou
 ::caidian::Caidian
 ::weining::Weining
 ::changli::Changli
@@ -23523,7 +22701,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::huaihua::Huaihua
 ::huainan::Huainan
 ::huangpi::Huangpi
-::huazhou::Huazhou
 ::huilong::Huilong
 ::huizhou::Huizhou
 ::jian’ou::Jian’ou
@@ -23532,10 +22709,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::jieshou::Jieshou
 ::jijiang::Jijiang
 ::jingmen::Jingmen
-::jinzhou::Jinzhou
 ::juegang::Juegang
 ::kaifeng::Kaifeng
-::kaiyuan::Kaiyuan
 ::kunming::Kunming
 ::kunyang::Kunyang
 ::laiyang::Laiyang
@@ -23549,7 +22724,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::linshui::Linshui
 ::lintong::Lintong
 ::guankou::Guankou
-::licheng::Licheng
 ::lucheng::Lucheng
 ::luorong::Luorong
 ::luoyang::Luoyang
@@ -23652,7 +22826,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::la laja::La Laja
 ::lautaro::Lautaro
 ::limache::Limache
-::linares::Linares
 ::machalí::Machalí
 ::mulchén::Mulchén
 ::quilpué::Quilpué
@@ -23692,7 +22865,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lusambo::Lusambo
 ::halifax::Halifax
 ::yorkton::Yorkton
-::windsor::Windsor
 ::welland::Welland
 ::vaughan::Vaughan
 ::toronto::Toronto
@@ -23704,7 +22876,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nanaimo::Nanaimo
 ::moncton::Moncton
 ::mirabel::Mirabel
-::midland::Midland
 ::markham::Markham
 ::langley::Langley
 ::keswick::Keswick
@@ -23715,9 +22886,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::camrose::Camrose
 ::calgary::Calgary
 ::burnaby::Burnaby
-::brandon::Brandon
 ::beloeil::Beloeil
-::airdrie::Airdrie
 ::byaroza::Byaroza
 ::dobrush::Dobrush
 ::krychaw::Krychaw
@@ -23763,9 +22932,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::chapecó::Chapecó
 ::cláudio::Cláudio
 ::coaraci::Coaraci
-::colombo::Colombo
 ::conchal::Conchal
-::corinto::Corinto
 ::corumbá::Corumbá
 ::cubatão::Cubatão
 ::curvelo::Curvelo
@@ -23816,7 +22983,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::limeira::Limeira
 ::machado::Machado
 ::maracás::Maracás
-::mariana::Mariana
 ::marília::Marília
 ::maringá::Maringá
 ::mascote::Mascote
@@ -23830,19 +22996,16 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pelotas::Pelotas
 ::perdões::Perdões
 ::peruíbe::Peruíbe
-::piedade::Piedade
 ::pirajuí::Pirajuí
 ::pitanga::Pitanga
 ::pompéia::Pompéia
 ::propriá::Propriá
 ::resende::Resende
 ::rolante::Rolante
-::salinas::Salinas
 ::sarandi::Sarandi
 ::sarzedo::Sarzedo
 ::saubara::Saubara
 ::serrana::Serrana
-::socorro::Socorro
 ::taquara::Taquara
 ::taquari::Taquari
 ::taubaté::Taubaté
@@ -23872,7 +23035,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::catende::Catende
 ::caucaia::Caucaia
 ::colinas::Colinas
-::condado::Condado
 ::coroatá::Coroatá
 ::crateús::Crateús
 ::eusébio::Eusébio
@@ -23885,7 +23047,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mombaça::Mombaça
 ::pacajus::Pacajus
 ::penalva::Penalva
-::santana::Santana
 ::quixadá::Quixadá
 ::solânea::Solânea
 ::surubim::Surubim
@@ -23930,8 +23091,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hasselt::Hasselt
 ::herstal::Herstal
 ::herzele::Herzele
-::heusden::Heusden
-::hoboken::Hoboken
 ::kontich::Kontich
 ::lanaken::Lanaken
 ::lebbeke::Lebbeke
@@ -23947,7 +23106,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::waregem::Waregem
 ::zoersel::Zoersel
 ::azimpur::Azimpur
-::saidpur::Saidpur
 ::sherpur::Sherpur
 ::pirgaaj::Pirgaaj
 ::tangail::Tangail
@@ -23970,21 +23128,17 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yevlakh::Yevlakh
 ::imishli::Imishli
 ::angochi::Angochi
-::clayton::Clayton
 ::dee why::Dee Why
 ::bendigo::Bendigo
 ::berwick::Berwick
 ::boronia::Boronia
 ::buderim::Buderim
-::clayton::Clayton
 ::forster::Forster
 ::geelong::Geelong
 ::glenroy::Glenroy
 ::hornsby::Hornsby
 ::lismore::Lismore
 ::mildura::Mildura
-::preston::Preston
-::seaford::Seaford
 ::sunbury::Sunbury
 ::tarneit::Tarneit
 ::wodonga::Wodonga
@@ -24003,11 +23157,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::caucete::Caucete
 ::charata::Charata
 ::chimbas::Chimbas
-::córdoba::Córdoba
 ::coronda::Coronda
 ::cosquín::Cosquín
 ::embalse::Embalse
-::lincoln::Lincoln
 ::mendoza::Mendoza
 ::neuquén::Neuquén
 ::palpalá::Palpalá
@@ -24016,11 +23168,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ushuaia::Ushuaia
 ::campana::Campana
 ::chajarí::Chajarí
-::dolores::Dolores
 ::esquina::Esquina
 ::federal::Federal
-::fontana::Fontana
-::formosa::Formosa
 ::posadas::Posadas
 ::quilmes::Quilmes
 ::saladas::Saladas
@@ -24029,7 +23178,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::malanje::Malanje
 ::saurimo::Saurimo
 ::abovyan::Abovyan
-::armavir::Armavir
 ::hrazdan::Hrazdan
 ::yerevan::Yerevan
 ::lushnjë::Lushnjë
@@ -24070,7 +23218,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dundee::Dundee
 ::durban::Durban
 ::ermelo::Ermelo
-::george::George
 ::giyani::Giyani
 ::howick::Howick
 ::knysna::Knysna
@@ -24120,7 +23267,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::gurlan::Gurlan
 ::jizzax::Jizzax
 ::qibray::Qibray
-::navoiy::Navoiy
 ::nurota::Nurota
 ::qo‘qon::Qo‘qon
 ::showot::Showot
@@ -24141,22 +23287,17 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tacoma::Tacoma
 ::seatac::SeaTac
 ::renton::Renton
-::monroe::Monroe
-::graham::Graham
 ::burien::Burien
 ::auburn::Auburn
 ::tooele::Tooele
 ::payson::Payson
 ::murray::Murray
-::layton::Layton
 ::kearns::Kearns
 ::draper::Draper
 ::tigard::Tigard
 ::keizer::Keizer
-::eugene::Eugene
 ::albany::Albany
 ::mandan::Mandan
-::helena::Helena
 ::moscow::Moscow
 ::eureka::Eureka
 ::arcata::Arcata
@@ -24167,10 +23308,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::gallup::Gallup
 ::clovis::Clovis
 ::pueblo::Pueblo
-::parker::Parker
 ;::golden::Golden
-::denver::Denver
-::aurora::Aurora
 ::arvada::Arvada
 ::upland::Upland
 ::tustin::Tustin
@@ -24179,7 +23317,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::santee::Santee
 ::sanger::Sanger
 ::rialto::Rialto
-::ramona::Ramona
 ::pomona::Pomona
 ::pinole::Pinole
 ::perris::Perris
@@ -24187,13 +23324,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::orinda::Orinda
 ::orcutt::Orcutt
 ;::orange::Orange
-::oakley::Oakley
 ::novato::Novato
 ::nipomo::Nipomo
 ::newark::Newark
 ::moraga::Moraga
 ::merced::Merced
-::marina::Marina
 ::madera::Madera
 ::lompoc::Lompoc
 ::lomita::Lomita
@@ -24211,42 +23346,29 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cudahy::Cudahy
 ::covina::Covina
 ::corona::Corona
-::colton::Colton
-::clovis::Clovis
-::carson::Carson
 ::blythe::Blythe
 ::avenal::Avenal
-::albany::Albany
 ::agoura::Agoura
 ::tucson::Tucson
 ::peoria::Peoria
-::payson::Payson
 ::marana::Marana
 ::wausau::Wausau
 ::racine::Racine
 ::neenah::Neenah
 ::mequon::Mequon
-::howard::Howard
-::cudahy::Cudahy
 ::beloit::Beloit
 ::radnor::Radnor
-::easton::Easton
-::warren::Warren
 ::toledo::Toledo
 ::tiffin::Tiffin
 ::sidney::Sidney
 ::oregon::Oregon
-::newark::Newark
 ::mentor::Mentor
 ::medina::Medina
 ::marion::Marion
 ::lorain::Lorain
-::hudson::Hudson
 ::euclid::Euclid
 ::elyria::Elyria
-::dublin::Dublin
 ::canton::Canton
-::aurora::Aurora
 ::selden::Selden
 ::oswego::Oswego
 ::nanuet::Nanuet
@@ -24257,18 +23379,13 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::elmira::Elmira
 ::cohoes::Cohoes
 ::beacon::Beacon
-::auburn::Auburn
-::albany::Albany
 ::summit::Summit
 ::rahway::Rahway
-;::orange::Orange
 ::nutley::Nutley
-::newark::Newark
 ::mahwah::Mahwah
 ::linden::Linden
 ::kearny::Kearny
 ::iselin::Iselin
-::edison::Edison
 ::dumont::Dumont
 ::avenel::Avenel
 ::nashua::Nashua
@@ -24277,49 +23394,28 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ramsey::Ramsey
 ::duluth::Duluth
 ::chaska::Chaska
-::blaine::Blaine
-::austin::Austin
-::warren::Warren
-::walker::Walker
-::taylor::Taylor
-::shelby::Shelby
 ::owosso::Owosso
 ::okemos::Okemos
-::monroe::Monroe
-::canton::Canton
 ::burton::Burton
-::adrian::Adrian
 ::bangor::Bangor
-::auburn::Auburn
 ::woburn::Woburn
 ::saugus::Saugus
-::quincy::Quincy
 ::palmer::Palmer
-::norton::Norton
 ::newton::Newton
 ::natick::Natick
-::milton::Milton
 ::malden::Malden
 ::ludlow::Ludlow
 ::lowell::Lowell
-::holden::Holden
-::easton::Easton
 ::dracut::Dracut
 ::dedham::Dedham
-::canton::Canton
-::boston::Boston
-::auburn::Auburn
 ::agawam::Agawam
 ::muncie::Muncie
-::marion::Marion
 ::kokomo::Kokomo
 ::hobart::Hobart
 ::goshen::Goshen
 ::urbana::Urbana
 ::skokie::Skokie
-::peoria::Peoria
 ::ottawa::Ottawa
-::oswego::Oswego
 ;::normal::Normal
 ::morton::Morton
 ::moline::Moline
@@ -24327,7 +23423,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::macomb::Macomb
 ::lemont::Lemont
 ::joliet::Joliet
-::harvey::Harvey
 ::gurnee::Gurnee
 ::geneva::Geneva
 ::dolton::Dolton
@@ -24335,24 +23430,18 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::darien::Darien
 ::cicero::Cicero
 ::berwyn::Berwyn
-::aurora::Aurora
-::newton::Newton
-::marion::Marion
 ::ankeny::Ankeny
 ::wilton::Wilton
 ::irving::Irving
 ::humble::Humble
 ::groves::Groves
 ::frisco::Frisco
-::fresno::Fresno
 ::euless::Euless
 ::denton::Denton
 ::desoto::DeSoto
-::dallas::Dallas
 ::conroe::Conroe
 ::cibolo::Cibolo
 ::belton::Belton
-::austin::Austin
 ::aldine::Aldine
 ::smyrna::Smyrna
 ::sumter::Sumter
@@ -24363,61 +23452,33 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lawton::Lawton
 ::edmond::Edmond
 ::durant::Durant
-::duncan::Duncan
 ::oxford::Oxford
-::dayton::Dayton
 ::athens::Athens
-::camden::Camden
-::wilson::Wilson
-::shelby::Shelby
-::monroe::Monroe
 ::lenoir::Lenoir
 ::garner::Garner
 ::durham::Durham
 ::tupelo::Tupelo
-::oxford::Oxford
-::laurel::Laurel
 ::biloxi::Biloxi
 ::joplin::Joplin
-::belton::Belton
 ::arnold::Arnold
 ::affton::Affton
 ::towson::Towson
 ::severn::Severn
 ::parole::Parole
-::laurel::Laurel
 ::elkton::Elkton
-::easton::Easton
 ::carney::Carney
-::arnold::Arnold
 ::ruston::Ruston
-::monroe::Monroe
 ::kenner::Kenner
-::harvey::Harvey
 ::gretna::Gretna
-::murray::Murray
 ::topeka::Topeka
 ::salina::Salina
 ::olathe::Olathe
-::newton::Newton
 ::lenexa::Lenexa
-::jasper::Jasper
 ::carmel::Carmel
-::quincy::Quincy
-::marion::Marion
-::tucker::Tucker
 ::tifton::Tifton
-::smyrna::Smyrna
 ::pooler::Pooler
 ::newnan::Newnan
-::duluth::Duluth
-::dublin::Dublin
-::dalton::Dalton
-::canton::Canton
-::athens::Athens
-::albany::Albany
 ::wright::Wright
-::weston::Weston
 ::venice::Venice
 ::sunset::Sunset
 ::stuart::Stuart
@@ -24426,25 +23487,17 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::naples::Naples
 ::eustis::Eustis
 ::estero::Estero
-::ensley::Ensley
 ::debary::DeBary
 ::deland::DeLand
 ::cutler::Cutler
 ::bartow::Bartow
 ::apopka::Apopka
-::newark::Newark
 ::searcy::Searcy
 ::rogers::Rogers
-::conway::Conway
-::bryant::Bryant
-::benton::Benton
 ::pelham::Pelham
-::oxford::Oxford
 ::mobile::Mobile
 ::hoover::Hoover
-::helena::Helena
 ::dothan::Dothan
-::daphne::Daphne
 ::bugiri::Bugiri
 ::iganga::Iganga
 ::kabale::Kabale
@@ -24471,7 +23524,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::luts’k::Luts’k
 ::merefa::Merefa
 ::nizhyn::Nizhyn
-::odessa::Odessa
 ::ovruch::Ovruch
 ::polohy::Polohy
 ::sambir::Sambir
@@ -24601,7 +23653,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::develi::Develi
 ::elazig::Elazig
 ::elmali::Elmali
-::eregli::Eregli
 ::ergani::Ergani
 ::göksun::Göksun
 ::hilvan::Hilvan
@@ -24631,7 +23682,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::el kef::El Kef
 ::mahdia::Mahdia
 ::gremda::Gremda
-::ariana::Ariana
 ::chebba::Chebba
 ::zouila::Zouila
 ::zarzis::Zarzis
@@ -24698,7 +23748,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::makeni::Makeni
 ::brezno::Brezno
 ::levice::Levice
-::martin::Martin
 ::púchov::Púchov
 ::sellye::Sellye
 ::senica::Senica
@@ -24724,7 +23773,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::shendi::Shendi
 ::dammam::Dammam
 ::khobar::Khobar
-::medina::Medina
 ::‘ar‘ar::‘Ar‘ar
 ::riyadh::Riyadh
 ::abqaiq::Abqaiq
@@ -24763,7 +23811,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tyumen::Tyumen
 ::usinsk::Usinsk
 ::mirnyy::Mirnyy
-::lesnoy::Lesnoy
 ::annino::Annino
 ::alagir::Alagir
 ::ryl’sk::Ryl’sk
@@ -24806,9 +23853,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lys’va::Lys’va
 ::maykop::Maykop
 ::meleuz::Meleuz
-::mirnyy::Mirnyy
 ::monino::Monino
-::moscow::Moscow
 ::mozdok::Mozdok
 ::mozhga::Mozhga
 ::nevel’::Nevel’
@@ -24820,11 +23865,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::plavsk::Plavsk
 ::pochep::Pochep
 ::pokrov::Pokrov
-::annino::Annino
 ::reutov::Reutov
 ::rostov::Rostov
 ::sal’sk::Sal’sk
-::samara::Samara
 ::setun’::Setun’
 ::skopin::Skopin
 ::tambov::Tambov
@@ -24995,8 +24038,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::abucay::Abucay
 ::abuyog::Abuyog
 ::alabel::Alabel
-::aliaga::Aliaga
-::alicia::Alicia
 ::amadeo::Amadeo
 ::angono::Angono
 ::apalit::Apalit
@@ -25032,7 +24073,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::itogon::Itogon
 ::jasaan::Jasaan
 ::laoang::Laoang
-::la paz::La Paz
 ::liloan::Liloan
 ::lucban::Lucban
 ::lucena::Lucena
@@ -25042,7 +24082,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::malvar::Malvar
 ::manila::Manila
 ::mauban::Mauban
-::mexico::Mexico
 ::molave::Molave
 ::morong::Morong
 ::murcia::Murcia
@@ -25055,7 +24094,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::quezon::Quezon
 ::quiapo::Quiapo
 ::recodo::Recodo
-::aurora::Aurora
 ::santol::Santol
 ::silang::Silang
 ::solana::Solana
@@ -25066,8 +24104,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tangub::Tangub
 ::tanjay::Tanjay
 ::taytay::Taytay
-::teresa::Teresa
-::toledo::Toledo
 ::trento::Trento
 ::bulolo::Bulolo
 ::goroka::Goroka
@@ -25100,7 +24136,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::muscat::Muscat
 ::shinas::Shinas
 ::napier::Napier
-::nelson::Nelson
 ::timaru::Timaru
 ::banepa::Banepa
 ::butwal::Butwal
@@ -25127,7 +24162,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::duiven::Duiven
 ::eersel::Eersel
 ::elburg::Elburg
-::ermelo::Ermelo
 ::gennep::Gennep
 ::goirle::Goirle
 ::heerde::Heerde
@@ -25237,10 +24271,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::celaya::Celaya
 ::colima::Colima
 ::ixtapa::Ixtapa
-::la paz::La Paz
 ::loreto::Loreto
 ::marfil::Marfil
-::medina::Medina
 ::romita::Romita
 ::sayula::Sayula
 ::tecate::Tecate
@@ -25249,9 +24281,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::garcía::García
 ::zacapú::Zacapú
 ::zamora::Zamora
-::tonalá::Tonalá
 ::cancún::Cancún
-::mérida::Mérida
 ::pánuco::Pánuco
 ::perote::Perote
 ::puebla::Puebla
@@ -25295,7 +24325,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::??????::??????
 ::tetovo::Tetovo
 ::vinica::Vinica
-::??????::??????
 ::majuro::Majuro
 ::andapa::Andapa
 ::beloha::Beloha
@@ -25307,7 +24336,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::comrat::Comrat
 ::soroca::Soroca
 ::edinet::Edinet
-::monaco::Monaco
 ::dakhla::Dakhla
 ::agadir::Agadir
 ::asilah::Asilah
@@ -25341,7 +24369,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::silute::Silute
 ::leribe::Leribe
 ::maseru::Maseru
-::harper::Harper
 ::kakata::Kakata
 ::zwedru::Zwedru
 ::ampara::Ampara
@@ -25435,7 +24462,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bihoro::Bihoro
 ::hasaki::Hasaki
 ::kakuda::Kakuda
-::kasama::Kasama
 ::kogota::Kogota
 ::makabe::Makabe
 ::miharu::Miharu
@@ -25447,7 +24473,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::naruto::Naruto
 ::sakura::Sakura
 ::sawara::Sawara
-::sendai::Sendai
 ::shinjo::Shinjo
 ::shiroi::Shiroi
 ::shisui::Shisui
@@ -25486,13 +24511,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ishige::Ishige
 ::ishiki::Ishiki
 ::itoman::Itoman
-::kadoma::Kadoma
 ::kainan::Kainan
 ::kajiki::Kajiki
 ::kanaya::Kanaya
 ::kanoya::Kanoya
 ::kanuma::Kanuma
-::kariya::Kariya
 ::komaki::Komaki
 ::komono::Komono
 ::komoro::Komoro
@@ -25547,7 +24570,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yoshii::Yoshii
 ::akashi::Akashi
 ::atsugi::Atsugi
-::shingu::Shingu
 ::‘ajlun::‘Ajlun
 ::mafraq::Mafraq
 ::jarash::Jarash
@@ -25607,9 +24629,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::teramo::Teramo
 ::thiene::Thiene
 ::tivoli::Tivoli
-::trento::Trento
 ::varese::Varese
-::venice::Venice
 ::verona::Verona
 ::adrano::Adrano
 ::alcamo::Alcamo
@@ -25626,7 +24646,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sinnai::Sinnai
 ::taybad::Taybad
 ::rehnan::Rehnan
-::abadan::Abadan
 ::abadeh::Abadeh
 ::alvand::Alvand
 ::astara::Astara
@@ -25685,7 +24704,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::aklera::Aklera
 ::alandi::Alandi
 ::alibag::Alibag
-::alipur::Alipur
 ::almora::Almora
 ::ambala::Ambala
 ::amreli::Amreli
@@ -25793,7 +24811,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hangal::Hangal
 ::hardoi::Hardoi
 ::harsud::Harsud
-::hassan::Hassan
 ::haveri::Haveri
 ::hospet::Hospet
 ::hukeri::Hukeri
@@ -25823,7 +24840,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kakori::Kakori
 ::kalamb::Kalamb
 ::kalyan::Kalyan
-::cumbum::Cumbum
 ::kampli::Kampli
 ::kamthi::Kamthi
 ::kandla::Kandla
@@ -25883,7 +24899,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::maghar::Maghar
 ::mahoba::Mahoba
 ::maholi::Maholi
-::mahwah::Mahwah
 ::maihar::Maihar
 ::mairwa::Mairwa
 ::malaut::Malaut
@@ -26007,7 +25022,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::shimla::Shimla
 ::sindgi::Sindgi
 ::singur::Singur
-::sinnar::Sinnar
 ::sirohi::Sirohi
 ::sironj::Sironj
 ::siwana::Siwana
@@ -26054,11 +25068,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ashdod::Ashdod
 ::dimona::Dimona
 ::h_olon::H_olon
-::maghar::Maghar
 ::nesher::Nesher
 ::ofaqim::Ofaqim
 ::carlow::Carlow
-::dublin::Dublin
 ::swords::Swords
 ::tralee::Tralee
 ::kupang::Kupang
@@ -26141,16 +25153,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rijeka::Rijeka
 ::požega::Požega
 ::zagreb::Zagreb
-::la paz::La Paz
 ::tai po::Tai Po
-::linden::Linden
 ::bafatá::Bafatá
-::bissau::Bissau
 ::cantel::Cantel
 ::chisec::Chisec
 ::flores::Flores
 ::gualán::Gualán
-::jalapa::Jalapa
 ::panzós::Panzós
 ::patzún::Patzún
 ::petapa::Petapa
@@ -26169,7 +25177,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sykiés::Sykiés
 ::véroia::Véroia
 ::xánthi::Xánthi
-::athens::Athens
 ::dhafní::Dhafní
 ::álimos::Álimos
 ::chaniá::Chaniá
@@ -26206,38 +25213,28 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::batumi::Batumi
 ::p’ot’i::P’ot’i
 ::telavi::Telavi
-::orkney::Orkney
 ::mendip::Mendip
 ::neston::Neston
-::crosby::Crosby
 ::antrim::Antrim
-::arnold::Arnold
-::bangor::Bangor
 ::barnet::Barnet
 ::batley::Batley
 ::belper::Belper
-::bexley::Bexley
 ::bolton::Bolton
 ::bootle::Bootle
-::boston::Boston
 ::brymbo::Brymbo
 ::bushey::Bushey
 ::buxton::Buxton
 ::cobham::Cobham
-::irvine::Irvine
 ::jarrow::Jarrow
 ::kendal::Kendal
 ::kirkby::Kirkby
-::london::London
 ::maldon::Maldon
 ::maltby::Maltby
 ::marlow::Marlow
 ::marple::Marple
 ::morley::Morley
-::nelson::Nelson
 ::oldham::Oldham
 ::ossett::Ossett
-::oxford::Oxford
 ::pinner::Pinner
 ::pitsea::Pitsea
 ::pudsey::Pudsey
@@ -26308,7 +25305,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nantes::Nantes
 ::nevers::Nevers
 ::olivet::Olivet
-;::orange::Orange
 ::pantin::Pantin
 ::pessac::Pessac
 ::poissy::Poissy
@@ -26366,15 +25362,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::llefià::Llefià
 ::pasaia::Pasaia
 ::retiro::Retiro
-::latina::Latina
 ::algete::Algete
 ::avilés::Avilés
 ::bermeo::Bermeo
 ::bilbao::Bilbao
 ::blanes::Blanes
-::burgos::Burgos
 ::cambre::Cambre
-::cuenca::Cuenca
 ::ferrol::Ferrol
 ::girona::Girona
 ::getafe::Getafe
@@ -26387,14 +25380,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::monzón::Monzón
 ::mungia::Mungia
 ::nigrán::Nigrán
-::oviedo::Oviedo
 ::seseña::Seseña
 ::sestao::Sestao
 ::sitges::Sitges
 ::teruel::Teruel
 ::tolosa::Tolosa
 ::tudela::Tudela
-::zamora::Zamora
 ::alzira::Alzira
 ::aldaia::Aldaia
 ::arucas::Arucas
@@ -26411,21 +25402,16 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::huelva::Huelva
 ::xàtiva::Xàtiva
 ::llíria::Llíria
-::lucena::Lucena
 ::málaga::Málaga
 ::martos::Martos
-::mérida::Mérida
 ::moguer::Moguer
 ::motril::Motril
-::murcia::Murcia
 ::pájara::Pájara
 ::tarifa::Tarifa
-::toledo::Toledo
 ::torrox::Torrox
 ::totana::Totana
 ::utrera::Utrera
 ::asmara::Asmara
-::dakhla::Dakhla
 ::akhmim::Akhmim
 ::ashmun::Ashmun
 ::basyun::Basyun
@@ -26439,14 +25425,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::maardu::Maardu
 ::ambato::Ambato
 ::balzar::Balzar
-::cuenca::Cuenca
 ::ibarra::Ibarra
 ::pasaje::Pasaje
 ::playas::Playas
 ::pujilí::Pujilí
 ::tulcán::Tulcán
 ::vinces::Vinces
-::zamora::Zamora
 ::annaba::Annaba
 ::aoulef::Aoulef
 ::azazga::Azazga
@@ -26616,7 +25600,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::melník::Melník
 ::náchod::Náchod
 ::orlová::Orlová
-::ostrov::Ostrov
 ::pilsen::Pilsen
 ::prague::Prague
 ::prerov::Prerov
@@ -26639,7 +25622,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mariel::Mariel
 ::perico::Perico
 ::aserrí::Aserrí
-::colima::Colima
 ::nicoya::Nicoya
 ::purral::Purral
 ::carepa::Carepa
@@ -26651,7 +25633,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::caldas::Caldas
 ::cereté::Cereté
 ::cúcuta::Cúcuta
-::fresno::Fresno
 ::galapa::Galapa
 ::garzón::Garzón
 ::ibagué::Ibagué
@@ -26659,9 +25640,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lérida::Lérida
 ::líbano::Líbano
 ::lorica::Lorica
-::madrid::Madrid
 ::maicao::Maicao
-::málaga::Málaga
 ::melgar::Melgar
 ::mompós::Mompós
 ::quibdó::Quibdó
@@ -26701,7 +25680,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lianhe::Lianhe
 ::nantai::Nantai
 ::panshi::Panshi
-::fendou::Fendou
 ::salaqi::Salaqi
 ::shulan::Shulan
 ::shunyi::Shunyi
@@ -26726,7 +25704,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::chaohu::Chaohu
 ::dalian::Dalian
 ::daokou::Daokou
-::datong::Datong
 ::dazhou::Dazhou
 ::deqing::Deqing
 ::deyang::Deyang
@@ -26753,7 +25730,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::jieshi::Jieshi
 ::jiexiu::Jiexiu
 ::jinhua::Jinhua
-::jining::Jining
 ::jinsha::Jinsha
 ::jinshi::Jinshi
 ::jishui::Jishui
@@ -26787,7 +25763,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::shiwan::Shiwan
 ::shiyan::Shiyan
 ::sishui::Sishui
-::suzhou::Suzhou
 ::tai’an::Tai’an
 ::tanggu::Tanggu
 ::tantou::Tantou
@@ -26810,10 +25785,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::xintai::Xintai
 ::xinzhi::Xinzhi
 ::xiulin::Xiulin
-::yanggu::Yanggu
 ::yantai::Yantai
 ::yashan::Yashan
-::yichun::Yichun
 ::yishui::Yishui
 ::heyuan::Heyuan
 ::yudong::Yudong
@@ -26907,21 +25880,13 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kamina::Kamina
 ::lisala::Lisala
 ::ladner::Ladner
-::sydney::Sydney
 ::québec::Québec
-::vernon::Vernon
 ::surrey::Surrey
 ::sarnia::Sarnia
-::regina::Regina
-::ottawa::Ottawa
 ::oshawa::Oshawa
-::milton::Milton
-::london::London
 ::guelph::Guelph
 ::granby::Granby
-::duncan::Duncan
 ::dorval::Dorval
-::dieppe::Dieppe
 ::barrie::Barrie
 ::anmore::Anmore
 ::bykhaw::Bykhaw
@@ -26955,7 +25920,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::canela::Canela
 ::canoas::Canoas
 ::capela::Capela
-::castro::Castro
 ::cuiabá::Cuiabá
 ::esteio::Esteio
 ::franca::Franca
@@ -26989,7 +25953,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nazaré::Nazaré
 ::osasco::Osasco
 ::osório::Osório
-::palmas::Palmas
 ::paraty::Paraty
 ::parobé::Parobé
 ::passos::Passos
@@ -27002,14 +25965,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pontal::Pontal
 ::portão::Portão
 ::quaraí::Quaraí
-::santos::Santos
 ::seabra::Seabra
 ::sumaré::Sumaré
 ::suzano::Suzano
 ::tambaú::Tambaú
 ::tanabi::Tanabi
 ::tanguá::Tanguá
-::toledo::Toledo
 ::torres::Torres
 ::tucano::Tucano
 ::uruaçu::Uruaçu
@@ -27018,7 +25979,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::acaraú::Acaraú
 ::balsas::Balsas
 ::barras::Barras
-::bayeux::Bayeux
 ::breves::Breves
 ::buíque::Buíque
 ::cametá::Cametá
@@ -27039,7 +25999,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::oeiras::Oeiras
 ::olinda::Olinda
 ::jatobá::Jatobá
-::pombal::Pombal
 ::pombos::Pombos
 ::portel::Portel
 ::recife::Recife
@@ -27050,11 +26009,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::trairi::Trairi
 ::tucumã::Tucumã
 ::tuntum::Tuntum
-::viçosa::Viçosa
 ::camiri::Camiri
 ::cobija::Cobija
 ::cotoca::Cotoca
-::la paz::La Paz
 ::mizque::Mizque
 ::potosí::Potosí
 ::punata::Punata
@@ -27117,7 +26074,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::palang::Palang
 ::raojan::Raojan
 ::narail::Narail
-::raipur::Raipur
 ::mathba::Mathba
 ::patiya::Patiya
 ::sylhet::Sylhet
@@ -27131,7 +26087,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::xaçmaz::Xaçmaz
 ::zabrat::Zabrat
 ::sirvan::Sirvan
-::astara::Astara
 ::fizuli::Fizuli
 ::saatli::Saatli
 ::salyan::Salyan
@@ -27139,25 +26094,17 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::babijn::Babijn
 ::booval::Booval
 ::albury::Albury
-::auburn::Auburn
 ::burnie::Burnie
 ::cairns::Cairns
-::coburg::Coburg
 ::echuca::Echuca
 ::eltham::Eltham
 ::epping::Epping
-::hobart::Hobart
 ::mackay::Mackay
 ::melton::Melton
 ::mosman::Mosman
 ::nerang::Nerang
-;::orange::Orange
-::sydney::Sydney
-::albany::Albany
-::darwin::Darwin
 ::gawler::Gawler
 ::leoben::Leoben
-::vienna::Vienna
 ::crespo::Crespo
 ::esquel::Esquel
 ::firmat::Firmat
@@ -27170,9 +26117,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::viedma::Viedma
 ::zapala::Zapala
 ::garupá::Garupá
-::la paz::La Paz
 ::pirané::Pirané
-::retiro::Retiro
 ::tandil::Tandil
 ::zárate::Zárate
 ::huambo::Huambo
@@ -27197,7 +26142,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kunduz::Kunduz
 ::nahrin::Nahrin
 ::qarqin::Qarqin
-::rustaq::Rustaq
 ::zaranj::Zaranj
 ::al ain::Al Ain
 :: ipan:: ipan
@@ -27264,12 +26208,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ;::young::Young
 ::kihei::Kihei
 ::pasco::Pasco
-::lacey::Lacey
 ::camas::Camas
 ::provo::Provo
 ::ogden::Ogden
 ::magna::Magna
-::logan::Logan
 ::salem::Salem
 ::lents::Lents
 ::canby::Canby
@@ -27291,14 +26233,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::indio::Indio
 ::hemet::Hemet
 ::dixon::Dixon
-::davis::Davis
 ::chino::Chino
 ::chico::Chico
-::ceres::Ceres
 ::azusa::Azusa
 ::arvin::Arvin
 ::tempe::Tempe
-::wayne::Wayne
 ::solon::Solon
 ::piqua::Piqua
 ::parma::Parma
@@ -27310,39 +26249,27 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::islip::Islip
 ::depew::Depew
 ::coram::Coram
-::wayne::Wayne
 ::union::Union
 ::fords::Fords
 ::ewing::Ewing
 ::dover::Dover
-::salem::Salem
 ::keene::Keene
-::dover::Dover
 ::derry::Derry
 ::omaha::Omaha
 ::fargo::Fargo
 ::edina::Edina
 ::eagan::Eagan
 ::anoka::Anoka
-::wayne::Wayne
 ::flint::Flint
-::salem::Salem
 ::acton::Acton
-::wasco::Wasco
 ::pekin::Pekin
-::niles::Niles
 ::lisle::Lisle
 ::elgin::Elgin
-::dixon::Dixon
 ::alsip::Alsip
 ::clive::Clive
 ::hurst::Hurst
 ::ennis::Ennis
 ::donna::Donna
-::bryan::Bryan
-::alvin::Alvin
-::allen::Allen
-::alice::Alice
 ::alamo::Alamo
 ::greer::Greer
 ::aiken::Aiken
@@ -27353,9 +26280,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bixby::Bixby
 ::altus::Altus
 ::xenia::Xenia
-::mason::Mason
-::boone::Boone
-::pearl::Pearl
 ::rolla::Rolla
 ::ozark::Ozark
 ::lemay::Lemay
@@ -27368,7 +26292,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::alton::Alton
 ::redan::Redan
 ::macon::Macon
-::evans::Evans
 ::tampa::Tampa
 ::ocoee::Ocoee
 ::ocala::Ocala
@@ -27378,9 +26301,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::davie::Davie
 ::cocoa::Cocoa
 ::brent::Brent
-::dover::Dover
 ::cabot::Cabot
-::selma::Selma
 ::busia::Busia
 ::hoima::Hoima
 ::jinja::Jinja
@@ -27389,7 +26310,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::njeru::Njeru
 ::yumbe::Yumbe
 ::balta::Balta
-::brody::Brody
 ::bucha::Bucha
 ::dubno::Dubno
 ::irpin::Irpin
@@ -27468,11 +26388,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::adana::Adana
 ::afsin::Afsin
 ::ahlat::Ahlat
-::aydin::Aydin
 ::bahçe::Bahçe
 ::banaz::Banaz
 ::belek::Belek
-::belen::Belen
 ::besni::Besni
 ::bucak::Bucak
 ::çesme::Çesme
@@ -27608,7 +26526,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tabuk::Tabuk
 ::tarut::Tarut
 ::yanbu::Yanbu
-::nzega::Nzega
 ::zarya::Zarya
 ::aldan::Aldan
 ::artëm::Artëm
@@ -27653,7 +26570,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ezhva::Ezhva
 ::gusev::Gusev
 ::istra::Istra
-::kazan::Kazan
 ::kimry::Kimry
 ::kirov::Kirov
 ::kizel::Kizel
@@ -27705,7 +26621,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lugoj::Lugoj
 ::mizil::Mizil
 ::motru::Motru
-::roman::Roman
 ::sebes::Sebes
 ::sibiu::Sibiu
 ::turda::Turda
@@ -27717,7 +26632,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::porto::Porto
 ::viseu::Viseu
 ::algés::Algés
-::amora::Amora
 ::belas::Belas
 ::cacém::Cacém
 ::évora::Évora
@@ -27836,22 +26750,18 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nabua::Nabua
 ::narra::Narra
 ::orani::Orani
-::orion::Orion
 ::ormoc::Ormoc
 ::pacol::Pacol
 ::paete::Paete
 ::pandi::Pandi
 ::passi::Passi
-::pilar::Pilar
 ::porac::Porac
-::ramon::Ramon
 ::ramos::Ramos
 ::rizal::Rizal
 ::roxas::Roxas
 ::sagay::Sagay
 ::samal::Samal
 ::subic::Subic
-::tabuk::Tabuk
 ::tagas::Tagas
 ::tagum::Tagum
 ::taloc::Taloc
@@ -27879,7 +26789,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rioja::Rioja
 ::chepo::Chepo
 ::colón::Colón
-::david::David
 ::ibra’::Ibra’
 ::‘ibri::‘Ibri
 ::nizwá::Nizwá
@@ -27963,7 +26872,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::keffi::Keffi
 ::kwale::Kwale
 ::lafia::Lafia
-::lagos::Lagos
 ::lapai::Lapai
 ::marte::Marte
 ::minna::Minna
@@ -27983,7 +26891,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::wamba::Wamba
 ::warri::Warri
 ::wudil::Wudil
-::zaria::Zaria
 ::diffa::Diffa
 ::dosso::Dosso
 ::rundu::Rundu
@@ -28012,7 +26919,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kulai::Kulai
 ::ameca::Ameca
 ::jamay::Jamay
-::palau::Palau
 ::silao::Silao
 ::tepic::Tepic
 ::álamo::Álamo
@@ -28106,7 +27012,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yeoju::Yeoju
 ::eisen::Eisen
 ::reiko::Reiko
-::eisen::Eisen
 ::kilju::Kilju
 ::najin::Najin
 ::nanam::Nanam
@@ -28116,12 +27021,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::takeo::Takeo
 ::naryn::Naryn
 ::uzgen::Uzgen
-::talas::Talas
 ::siaya::Siaya
-::busia::Busia
 ::kisii::Kisii
 ::kitui::Kitui
-::mbale::Mbale
 ::narok::Narok
 ::nyeri::Nyeri
 ::thika::Thika
@@ -28152,14 +27054,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tendo::Tendo
 ::saijo::Saijo
 ::miura::Miura
-::asaka::Asaka
 ::fussa::Fussa
 ::akune::Akune
 ::amagi::Amagi
 ::atami::Atami
 ::ayabe::Ayabe
 ::beppu::Beppu
-::chino::Chino
 ::enzan::Enzan
 ::gosen::Gosen
 ::gyoda::Gyoda
@@ -28259,7 +27159,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ivrea::Ivrea
 ::lecce::Lecce
 ::lecco::Lecco
-::lucca::Lucca
 ::massa::Massa
 ::melzo::Melzo
 ::monza::Monza
@@ -28267,14 +27166,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nuoro::Nuoro
 ::olbia::Olbia
 ::osimo::Osimo
-::parma::Parma
 ::pavia::Pavia
 ::prato::Prato
 ::rieti::Rieti
 ::sarno::Sarno
 ::schio::Schio
 ::sezze::Sezze
-::siena::Siena
 ::terni::Terni
 ::turin::Turin
 ::trani::Trani
@@ -28333,7 +27230,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::aland::Aland
 ::along::Along
 ::alwar::Alwar
-::aluva::Aluva
 ::ambad::Ambad
 ::ambah::Ambah
 ::ambur::Ambur
@@ -28467,7 +27363,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kalna::Kalna
 ::kalol::Kalol
 ::kalpi::Kalpi
-::kaman::Kaman
 ::kandi::Kandi
 ::kanke::Kanke
 ::kanth::Kanth
@@ -28487,7 +27382,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kodar::Kodar
 ::kolar::Kolar
 ::konch::Konch
-::korba::Korba
 ::kotma::Kotma
 ::kovur::Kovur
 ::kulti::Kulti
@@ -28508,7 +27402,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mandi::Mandi
 ::mandu::Mandu
 ::maner::Maner
-::mansa::Mansa
 ::manvi::Manvi
 ::medak::Medak
 ::melur::Melur
@@ -28536,7 +27429,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::panna::Panna
 ::pardi::Pardi
 ::pasan::Pasan
-::patan::Patan
 ::patna::Patna
 ::patti::Patti
 ::patur::Patur
@@ -28566,7 +27458,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sagar::Sagar
 ::saiha::Saiha
 ::sakti::Sakti
-::salem::Salem
 ::salur::Salur
 ::samba::Samba
 ::sandi::Sandi
@@ -28581,7 +27472,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sijua::Sijua
 ::sikka::Sikka
 ::sikar::Sikar
-::silao::Silao
 ::sirsa::Sirsa
 ::sirsi::Sirsi
 ::sirur::Sirur
@@ -28620,7 +27510,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yaval::Yaval
 ::yeola::Yeola
 ::punch::Punch
-::ariel::Ariel
 ::‘akko::‘Akko
 ::‘arad::‘Arad
 ::eilat::Eilat
@@ -28631,7 +27520,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yavné::Yavné
 ::yehud::Yehud
 ::safed::Safed
-::ennis::Ennis
 ::lucan::Lucan
 ::navan::Navan
 ::sligo::Sligo
@@ -28682,7 +27570,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lenbe::Lenbe
 ::sisak::Sisak
 ::solin::Solin
-::split::Split
 ::zadar::Zadar
 ::danlí::Danlí
 ::tocoa::Tocoa
@@ -28717,9 +27604,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::suhum::Suhum
 ::yendi::Yendi
 ::ewell::Ewell
-::acton::Acton
 ::alloa::Alloa
-::alton::Alton
 ::ascot::Ascot
 ::barry::Barry
 ::blyth::Blyth
@@ -28728,7 +27613,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::leeds::Leeds
 ::leigh::Leigh
 ::lewes::Lewes
-::derry::Derry
 ::louth::Louth
 ::luton::Luton
 ::march::March
@@ -28765,7 +27649,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::laval::Laval
 ::laxou::Laxou
 ::lille::Lille
-::limay::Limay
 ::lomme::Lomme
 ::lunel::Lunel
 ::mâcon::Mâcon
@@ -28773,12 +27656,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::meaux::Meaux
 ::melun::Melun
 ::muret::Muret
-::nancy::Nancy
 ::nîmes::Nîmes
 ::niort::Niort
 ::noyon::Noyon
 ::orsay::Orsay
-::paris::Paris
 ::reims::Reims
 ::rodez::Rodez
 ::rouen::Rouen
@@ -28817,7 +27698,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::harar::Harar
 ::jinka::Jinka
 ::korem::Korem
-::mendi::Mendi
 ::robit::Robit
 ::tippi::Tippi
 ::wenji::Wenji
@@ -28853,8 +27733,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::baeza::Baeza
 ::berja::Berja
 ::cabra::Cabra
-::cadiz::Cadiz
-::camas::Camas
 ::cieza::Cieza
 ::denia::Denia
 ::écija::Écija
@@ -28884,7 +27762,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::smara::Smara
 ::abnub::Abnub
 ::arish::Arish
-::cairo::Cairo
 ::luxor::Luxor
 ::aswan::Aswan
 ::asyut::Asyut
@@ -28900,7 +27777,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::qutur::Qutur
 ::sohag::Sohag
 ::tahta::Tahta
-::tanda::Tanda
 ::toukh::Toukh
 ::ziftá::Ziftá
 ::narva::Narva
@@ -28969,8 +27845,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::greiz::Greiz
 ::guben::Guben
 ::hagen::Hagen
-::halle::Halle
-::haren::Haren
 ::heide::Heide
 ::hemer::Hemer
 ::herne::Herne
@@ -29001,7 +27875,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::riesa::Riesa
 ::rudow::Rudow
 ::sasel::Sasel
-::soest::Soest
 ::stade::Stade
 ::stuhr::Stuhr
 ::tegel::Tegel
@@ -29031,13 +27904,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::banes::Banes
 ::bauta::Bauta
 ::cerro::Cerro
-::colón::Colón
 ::cueto::Cueto
 ::guane::Guane
 ::guisa::Guisa
 ::maisí::Maisí
-::minas::Minas
-::morón::Morón
 ::regla::Regla
 ::rodas::Rodas
 ::cañas::Cañas
@@ -29057,7 +27927,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pasto::Pasto
 ::patía::Patía
 ::sincé::Sincé
-::sucre::Sucre
 ::tuluá::Tuluá
 ::tunja::Tunja
 ::turbo::Turbo
@@ -29066,7 +27935,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yopal::Yopal
 ::yumbo::Yumbo
 ::ordos::Ordos
-::bayan::Bayan
 ::benxi::Benxi
 ::dalai::Dalai
 ::dehui::Dehui
@@ -29085,7 +27953,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tieli::Tieli
 ::tumen::Tumen
 ::yanji::Yanji
-::yilan::Yilan
 ::yushu::Yushu
 ::bojia::Bojia
 ::mabai::Mabai
@@ -29102,7 +27969,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::fenyi::Fenyi
 ::gaomi::Gaomi
 ::gejiu::Gejiu
-::hangu::Hangu
 ::hecun::Hecun
 ::hefei::Hefei
 ::dasha::Dasha
@@ -29113,7 +27979,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::jinan::Jinan
 ::jinji::Jinji
 ::laiwu::Laiwu
-::lanxi::Lanxi
 ::wuwei::Wuwei
 ::linqu::Linqu
 ::linxi::Linxi
@@ -29171,7 +28036,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::manjo::Manjo
 ::obala::Obala
 ::penja::Penja
-::tonga::Tonga
 ::ancud::Ancud
 ::angol::Angol
 ::arica::Arica
@@ -29182,25 +28046,20 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rengo::Rengo
 ::talca::Talca
 ::abobo::Abobo
-::arrah::Arrah
 ::bouna::Bouna
 ::dabou::Dabou
 ::daloa::Daloa
 ::issia::Issia
 ::tabou::Tabou
-::tanda::Tanda
-::touba::Touba
 ::lancy::Lancy
 ::aarau::Aarau
 ::baden::Baden
 ::basel::Basel
-::emmen::Emmen
 ::köniz::Köniz
 ::olten::Olten
 ::pully::Pully
 ::uster::Uster
 ::vevey::Vevey
-::kayes::Kayes
 ::bimbo::Bimbo
 ::bouar::Bouar
 ::paoua::Paoua
@@ -29215,20 +28074,16 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::isiro::Isiro
 ::kindu::Kindu
 ::lodja::Lodja
-::lubao::Lubao
 ::luebo::Luebo
 ::mweka::Mweka
 ::uvira::Uvira
-::wamba::Wamba
 ::watsa::Watsa
 ::lévis::Lévis
 ::truro::Truro
 ::magog::Magog
 ::leduc::Leduc
-::laval::Laval
 ::delta::Delta
 ::brant::Brant
-::brest::Brest
 ::gomel::Gomel
 ::horki::Horki
 ::masty::Masty
@@ -29237,7 +28092,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::orsha::Orsha
 ::pinsk::Pinsk
 ::kanye::Kanye
-::sinop::Sinop
 ::coari::Coari
 ::aguaí::Aguaí
 ::apiaí::Apiaí
@@ -29253,7 +28107,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::butiá::Butiá
 ::caeté::Caeté
 ::cambé::Cambé
-::ceres::Ceres
 ::conde::Conde
 ::cotia::Cotia
 ::coxim::Coxim
@@ -29274,7 +28127,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::jales::Jales
 ::jataí::Jataí
 ::lages::Lages
-::lucas::Lucas
 ::macaé::Macaé
 ::mafra::Mafra
 ::marau::Marau
@@ -29285,7 +28137,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::posse::Posse
 ::prado::Prado
 ::prata::Prata
-::salto::Salto
 ::serra::Serra
 ::tapes::Tapes
 ::tatuí::Tatuí
@@ -29300,30 +28151,22 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::caicó::Caicó
 ::crato::Crato
 ::ipubi::Ipubi
-::macau::Macau
 ::maués::Maués
 ::natal::Natal
 ::patos::Patos
 ::picos::Picos
-::pilar::Pilar
 ::soure::Soure
 ::sousa::Sousa
 ::timon::Timon
 ::união::União
-::viana::Viana
 ::vigia::Vigia
-::conde::Conde
-::viseu::Viseu
 ::oruro::Oruro
-::sucre::Sucre
 ::seria::Seria
 ::dogbo::Dogbo
-::kandi::Kandi
 ::kétou::Kétou
 ::nikki::Nikki
 ::ngozi::Ngozi
 ::aytos::Aytos
-::sofia::Sofia
 ::varna::Varna
 ::vidin::Vidin
 ::gaoua::Gaoua
@@ -29337,14 +28180,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::balen::Balen
 ::diest::Diest
 ::eeklo::Eeklo
-::essen::Essen
 ::eupen::Eupen
-::halle::Halle
 ::hamme::Hamme
 ::herve::Herve
 ::ieper::Ieper
 ::liège::Liège
-::lille::Lille
 ::meise::Meise
 ::menen::Menen
 ::namur::Namur
@@ -29360,7 +28200,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pabna::Pabna
 ::bhola::Bhola
 ::kalia::Kalia
-::dhaka::Dhaka
 ::dohar::Dohar
 ::tungi::Tungi
 ::bihac::Bihac
@@ -29381,16 +28220,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lalor::Lalor
 ::nowra::Nowra
 ::taree::Taree
-::perth::Perth
-::baden::Baden
 ::steyr::Steyr
 ::traun::Traun
-::allen::Allen
-::junín::Junín
 ::pérez::Pérez
 ::salta::Salta
 ::luján::Luján
-::morón::Morón
 ::oberá::Oberá
 ::tigre::Tigre
 ::caála::Caála
@@ -29413,7 +28247,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::farah::Farah
 ::herat::Herat
 ::kabul::Kabul
-::khash::Khash
 ::khulm::Khulm
 ::khost::Khost
 ::kushk::Kushk
@@ -29431,7 +28264,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :: lha:: lha
 :: eer:: eer
 :: tín:: tín
-::aden::Aden
 ::ataq::Ataq
 ::pejë::Pejë
 ::apia::Apia
@@ -29459,39 +28291,27 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mesa::Mesa
 ::eloy::Eloy
 ::plum::Plum
-::erie::Erie
-::troy::Troy
 ::stow::Stow
 ::lima::Lima
-::kent::Kent
 ::avon::Avon
-::troy::Troy
 ::rome::Rome
-::lodi::Lodi
-::troy::Troy
 ::novi::Novi
 ::holt::Holt
 ::saco::Saco
 ::lynn::Lynn
-::gary::Gary
 ::dyer::Dyer
-::zion::Zion
 ::cary::Cary
 ::ames::Ames
 ::york::York
 ::enid::Enid
-::eden::Eden
-::cary::Cary
 ::apex::Apex
 ::nixa::Nixa
 ::hays::Hays
-::rome::Rome
 ::pace::Pace
 ::ojus::Ojus
 ::lutz::Lutz
 ::iona::Iona
 ::bear::Bear
-::troy::Troy
 ::arua::Arua
 ::gulu::Gulu
 ::lira::Lira
@@ -29534,9 +28354,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::béja::Béja
 ::douz::Douz
 ::sfax::Sfax
-::mary::Mary
 ::kaka::Kaka
-;::same::Same
 ::dili::Dili
 ::suai::Suai
 ::loei::Loei
@@ -29570,9 +28388,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::zima::Zima
 ::omsk::Omsk
 ::rezh::Rezh
-::tara::Tara
 ::uray::Uray
-::anna::Anna
 ::arsk::Arsk
 ::asha::Asha
 ::azov::Azov
@@ -29599,7 +28415,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::iasi::Iasi
 ::doha::Doha
 ::fafe::Fafe
-::maia::Maia
 ::ovar::Ovar
 ::beja::Beja
 ::faro::Faro
@@ -29658,7 +28473,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::naga::Naga
 ::naic::Naic
 ::palo::Palo
-::pila::Pila
 ::sebu::Sebu
 ::suay::Suay
 ::taal::Taal
@@ -29666,13 +28480,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tupi::Tupi
 ::daru::Daru
 ::faaa::Faaa
-::lima::Lima
 ::mala::Mala
 ::puno::Puno
 ::jaén::Jaén
 ::saña::Saña
 ::virú::Virú
-::adam::Adam
 ::seeb::Seeb
 ::izki::Izki
 ::gaur::Gaur
@@ -29722,7 +28534,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ugep::Ugep
 ::yola::Yola
 ::zuru::Zuru
-::gaya::Gaya
 ::téra::Téra
 ::tete::Tete
 ::miri::Miri
@@ -29732,7 +28543,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::muar::Muar
 ::raub::Raub
 ::kuah::Kuah
-::león::León
 ::nava::Nava
 ::tala::Tala
 ::apan::Apan
@@ -29807,7 +28617,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::iwai::Iwai
 ::kamo::Kamo
 ::kazo::Kazo
-::kobe::Kobe
 ::kofu::Kofu
 ::koga::Koga
 ::kure::Kure
@@ -29843,7 +28652,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::gero::Gero
 ::yuza::Yuza
 ::zama::Zama
-::safi::Safi
 ::alba::Alba
 ::asti::Asti
 ::bari::Bari
@@ -29852,13 +28660,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::fano::Fano
 ::jesi::Jesi
 ::lido::Lido
-::lodi::Lodi
 ::lugo::Lugo
 ::meda::Meda
 ::noci::Noci
-::nola::Nola
 ::pisa::Pisa
-::rome::Rome
 ::sava::Sava
 ::sora::Sora
 ::enna::Enna
@@ -29870,7 +28675,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::azna::Azna
 ::bafq::Bafq
 ::fasa::Fasa
-::ilam::Ilam
 ::kish::Kish
 ::neka::Neka
 ::sari::Sari
@@ -29893,15 +28697,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::amod::Amod
 ::amta::Amta
 ::anta::Anta
-::aron::Aron
 ::arvi::Arvi
 ::ausa::Ausa
 ::bali::Bali
 ::barh::Barh
-::bari::Bari
 ::basi::Basi
 ::bedi::Bedi
-::bela::Bela
 ::bhor::Bhor
 ::bhuj::Bhuj
 ::bhum::Bhum
@@ -29912,7 +28713,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::durg::Durg
 ::egra::Egra
 ::elur::Elur
-::gaya::Gaya
 ::guna::Guna
 ::hajo::Hajo
 ::indi::Indi
@@ -29920,11 +28720,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::jind::Jind
 ::jora::Jora
 ::kadi::Kadi
-::kant::Kant
 ::kosi::Kosi
 ::kota::Kota
 ::kuju::Kuju
-::kulu::Kulu
 ::loni::Loni
 ::mahe::Mahe
 ::maur::Maur
@@ -29932,7 +28730,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nawa::Nawa
 ::obra::Obra
 ::ozar::Ozar
-::okha::Okha
 ::orai::Orai
 ::pali::Pali
 ::phek::Phek
@@ -29956,7 +28753,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tura::Tura
 ::ooty::Ooty
 ::uran::Uran
-::vada::Vada
 ::vasa::Vasa
 ::vite::Vite
 ::wadi::Wadi
@@ -29964,7 +28760,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yafo::Yafo
 ::cork::Cork
 ::naas::Naas
-::baki::Baki
 ::batu::Batu
 ::bima::Bima
 ::cepu::Cepu
@@ -30014,20 +28809,16 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bath::Bath
 ::bury::Bury
 ::hull::Hull
-;::leek::Leek
 ::rhyl::Rhyl
 ::ryde::Ryde
-;::sale::Sale
 ::ware::Ware
 ::yate::Yate
-::york::York
 ::oyem::Oyem
 ::agde::Agde
 ::agen::Agen
 ::albi::Albi
 ::alès::Alès
 ::auch::Auch
-::avon::Avon
 ::bron::Bron
 ::caen::Caen
 ::dole::Dole
@@ -30068,8 +28859,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::amés::Amés
 ::gavà::Gavà
 ::irun::Irun
-::león::León
-::lugo::Lugo
 ::olot::Olot
 ::oria::Oria
 ::poio::Poio
@@ -30078,14 +28867,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ;::salt::Salt
 ::sama::Sama
 ::vigo::Vigo
-::adra::Adra
 ::aspe::Aspe
 ::baza::Baza
 ::calp::Calp
 ::coín::Coín
 ::elda::Elda
 ::inca::Inca
-::jaén::Jaén
 ::lepe::Lepe
 ::loja::Loja
 ::mula::Mula
@@ -30099,11 +28886,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::isna::Isna
 ::itsa::Itsa
 ::qina::Qina
-::tala::Tala
-::loja::Loja
 ::puyo::Puyo
 ::tena::Tena
-::mila::Mila
 ::oran::Oran
 ::azua::Azua
 ::baní::Baní
@@ -30144,10 +28928,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cheb::Cheb
 ;::most::Most
 ::zlín::Zlín
-::yara::Yara
 ::ipís::Ipís
 ::buga::Buga
-::cali::Cali
 ::chía::Chía
 ::tame::Tame
 ::tolú::Tolú
@@ -30182,16 +28964,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::qufu::Qufu
 ::wuda::Wuda
 ::wuhu::Wuhu
-::wuxi::Wuxi
 ::xihe::Xihe
 ::yima::Yima
 ::yuci::Yuci
 ::zibo::Zibo
 ::yuxi::Yuxi
-::aral::Aral
 ::hami::Hami
-::bali::Bali
-::bogo::Bogo
 ::buea::Buea
 ::edéa::Edéa
 ::loum::Loum
@@ -30211,15 +28989,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::onex::Onex
 ::thun::Thun
 ::boda::Boda
-::nola::Nola
-::bria::Bria
 ::ippy::Ippy
 ::beni::Beni
 ::buta::Buta
 ::goma::Goma
 ;::sake::Sake
-::amos::Amos
-::alma::Alma
 ::ajax::Ajax
 ::lida::Lida
 ::maun::Maun
@@ -30228,7 +29002,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bagé::Bagé
 ::buri::Buri
 ::catu::Catu
-::embu::Embu
 ::iaçu::Iaçu
 ::ibiá::Ibiá
 ::ijuí::Ijuí
@@ -30251,7 +29024,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::savé::Savé
 ::ruse::Ruse
 ::dori::Dori
-::kaya::Kaya
 ::yako::Yako
 ::asse::Asse
 ::boom::Boom
@@ -30270,20 +29042,16 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::baku::Baku
 ::quba::Quba
 ::ujar::Ujar
-::lara::Lara
 ::graz::Graz
 ::linz::Linz
 ::wels::Wels
-::vera::Vera
 ::azul::Azul
 ::goya::Goya
 ::soio::Soio
 ::uíge::Uíge
 ::luau::Luau
 ::fier::Fier
-;-------------------------------------------------------------------------------
 ; Personal hotkeys of github user: denolfe
-;-------------------------------------------------------------------------------
 ::intented::intended
 ::quetsiosn::questions
 ::quetsions::questions
@@ -30296,7 +29064,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::questsions::questions
 ::actally::actually
 ::labe::label
-::thansk::thanks
 ::thansks::thanks
 ::tahnk::thank
 ::develper::developer
@@ -30305,7 +29072,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pleae::please
 ::trae::trace
 ::oders::orders
-::belive::believe
 ::unelss::unless
 ::thaat::that
 ::crases::crashes
@@ -30329,7 +29095,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::wht::what
 ::hsas::has
 ::freigh::freight
-::pleae::please
 ::possibl::possible
 ::simiar::similar
 ::het::the
@@ -30390,7 +29155,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tak::take
 ::ofr::for
 ::seomthing::something
-::simiar::similar
 ::acse::case
 ::handlr::handler
 ::becauase::because
@@ -30424,7 +29188,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::plase::please
 ::graed::grayed
 ::tets::test
-::teh::the
 ::availabel::available
 ::unaable::unable
 ::attched::attached
@@ -30542,9 +29305,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::eht::the
 ::watns::wants
 ::abel::able
-::committment::commitment
 ::tble::table
-::custoemr::customer
 ::cahnges::changes
 ::tlak::talk
 ::quti::quit
@@ -30569,7 +29330,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::defualt::default
 ::componenets::components
 ::udpate::update
-::aer::are
 ::rae::are
 ::cuase::cause
 ::cuasing::causing
@@ -30598,9 +29358,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::apear::appear
 ::ugess::guess
 ::pritn::print
-::keybaord::keyboard
 ::whiel::while
-::purcahse::purchase
 ::instaed::instead
 ::pust::puts
 ::mena::mean
@@ -30655,21 +29413,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::accuonts::accounts
 ::mosue::mouse
 ::apge::page
-::ovid::void
 ::togetehr::together
 ::websotrm::webstorm
 ::moer::more
-::tutorila::tutorial
-::tyeps::types
-::ndoe::node
-::consol::console
-::otuline::outline
-::consoel::console
-::isntance::instance
-::wnidows::windows
-::accuonts::accounts
-::mosue::mouse
-::apge::page
 ::seelct::select
 ::somehwere::somewhere
 ::tseting::testing
@@ -30677,10 +29423,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dtae::date
 ::stakc::stack
 ::chacne::chance
-
-;------------------------------------------------------------------------------
 ; Permutations generated from the wordlist
-;------------------------------------------------------------------------------
 ::mimature::immature
 ::imamture::immature
 ::immtaure::immature
@@ -30709,7 +29452,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rPue::Prue
 ::Pure::Prue
 ::atble::table
-::tbale::table
 ::talbe::table
 ::lfoor::floor
 ::folor::floor
@@ -30818,7 +29560,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::entierly::entirely
 ::entirley::entirely
 ::atke::take
-::tkae::take
 ::afvorites::favorites
 ::fvaorites::favorites
 ::faovrites::favorites
@@ -30942,7 +29683,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::prehaps::perhaps
 ::pehraps::perhaps
 ::perahps::perhaps
-::perhpas::perhaps
 ::rtaining::training
 ::tarining::training
 ::trianing::training
@@ -31016,7 +29756,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ryoal::royal
 ::roayl::royal
 ::efatures::features
-::faetures::features
 ::fetaures::features
 ::feautres::features
 ::featrues::features
@@ -31193,7 +29932,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sandiwch::sandwich
 ::sandwcih::sandwich
 ::ewigh::weigh
-::wiegh::weigh
 ::wegih::weigh
 ::voerheard::overheard
 ::oevrheard::overheard
@@ -31319,8 +30057,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Chandelr::Chandler
 ::htings::things
 ::tihngs::things
-::thnigs::things
-::thigns::things
 ::cSully::Scully
 ::Suclly::Scully
 ::Scluly::Scully
@@ -31440,9 +30176,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cnacer::cancer
 ::cacner::cancer
 ::canecr::cancer
-::emant::meant
 ::maent::meant
-::menat::meant
 ::inghtmare::nightmare
 ::ngihtmare::nightmare
 ::nihgtmare::nightmare
@@ -31454,7 +30188,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nmub::numb
 ::omney::money
 ::mnoey::money
-::moeny::money
 ::eysterday's::yesterday's
 ::yseterday's::yesterday's
 ::yetserday's::yesterday's
@@ -31589,7 +30322,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::enetrtainment::entertainment
 ::entretainment::entertainment
 ::entetrainment::entertainment
-::enteratinment::entertainment
 ::entertianment::entertainment
 ::entertaniment::entertainment
 ::entertaimnent::entertainment
@@ -31614,7 +30346,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::isntead::instead
 ::intsead::instead
 ::insetad::instead
-::instaed::instead
 ::oRswell::Roswell
 ::Rsowell::Roswell
 ::Rowsell::Roswell
@@ -31709,9 +30440,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rejceted::rejected
 ::rejetced::rejected
 ::rejecetd::rejected
-::erally::really
-::raelly::really
-::relaly::really
 ::nulock::unlock
 ::ulnock::unlock
 ::unolck::unlock
@@ -31833,7 +30561,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::entwork::network
 ::ntework::network
 ::newtork::network
-::netowrk::network
 ::netwrok::network
 ::ohstile::hostile
 ::hsotile::hostile
@@ -31924,7 +30651,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::relationsihps::relationships
 ::relationshpis::relationships
 ::evry::very
-::vrey::very
 ::aevesdropping::eavesdropping
 ::evaesdropping::eavesdropping
 ::eaevsdropping::eavesdropping
@@ -31965,7 +30691,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::stmap::stamp
 ::lacohol::alcohol
 ::aclohol::alcohol
-::alochol::alcohol
 ::alchool::alcohol
 ::alcoohl::alcohol
 ::nisult::insult
@@ -32025,7 +30750,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::igmme::gimme
 ::gmime::gimme
 ::miage::image
-::iamge::image
 ::imgae::image
 ::rtas::rats
 ::oJrdan::Jordan
@@ -32250,7 +30974,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rterieve::retrieve
 ::rertieve::retrieve
 ::retireve::retrieve
-::retreive::retrieve
 ::retrivee::retrieve
 ::edcades::decades
 ::dceades::decades
@@ -32310,7 +31033,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::attentoin::attention
 ::own't::won't
 ::wno't::won't
-::wo'nt::won't
 ::csrambled::scrambled
 ::srcambled::scrambled
 ::scarmbled::scrambled
@@ -32390,7 +31112,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dsetroy::destroy
 ::detsroy::destroy
 ::desrtoy::destroy
-::destory::destroy
 ::uRpert::Rupert
 ::Rpuert::Rupert
 ::Rueprt::Rupert
@@ -32723,8 +31444,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kikcs::kicks
 ::hsip::ship
 ::sihp::ship
-::owrk::work
-::wrok::work
 ::tsat::stat
 ::satt::stat
 ::ocnsult::consult
@@ -32832,7 +31551,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lfit::lift
 ::rgoup::group
 ::gorup::group
-::gruop::group
 ::ocllar::collar
 ::clolar::collar
 ::colalr::collar
@@ -32871,7 +31589,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::visitaiton::visitation
 ::visitatoin::visitation
 ::owrd::word
-::wrod::word
 ::papear::appear
 ::apepar::appear
 ::appaer::appear
@@ -33110,7 +31827,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::blod::bold
 ::ercall::recall
 ::rceall::recall
-::reacll::recall
 ::reclal::recall
 ::orbbery::robbery
 ::rbobery::robbery
@@ -33120,7 +31836,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cirb::crib
 ::lcosing::closing
 ::colsing::closing
-::clsoing::closing
 ::cloisng::closing
 ::closnig::closing
 ::iksses::kisses
@@ -33135,7 +31850,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ocmpany::company
 ::cmopany::company
 ::copmany::company
-::comapny::company
 ::compnay::company
 ::lfipped::flipped
 ::filpped::flipped
@@ -33304,7 +32018,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::reprseented::represented
 ::repreesnted::represented
 ::represneted::represented
-::represetned::represented
 ::represenetd::represented
 ::aCitlin::Caitlin
 ::Ciatlin::Caitlin
@@ -33378,7 +32091,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::warheouse::warehouse
 ::wareohuse::warehouse
 ::warehuose::warehouse
-::warehosue::warehouse
 ::ubnch::bunch
 ::bnuch::bunch
 ::bucnh::bunch
@@ -33628,7 +32340,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::spetcacular::spectacular
 ::specatcular::spectacular
 ::spectcaular::spectacular
-::spectauclar::spectacular
 ::spectacluar::spectacular
 ::spectacualr::spectacular
 ::uLcille::Lucille
@@ -33755,7 +32466,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sohuldn't::shouldn't
 ::shuoldn't::shouldn't
 ::sholudn't::shouldn't
-::shoudln't::shouldn't
 ::shoulnd't::shouldn't
 ::should'nt::shouldn't
 ::orde::rode
@@ -33992,7 +32702,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tatotos::tattoos
 ::tsart::start
 ::satrt::start
-::strat::start
 ::xeperimental::experimental
 ::epxerimental::experimental
 ::exeprimental::experimental
@@ -34369,7 +33078,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::preidctable::predictable
 ::predcitable::predictable
 ::preditcable::predictable
-::predicatble::predictable
 ::predictbale::predictable
 ::predictalbe::predictable
 ::ownt::wont
@@ -34411,7 +33119,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::screeinng::screening
 ::screennig::screening
 ::eprcentage::percentage
-::precentage::percentage
 ::pecrentage::percentage
 ::perecntage::percentage
 ::percnetage::percentage
@@ -34422,7 +33129,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::gtoten::gotten
 ::gotetn::gotten
 ::cshool::school
-::shcool::school
 ::scohol::school
 ::aHns::Hans
 ::Hnas::Hans
@@ -34532,8 +33238,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::awrd::ward
 ::wrad::ward
 ::esarch::search
-::saerch::search
-::serach::search
 ::seacrh::search
 ::amgazine::magazine
 ::mgaazine::magazine
@@ -34587,7 +33291,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::htis::hits
 ::esnior::senior
 ::sneior::senior
-::seinor::senior
 ::senoir::senior
 ::psears::spears
 ::separs::spears
@@ -34606,10 +33309,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::consisetnt::consistent
 ::consistnet::consistent
 ::rpoblem::problem
-::porblem::problem
 ::prbolem::problem
 ::prolbem::problem
-::probelm::problem
 ::amrco::marco
 ::mraco::marco
 ::macro::marco
@@ -34851,7 +33552,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::fagogt::faggot
 ::ubndle::bundle
 ::bnudle::bundle
-::budnle::bundle
 ::bunlde::bundle
 ::ofrbid::forbid
 ::frobid::forbid
@@ -34918,7 +33618,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::spkoen::spoken
 ::spoekn::spoken
 ::ugarantees::guarantees
-::gaurantees::guarantees
 ::guraantees::guarantees
 ::guaarntees::guarantees
 ::guarnatees::guarantees
@@ -34974,7 +33673,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::setroids::steroids
 ::streoids::steroids
 ::steorids::steroids
-::steriods::steroids
 ::sterodis::steroids
 ::eben::been
 ::woner::owner
@@ -35013,7 +33711,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::presiedntial::presidential
 ::presidnetial::presidential
 ::presidetnial::presidential
-::presidenital::presidential
 ::presidentail::presidential
 ::oLuis::Louis
 ::Luois::Louis
@@ -35137,7 +33834,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::essnetial::essential
 ::essetnial::essential
 ::essenital::essential
-::essentail::essential
 ::lpates::plates
 ::paltes::plates
 ::pltaes::plates
@@ -35477,8 +34173,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ibng::bing
 ::bnig::bing
 ::rfiends::friends
-::firends::friends
-::freinds::friends
 ::frineds::friends
 ::friedns::friends
 ::opssibly::possibly
@@ -35546,7 +34240,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tatached::attached
 ::atatched::attached
 ::attcahed::attached
-::attahced::attached
 ::attacehd::attached
 ::aSndburg::Sandburg
 ::Snadburg::Sandburg
@@ -35565,7 +34258,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mtoor::motor
 ::mootr::motor
 ::ugard::guard
-::gaurd::guard
 ::gurad::guard
 ::nisane::insane
 ::isnane::insane
@@ -35615,7 +34307,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Am'ys::Amy's
 ::rdink::drink
 ::dirnk::drink
-::drnik::drink
 ::etar::tear
 ::taer::tear
 ::onnetheless::nonetheless
@@ -35630,7 +34321,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::edstined::destined
 ::dsetined::destined
 ::detsined::destined
-::desitned::destined
 ::destnied::destined
 ::destiend::destined
 ::rpices::prices
@@ -35642,7 +34332,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::meida::media
 ::oding::doing
 ::diong::doing
-::donig::doing
 ::etnsion::tension
 ::tnesion::tension
 ::tesnion::tension
@@ -35703,9 +34392,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rehearasl::rehearsal
 ::gaainst::against
 ::aaginst::against
-::agianst::against
-::aganist::against
-::agaisnt::against
 ::hwew::whew
 ::wehw::whew
 ::qsueeze::squeeze
@@ -35715,7 +34401,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::osldiers::soldiers
 ::slodiers::soldiers
 ::sodliers::soldiers
-::soliders::soldiers
 ::soldeirs::soldiers
 ::soldires::soldiers
 ::idseases::diseases
@@ -35755,7 +34440,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pecahes::peaches
 ::peahces::peaches
 ::peacehs::peaches
-::baout::about
 ::aobut::about
 ::abuot::about
 ::idsappeared::disappeared
@@ -35817,8 +34501,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::guiena::guinea
 ::htanks::thanks
 ::tahnks::thanks
-::thnaks::thanks
-::thakns::thanks
 ::ocncerning::concerning
 ::cnocerning::concerning
 ::cocnerning::concerning
@@ -36008,7 +34690,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ysesir::yessir
 ::yesisr::yessir
 ::opems::poems
-::peoms::poems
 ::pomes::poems
 ::oMlly's::Molly's
 ::Mloly's::Molly's
@@ -36023,12 +34704,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::trian::train
 ::nuiversity::university
 ::uinversity::university
-::unviersity::university
 ::unievrsity::university
 ::univresity::university
 ::univesrity::university
-::univeristy::university
-::universtiy::university
 ::rDucilla::Drucilla
 ::Durcilla::Drucilla
 ::Drcuilla::Drucilla
@@ -36179,7 +34857,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::atpped::tapped
 ::tpaped::tapped
 ::tapepd::tapped
-::iwll::will
 ::wlil::will
 ::eRva::Reva
 ::Rvea::Reva
@@ -36260,7 +34937,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::eprsonality::personality
 ::presonality::personality
 ::pesronality::personality
-::perosnality::personality
 ::persnoality::personality
 ::persoanlity::personality
 ::personlaity::personality
@@ -36376,7 +35052,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::umsical::musical
 ::msuical::musical
 ::muiscal::musical
-::muscial::musical
 ::musiacl::musical
 ::eLster::Lester
 ::Lseter::Lester
@@ -36398,8 +35073,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::uymmy::yummy
 ::ymumy::yummy
 ::atkes::takes
-::tkaes::takes
-::taeks::takes
 ::nuderwear::underwear
 ::udnerwear::underwear
 ::unedrwear::underwear
@@ -36413,7 +35086,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::decnecy::decency
 ::dececny::decency
 ::rboke::broke
-::borke::broke
 ::brkoe::broke
 ::ifreplace::fireplace
 ::frieplace::fireplace
@@ -36717,7 +35389,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Larua's::Laura's
 ::Lauar's::Laura's
 ::Laur'as::Laura's
-::eyar::year
 ::yaer::year
 ::ermembering::remembering
 ::rmeembering::remembering
@@ -36787,7 +35458,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::comumnication::communication
 ::commnuication::communication
 ::commuincation::communication
-::communciation::communication
 ::communiaction::communication
 ::communictaion::communication
 ::communicaiton::communication
@@ -36920,7 +35590,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::brage::barge
 ::bagre::barge
 ::esizure::seizure
-::siezure::seizure
 ::seziure::seizure
 ::seiuzre::seizure
 ::seizrue::seizure
@@ -36983,7 +35652,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::covnenient::convenient
 ::conevnient::convenient
 ::convneient::convenient
-::conveinent::convenient
 ::conveneint::convenient
 ::conveninet::convenient
 ::esntinel::sentinel
@@ -37027,9 +35695,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sehll::shell
 ::shlel::shell
 ::pudate::update
-::udpate::update
 ::upadte::update
-::updtae::update
 ::otpion::option
 ::opiton::option
 ::optoin::option
@@ -37079,8 +35745,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sensitvie::sensitive
 ::odesn't::doesn't
 ::deosn't::doesn't
-::dosen't::doesn't
-::doens't::doesn't
 ::does'nt::doesn't
 ::nidividuals::individuals
 ::idnividuals::individuals
@@ -37095,7 +35759,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cretain::certain
 ::cetrain::certain
 ::ceratin::certain
-::certian::certain
 ::rcunch::crunch
 ::curnch::crunch
 ::crnuch::crunch
@@ -37188,7 +35851,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::erview::review
 ::rveiew::review
 ::reivew::review
-::reveiw::review
 ::idsconnected::disconnected
 ::dsiconnected::disconnected
 ::dicsonnected::disconnected
@@ -37465,7 +36127,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::carrtos::carrots
 ::ilnes::lines
 ::lnies::lines
-::liens::lines
 ::irtuals::rituals
 ::rtiuals::rituals
 ::riutals::rituals
@@ -37479,7 +36140,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::brun::burn
 ::ihnt::hint
 ::hnit::hint
-::ehre::here
 ::hree::here
 ::rcash::crash
 ::carsh::crash
@@ -37495,7 +36155,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::uqestions::questions
 ::qeustions::questions
 ::qusetions::questions
-::quetsions::questions
 ::quesitons::questions
 ::questoins::questions
 ::questinos::questions
@@ -37667,7 +36326,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::evnironmental::environmental
 ::enivronmental::environmental
 ::envrionmental::environmental
-::enviornmental::environmental
 ::envirnomental::environmental
 ::enviromnental::environmental
 ::environemntal::environmental
@@ -37739,7 +36397,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::eblieve::believe
 ::bleieve::believe
 ::beileve::believe
-::beleive::believe
 ::belivee::believe
 ::noion::onion
 ::oinon::onion
@@ -37791,7 +36448,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Caremn::Carmen
 ::hteir::their
 ::tehir::their
-::thier::their
 ::eneding::needing
 ::nedeing::needing
 ::neeidng::needing
@@ -37962,7 +36618,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::usulaly::usually
 ::elarn::learn
 ::laern::learn
-::leran::learn
 ::gareed::agreed
 ::argeed::agreed
 ::agered::agreed
@@ -37993,7 +36648,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cnoceived::conceived
 ::cocneived::conceived
 ::conecived::conceived
-::concieved::conceived
 ::concevied::conceived
 ::conceievd::conceived
 ::osmebody's::somebody's
@@ -38079,10 +36733,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::snaek::sneak
 ::xechange::exchange
 ::ecxhange::exchange
-::exhcange::exchange
 ::excahnge::exchange
 ::exchnage::exchange
-::exchagne::exchange
 ::ehavens::heavens
 ::haevens::heavens
 ::hevaens::heavens
@@ -38140,7 +36792,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::obmb::bomb
 ::bmob::bomb
 ::eprmission::permission
-::premission::permission
 ::pemrission::permission
 ::perimssion::permission
 ::permsision::permission
@@ -38156,7 +36807,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::camreas::cameras
 ::camears::cameras
 ::ugaranteed::guaranteed
-::gauranteed::guaranteed
 ::guraanteed::guaranteed
 ::guaarnteed::guaranteed
 ::guarnateed::guaranteed
@@ -38214,7 +36864,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bulff::bluff
 ::blfuf::bluff
 ::rwiting::writing
-::wirting::writing
 ::wrtiing::writing
 ::wriitng::writing
 ::writnig::writing
@@ -38245,7 +36894,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ytpical::typical
 ::tpyical::typical
 ::tyipcal::typical
-::typcial::typical
 ::typiacl::typical
 ::atctics::tactics
 ::tcatics::tactics
@@ -38395,8 +37043,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Amercia's::America's
 ::Ameriac's::America's
 ::Americ'as::America's
-::amkes::makes
-::mkaes::makes
 ::maeks::makes
 ::olnging::longing
 ::lnoging::longing
@@ -38761,7 +37407,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nuderground::underground
 ::udnerground::underground
 ::unedrground::underground
-::undreground::underground
 ::undegrround::underground
 ::underrgound::underground
 ::undergorund::underground
@@ -38917,7 +37562,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::proecdure::procedure
 ::procdeure::procedure
 ::proceudre::procedure
-::procedrue::procedure
 ::awsting::wasting
 ::wsating::wasting
 ::watsing::wasting
@@ -38950,11 +37594,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rgow::grow
 ::gorw::grow
 ::uqestion::question
-::qeustion::question
 ::qusetion::question
-::quetsion::question
 ::quesiton::question
-::questoin::question
 ::tatractive::attractive
 ::atrtactive::attractive
 ::attarctive::attractive
@@ -39103,7 +37744,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Bevrely::Beverly
 ::Bevelry::Beverly
 ::opem::poem
-::peom::poem
 ::nivisible::invisible
 ::ivnisible::invisible
 ::inivsible::invisible
@@ -39162,7 +37802,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ofllowing::following
 ::flolowing::following
 ::fololwing::following
-::follwoing::following
 ::folloiwng::following
 ::follownig::following
 ::rceam::cream
@@ -39364,7 +38003,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::shutlte::shuttle
 ::idfferent::different
 ::dfiferent::different
-::difefrent::different
 ::diffreent::different
 ::diffeernt::different
 ::differnet::different
@@ -39377,8 +38015,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dcoument::document
 ::doucment::document
 ::docmuent::document
-::docuemnt::document
-::documnet::document
 ::sesentially::essentially
 ::esesntially::essentially
 ::essnetially::essentially
@@ -39389,9 +38025,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::erach::reach
 ::raech::reach
 ::recah::reach
-::owrking::working
-::wroking::working
-::wokring::working
 ::worikng::working
 ::worknig::working
 ::uhnting::hunting
@@ -39426,7 +38059,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ctuter::cutter
 ::cutetr::cutter
 ::adte::date
-::dtae::date
 ::aJn's::Jan's
 ::Jna's::Jan's
 ::Ja'ns::Jan's
@@ -39445,8 +38077,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::satre::stare
 ::strae::stare
 ::tsyle::style
-::sytle::style
-::stlye::style
 ::kSye's::Skye's
 ::Syke's::Skye's
 ::Skey's::Skye's
@@ -39479,7 +38109,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cuhck::chuck
 ::chcuk::chuck
 ::ehlp::help
-::hlep::help
 ::aMris::Maris
 ::Mrais::Maris
 ::Mairs::Maris
@@ -39626,7 +38255,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dsiplay::display
 ::dipslay::display
 ::dislpay::display
-::dispaly::display
 ::opof::poof
 ::msashing::smashing
 ::samshing::smashing
@@ -39678,9 +38306,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::albor::labor
 ::lbaor::labor
 ::laobr::labor
-::eyars::years
 ::yaers::years
-::yeras::years
 ::nsiff::sniff
 ::sinff::sniff
 ::snfif::sniff
@@ -39713,9 +38339,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Abigial's::Abigail's
 ::Abigali's::Abigail's
 ::Abigai'ls::Abigail's
-::oging::going
-::giong::going
-::gonig::going
 ::lbiss::bliss
 ::bilss::bliss
 ::blsis::bliss
@@ -39751,12 +38374,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::potateos::potatoes
 ::ivsible::visible
 ::vsiible::visible
-::viisble::visible
 ::visbile::visible
 ::visilbe::visible
 ::edtails::details
 ::dteails::details
-::deatils::details
 ::detials::details
 ::detalis::details
 ::urles::rules
@@ -39829,7 +38450,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cneturies::centuries
 ::cetnuries::centuries
 ::cenutries::centuries
-::centruies::centuries
 ::centuires::centuries
 ::centureis::centuries
 ::edbt::debt
@@ -39996,7 +38616,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::judigng::judging
 ::judgnig::judging
 ::ujst::just
-::jsut::just
 ::rpisoner::prisoner
 ::pirsoner::prisoner
 ::prsioner::prisoner
@@ -40083,13 +38702,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::erlieved::relieved
 ::rleieved::relieved
 ::reileved::relieved
-::releived::relieved
 ::reliveed::relieved
 ::relieevd::relieved
 ::ahrm::harm
 ::hram::harm
 ::oyur::your
-::yuor::your
 ::ikdney::kidney
 ::kdiney::kidney
 ::kindey::kidney
@@ -40360,7 +38977,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::adventrue::adventure
 ::rfiend::friend
 ::firend::friend
-::freind::friend
 ::frined::friend
 ::apradise::paradise
 ::praadise::paradise
@@ -40439,7 +39055,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::eblieves::believes
 ::bleieves::believes
 ::beileves::believes
-::beleives::believes
 ::belivees::believes
 ::belieevs::believes
 ::esriously::seriously
@@ -40666,8 +39281,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ehars::hears
 ::haers::hears
 ::heras::hears
-::htis::this
-::tihs::this
 ::ysrup::syrup
 ::sryup::syrup
 ::syurp::syrup
@@ -40733,7 +39346,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hcairman::chairman
 ::cahirman::chairman
 ::chiarman::chairman
-::chariman::chairman
 ::chaimran::chairman
 ::chairamn::chairman
 ::aPrker::Parker
@@ -40762,7 +39374,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::regretetd::regretted
 ::rfiendly::friendly
 ::firendly::friendly
-::freindly::friendly
 ::frinedly::friendly
 ::friednly::friendly
 ::frienldy::friendly
@@ -40837,7 +39448,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ermove::remove
 ::rmeove::remove
 ::reomve::remove
-::remvoe::remove
 ::rpofit::profit
 ::porfit::profit
 ::prfoit::profit
@@ -40944,7 +39554,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::curoius::curious
 ::curiuos::curious
 ::nkows::knows
-::konws::knows
 ::knwos::knows
 ::rToy::Troy
 ::Tory::Troy
@@ -41039,7 +39648,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::chamipon::champion
 ::champoin::champion
 ::laso::also
-::aslo::also
 ::rdowning::drowning
 ::dorwning::drowning
 ::drwoning::drowning
@@ -41057,7 +39665,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hahhh::ahhhh
 ::htird::third
 ::tihrd::third
-::thrid::third
 ::tsupid::stupid
 ::sutpid::stupid
 ::stpuid::stupid
@@ -41232,7 +39839,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pleasnat::pleasant
 ::tsand::stand
 ::satnd::stand
-::stnad::stand
 ::lbueberry::blueberry
 ::buleberry::blueberry
 ::bleuberry::blueberry
@@ -41244,8 +39850,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Loiuse::Louise
 ::Lousie::Louise
 ::hcange::change
-::cahnge::change
-::chnage::change
 ::chagne::change
 ::ubgged::bugged
 ::bguged::bugged
@@ -41303,8 +39907,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::crwaled::crawled
 ::cralwed::crawled
 ::craweld::crawled
-::amking::making
-::mkaing::making
 ::maikng::making
 ::maknig::making
 ::amrital::marital
@@ -41465,7 +40067,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::eblief::belief
 ::bleief::belief
 ::beilef::belief
-::beleif::belief
 ::neergy::energy
 ::eenrgy::energy
 ::enregy::energy
@@ -41578,13 +40179,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::immedaitely::immediately
 ::immeditaely::immediately
 ::immediaetly::immediately
-::immediatley::immediately
 ::hcose::chose
 ::cohse::chose
 ::chsoe::chose
 ::iknda::kinda
 ::knida::kinda
-::kidna::kinda
 ::abre::bare
 ::brae::bare
 ::emter::meter
@@ -41627,7 +40226,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sasociated::associated
 ::asosciated::associated
 ::asscoiated::associated
-::assoicated::associated
 ::assocaited::associated
 ::associtaed::associated
 ::associaetd::associated
@@ -42051,7 +40649,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cocasion::occasion
 ::ocacsion::occasion
 ::occsaion::occasion
-::occaison::occasion
 ::occasoin::occasion
 ::afults::faults
 ::fualts::faults
@@ -42374,7 +40971,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ifght::fight
 ::fgiht::fight
 ::fihgt::fight
-::owuld::would
 ::wuold::would
 ::wolud::would
 ::onnsense::nonsense
@@ -42460,7 +41056,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::puinsh::punish
 ::punsih::punish
 ::ipece::piece
-::peice::piece
 ::picee::piece
 ::abke::bake
 ::bkae::bake
@@ -42547,7 +41142,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::screaimng::screaming
 ::screamnig::screaming
 ::ince::nice
-::ncie::nice
 ::uqarter::quarter
 ::qaurter::quarter
 ::qurater::quarter
@@ -42700,13 +41294,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::htinking::thinking
 ::tihnking::thinking
 ::thniking::thinking
-::thikning::thinking
 ::thinikng::thinking
 ::thinknig::thinking
 ::hsort::short
 ::sohrt::short
 ::shrot::short
-::efel::feel
 ::ovlume::volume
 ::vloume::volume
 ::voulme::volume
@@ -42858,7 +41450,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::aggresisve::aggressive
 ::aggressvie::aggressive
 ::ehir::heir
-::hier::heir
 ::etenager::teenager
 ::teneager::teenager
 ::teeanger::teenager
@@ -42919,7 +41510,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Dvais::Davis
 ::Daivs::Davis
 ::actegory::category
-::ctaegory::category
 ::caetgory::category
 ::catgeory::category
 ::cateogry::category
@@ -42975,7 +41565,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::aamteur::amateur
 ::amtaeur::amateur
 ::amaetur::amateur
-::amatuer::amateur
 ::nkowing::knowing
 ::konwing::knowing
 ::knwoing::knowing
@@ -43012,7 +41601,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::csaualties::casualties
 ::causalties::casualties
 ::casaulties::casualties
-::casulaties::casualties
 ::casuatlies::casualties
 ::casualites::casualties
 ::casualteis::casualties
@@ -43025,7 +41613,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::enar::near
 ::naer::near
 ::hcat::chat
-::caht::chat
 ::voerride::override
 ::oevrride::override
 ::ovreride::override
@@ -43216,7 +41803,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bidrs::birds
 ::nidustry::industry
 ::idnustry::industry
-::inudstry::industry
 ::indsutry::industry
 ::indutsry::industry
 ::indusrty::industry
@@ -43276,7 +41862,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::partciular::particular
 ::partiuclar::particular
 ::particluar::particular
-::particualr::particular
 ::fofering::offering
 ::ofefring::offering
 ::offreing::offering
@@ -43325,7 +41910,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::eblieved::believed
 ::bleieved::believed
 ::beileved::believed
-::beleived::believed
 ::beliveed::believed
 ::belieevd::believed
 ::escurity::security
@@ -43377,7 +41961,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::remian::remain
 ::htief::thief
 ::tihef::thief
-::theif::thief
 ::ests::sets
 ::stes::sets
 ::ysringe::syringe
@@ -43659,7 +42242,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::jbos::jobs
 ::lAlen::Allen
 ::Aleln::Allen
-::hten::then
 ::tehn::then
 ::aRth::Rath
 ::Rtah::Rath
@@ -43887,7 +42469,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cehmical::chemical
 ::chmeical::chemical
 ::cheimcal::chemical
-::chemcial::chemical
 ::chemiacl::chemical
 ::olss::loss
 ::lsos::loss
@@ -44096,7 +42677,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lsips::slips
 ::silps::slips
 ::slpis::slips
-::htem::them
 ::tehm::them
 ::amnticore::manticore
 ::mnaticore::manticore
@@ -44227,7 +42807,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::selcetion::selection
 ::seletcion::selection
 ::seleciton::selection
-::selectoin::selection
 ::oroms::rooms
 ::romos::rooms
 ::ocncept::concept
@@ -44309,7 +42888,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ogtcha::gotcha
 ::gtocha::gotcha
 ::goctha::gotcha
-::gothca::gotcha
 ::yeeballs::eyeballs
 ::eeyballs::eyeballs
 ::eybealls::eyeballs
@@ -44429,7 +43007,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::htinks::thinks
 ::tihnks::thinks
 ::thniks::thinks
-::thikns::thinks
 ::arnk::rank
 ::rnak::rank
 ::erquests::requests
@@ -44565,7 +43142,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::electirc::electric
 ::gaain::again
 ::aagin::again
-::agian::again
 ::acppuccino::cappuccino
 ::cpapuccino::cappuccino
 ::capupccino::cappuccino
@@ -44802,7 +43378,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::emotioanlly::emotionally
 ::emotionlaly::emotionally
 ::niterested::interested
-::itnerested::interested
 ::inetrested::interested
 ::intreested::interested
 ::inteersted::interested
@@ -44826,7 +43401,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sutdent::student
 ::stduent::student
 ::stuednt::student
-::studnet::student
 ::ocmplicated::complicated
 ::cmoplicated::complicated
 ::copmlicated::complicated
@@ -44854,13 +43428,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::confronetd::confronted
 ::ucstomer::customer
 ::csutomer::customer
-::cutsomer::customer
-::cusotmer::customer
 ::custmoer::customer
-::custoemr::customer
-::hting::thing
 ::tihng::thing
-::thnig::thing
 ::efather::feather
 ::faether::feather
 ::fetaher::feather
@@ -45324,7 +43893,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mvoed::moved
 ::moevd::moved
 ::atlk::talk
-::tlak::talk
 ::idrectors::directors
 ::driectors::directors
 ::dierctors::directors
@@ -45540,7 +44108,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Seirra::Sierra
 ::Sirera::Sierra
 ::niterests::interests
-::itnerests::interests
 ::inetrests::interests
 ::intreests::interests
 ::inteersts::interests
@@ -45838,7 +44405,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::stealnig::stealing
 ::hsield::shield
 ::siheld::shield
-::sheild::shield
 ::shiled::shield
 ::nifant::infant
 ::ifnant::infant
@@ -45860,8 +44426,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::laready::already
 ::arleady::already
 ::alerady::already
-::alraedy::already
-::alreday::already
 ::rgatitude::gratitude
 ::gartitude::gratitude
 ::grtaitude::gratitude
@@ -45891,11 +44455,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Dreek::Derek
 ::Deerk::Derek
 ::opsition::position
-::psoition::position
 ::poistion::position
-::postiion::position
 ::posiiton::position
-::positoin::position
 ::lcassroom::classroom
 ::calssroom::classroom
 ::clsasroom::classroom
@@ -45942,7 +44503,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::atatck::attack
 ::attcak::attack
 ::htrough::through
-::trhough::through
 ::thorugh::through
 ::thruogh::through
 ::throguh::through
@@ -46024,7 +44584,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ucrl::curl
 ::crul::curl
 ::etsted::tested
-::tseted::tested
 ::tetsed::tested
 ::tesetd::tested
 ::etstify::testify
@@ -46120,7 +44679,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::asron::arson
 ::arosn::arson
 ::noes::ones
-::oens::ones
 ::emssy::messy
 ::msesy::messy
 ::esctor::sector
@@ -46286,8 +44844,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::attmepts::attempts
 ::attepmts::attempts
 ::attemtps::attempts
-::hwat::what
-::waht::what
 ::ocmfortable::comfortable
 ::cmofortable::comfortable
 ::cofmortable::comfortable
@@ -46562,7 +45118,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::doucments::documents
 ::docmuents::documents
 ::docuemnts::documents
-::documnets::documents
 ::documetns::documents
 ::rgoceries::groceries
 ::gorceries::groceries
@@ -46668,7 +45223,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::disehs::dishes
 ::lcose::close
 ::colse::close
-::clsoe::close
 ::aMddie::Maddie
 ::Mdadie::Maddie
 ::Madide::Maddie
@@ -46679,7 +45233,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bnuny::bunny
 ::cacounts::accounts
 ::acocunts::accounts
-::accuonts::accounts
 ::acconuts::accounts
 ::accoutns::accounts
 ::idtch::ditch
@@ -46724,7 +45277,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::asfety::safety
 ::sfaety::safety
 ::saefty::safety
-::saftey::safety
 ::rcimes::crimes
 ::cirmes::crimes
 ::crmies::crimes
@@ -46732,7 +45284,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ocmpanies::companies
 ::cmopanies::companies
 ::copmanies::companies
-::comapnies::companies
 ::compnaies::companies
 ::compaines::companies
 ::companeis::companies
@@ -46870,7 +45421,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::newset::newest
 ::csript::script
 ::srcipt::script
-::scirpt::script
 ::scrpit::script
 ::elase::lease
 ::laese::lease
@@ -47001,8 +45551,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::excsued::excused
 ::excuesd::excused
 ::tsory::story
-::sotry::story
-::stroy::story
 ::mabrosia::ambrosia
 ::abmrosia::ambrosia
 ::amrbosia::ambrosia
@@ -47027,7 +45575,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::finsih::finish
 ::igven::given
 ::gvien::given
-::gievn::given
 ::tsalker::stalker
 ::satlker::stalker
 ::stlaker::stalker
@@ -47168,7 +45715,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Davidosn::Davidson
 ::tsructure::structure
 ::srtucture::structure
-::sturcture::structure
 ::strcuture::structure
 ::strutcure::structure
 ::strucutre::structure
@@ -47182,7 +45728,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kliler::killer
 ::kilelr::killer
 ::cacount::account
-::acocunt::account
 ::accuont::account
 ::acconut::account
 ::ifve::five
@@ -47363,7 +45908,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ofreign::foreign
 ::froeign::foreign
 ::foerign::foreign
-::foriegn::foreign
 ::foregin::foreign
 ::hwacked::whacked
 ::wahcked::whacked
@@ -47556,7 +46100,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yuors::yours
 ::yorus::yours
 ::ivew::view
-::veiw::view
 ::ubzzing::buzzing
 ::bzuzing::buzzing
 ::buzizng::buzzing
@@ -47623,7 +46166,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rtying::trying
 ::tyring::trying
 ::triyng::trying
-::trynig::trying
 ::owrld's::world's
 ::wrold's::world's
 ::wolrd's::world's
@@ -47696,7 +46238,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tsudio::studio
 ::sutdio::studio
 ::stduio::studio
-::stuido::studio
 ::acller::caller
 ::claler::caller
 ::calelr::caller
@@ -47764,7 +46305,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::oduble::double
 ::duoble::double
 ::dobule::double
-::doulbe::double
 ::esrvice::service
 ::srevice::service
 ::sevrice::service
@@ -47789,7 +46329,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::presidetns::presidents
 ::naswered::answered
 ::asnwered::answered
-::anwsered::answered
 ::ansewred::answered
 ::answreed::answered
 ::answeerd::answered
@@ -47814,7 +46353,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::prot::port
 ::nuless::unless
 ::ulness::unless
-::unelss::unless
 ::unlses::unless
 ::adtes::dates
 ::dtaes::dates
@@ -47923,7 +46461,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Stefaon's::Stefano's
 ::Stefan'os::Stefano's
 ::hcaracters::characters
-::cahracters::characters
 ::chraacters::characters
 ::chaarcters::characters
 ::charcaters::characters
@@ -47986,7 +46523,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::psecies::species
 ::sepcies::species
 ::spceies::species
-::speices::species
 ::speceis::species
 ::adisy::daisy
 ::diasy::daisy
@@ -48030,7 +46566,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::soemwhat::somewhat
 ::somwehat::somewhat
 ::somehwat::somewhat
-::somewaht::somewhat
 ::iwpe::wipe
 ::wpie::wipe
 ::msashed::smashed
@@ -48071,7 +46606,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::awnna::wanna
 ::wnana::wanna
 ::opetry::poetry
-::peotry::poetry
 ::potery::poetry
 ::poerty::poetry
 ::agme::game
@@ -48100,7 +46634,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::descrpition::description
 ::descritpion::description
 ::descripiton::description
-::descriptoin::description
 ::ocnfident::confident
 ::cnofident::confident
 ::cofnident::confident
@@ -48304,7 +46837,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::temeprature::temperature
 ::tempreature::temperature
 ::tempearture::temperature
-::tempertaure::temperature
 ::temperautre::temperature
 ::temperatrue::temperature
 ::rtansfer::transfer
@@ -48420,7 +46952,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::wohm::whom
 ::hcief::chief
 ::cihef::chief
-::cheif::chief
 ::iklled::killed
 ::kliled::killed
 ::kileld::killed
@@ -48524,7 +47055,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::physiacl::physical
 ::qsuare::square
 ::suqare::square
-::sqaure::square
 ::squrae::square
 ::onvel::novel
 ::nvoel::novel
@@ -48654,7 +47184,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::angles::angels
 ::ewek::week
 ::epriod::period
-::preiod::period
 ::peirod::period
 ::peroid::period
 ::aCroline::Caroline
@@ -48734,7 +47263,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yourslef::yourself
 ::ubsinessman::businessman
 ::bsuinessman::businessman
-::buisnessman::businessman
 ::busniessman::businessman
 ::busienssman::businessman
 ::businsesman::businessman
@@ -48922,7 +47450,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::babysittnig::babysitting
 ::omuse::mouse
 ::muose::mouse
-::mosue::mouse
 ::alke::lake
 ::lkae::lake
 ::uqest::quest
@@ -48967,8 +47494,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::watis::waits
 ::rfeed::freed
 ::fered::freed
-::ahve::have
-::hvae::have
 ::atngled::tangled
 ::tnagled::tangled
 ::tagnled::tangled
@@ -49016,7 +47541,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::crimianl::criminal
 ::ysmptoms::symptoms
 ::smyptoms::symptoms
-::sypmtoms::symptoms
 ::symtpoms::symptoms
 ::sympotms::symptoms
 ::symptmos::symptoms
@@ -49046,7 +47570,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::chians::chains
 ::chanis::chains
 ::hceck::check
-::cehck::check
 ::chcek::check
 ::ikssed::kissed
 ::ksised::kissed
@@ -49168,7 +47691,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lgobal::global
 ::golbal::global
 ::glboal::global
-::gloabl::global
 ::hcildish::childish
 ::cihldish::childish
 ::chlidish::childish
@@ -49204,7 +47726,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Eri'cs::Eric's
 ::lcearly::clearly
 ::celarly::clearly
-::claerly::clearly
 ::cleraly::clearly
 ::clealry::clearly
 ::edlay::delay
@@ -49215,8 +47736,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::fraekin::freakin
 ::frekain::freakin
 ::freaikn::freakin
-::amke::make
-::mkae::make
 ::ejopardize::jeopardize
 ::joepardize::jeopardize
 ::jepoardize::jeopardize
@@ -49269,7 +47788,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::illnses::illness
 ::peisode::episode
 ::eipsode::episode
-::epsiode::episode
 ::epiosde::episode
 ::episdoe::episode
 ::erstaurants::restaurants
@@ -49316,7 +47834,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::psychoolgy::psychology
 ::psycholgoy::psychology
 ::olad::load
-::laod::load
 ::lbood::blood
 ::bolod::blood
 ::paophis::apophis
@@ -49466,7 +47983,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::inforamtion::information
 ::informtaion::information
 ::informaiton::information
-::informatoin::information
 ::raranged::arranged
 ::ararnged::arranged
 ::arrnaged::arranged
@@ -49565,7 +48081,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::owuldn't::wouldn't
 ::wuoldn't::wouldn't
 ::woludn't::wouldn't
-::woudln't::wouldn't
 ::woulnd't::wouldn't
 ::would'nt::wouldn't
 ::ogons::goons
@@ -49829,7 +48344,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rseearch::research
 ::reesarch::research
 ::resaerch::research
-::reserach::research
 ::reseacrh::research
 ::owunded::wounded
 ::wuonded::wounded
@@ -49997,7 +48511,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cocksukcer::cocksucker
 ::cocksucekr::cocksucker
 ::ofrmed::formed
-::fromed::formed
 ::fomred::formed
 ::foremd::formed
 ::adncing::dancing
@@ -50162,7 +48675,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::oculdn't::couldn't
 ::cuoldn't::couldn't
 ::coludn't::couldn't
-::coudln't::couldn't
 ::coulnd't::couldn't
 ::could'nt::couldn't
 ::aers::ears
@@ -50548,8 +49060,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::impuslive::impulsive
 ::impulisve::impulsive
 ::impulsvie::impulsive
-::hwere::where
-::wehre::where
 ::whree::where
 ::obzo::bozo
 ::bzoo::bozo
@@ -50578,12 +49088,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::crorupt::corrupt
 ::corurpt::corrupt
 ::corrput::corrupt
-::ahppen::happen
 ::hpapen::happen
 ::hapepn::happen
 ::asdness::sadness
 ::sdaness::sadness
-::sandess::sadness
 ::sadenss::sadness
 ::sadnses::sadness
 ::tsrength::strength
@@ -50591,14 +49099,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sterngth::strength
 ::strnegth::strength
 ::stregnth::strength
-::strentgh::strength
 ::ogose::goose
 ::gosoe::goose
 ::tsories::stories
 ::sotries::stories
 ::stroies::stories
 ::stoires::stories
-::storeis::stories
 ::rtauma::trauma
 ::taruma::trauma
 ::truama::trauma
@@ -50688,8 +49194,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::transporttaion::transportation
 ::transportaiton::transportation
 ::transportatoin::transportation
-::acse::case
-::csae::case
 ::diiotic::idiotic
 ::iidotic::idiotic
 ::idoitic::idiotic
@@ -50807,8 +49311,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::malibox::mailbox
 ::maiblox::mailbox
 ::mailobx::mailbox
-::htere::there
-::tehre::there
 ::ivsions::visions
 ::vsiions::visions
 ::viisons::visions
@@ -50843,7 +49345,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Detriot::Detroit
 ::isnce::since
 ::snice::since
-::sicne::since
 ::otuchy::touchy
 ::tuochy::touchy
 ::tocuhy::touchy
@@ -50938,11 +49439,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ilmo::limo
 ::lmio::limo
 ::ifelds::fields
-::feilds::fields
 ::fileds::fields
 ::fiedls::fields
 ::awnted::wanted
-::wnated::wanted
 ::watned::wanted
 ::wanetd::wanted
 ::urined::ruined
@@ -50967,9 +49466,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nruse::nurse
 ::nusre::nurse
 ::ojin::join
-::jion::join
 ::atking::taking
-::tkaing::taking
 ::taikng::taking
 ::taknig::taking
 ::nanoying::annoying
@@ -51022,7 +49519,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::iflls::fills
 ::flils::fills
 ::opwer::power
-::pwoer::power
 ::poewr::power
 ::uSnnydale::Sunnydale
 ::Snunydale::Sunnydale
@@ -51046,7 +49542,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sotfware::software
 ::sofwtare::software
 ::softawre::software
-::softwrae::software
 ::pslitting::splitting
 ::slpitting::splitting
 ::spiltting::splitting
@@ -51057,7 +49552,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ailen::alien
 ::alein::alien
 ::atlking::talking
-::tlaking::talking
 ::takling::talking
 ::talikng::talking
 ::talknig::talking
@@ -51155,7 +49649,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ivllain::villain
 ::vlilain::villain
 ::vilalin::villain
-::villian::villain
 ::abttle::battle
 ::btatle::battle
 ::batlte::battle
@@ -51366,7 +49859,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::capalbe::capable
 ::htieves::thieves
 ::tiheves::thieves
-::theives::thieves
 ::thivees::thieves
 ::thieevs::thieves
 ::lsippery::slippery
@@ -51399,7 +49891,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Princeotn::Princeton
 ::htose::those
 ::tohse::those
-::thsoe::those
 ::uhnter::hunter
 ::hnuter::hunter
 ::hutner::hunter
@@ -51460,7 +49951,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::garilc::garlic
 ::uesd::used
 ::eciling::ceiling
-::cieling::ceiling
 ::celiing::ceiling
 ::ceiilng::ceiling
 ::ceilnig::ceiling
@@ -51589,7 +50079,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::postopned::postponed
 ::postpnoed::postponed
 ::postpoend::postponed
-::hsould::should
 ::sohuld::should
 ::shuold::should
 ::sholud::should
@@ -51620,7 +50109,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ultiamtum::ultimatum
 ::ultimtaum::ultimatum
 ::ultimautm::ultimatum
-::htink::think
 ::tihnk::think
 ::thnik::think
 ::hsells::shells
@@ -51722,7 +50210,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nicekl::nickel
 ::dieas::ideas
 ::iedas::ideas
-::idaes::ideas
 ::otday's::today's
 ::tdoay's::today's
 ::toady's::today's
@@ -51835,7 +50322,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nocth::notch
 ::ubsiness::business
 ::bsuiness::business
-::buisness::business
 ::busniess::business
 ::busienss::business
 ::businses::business
@@ -51952,14 +50438,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::acorss::across
 ::acrsos::across
 ::ipcture::picture
-::pciture::picture
 ::pitcure::picture
 ::picutre::picture
 ::pictrue::picture
 ::naywhere::anywhere
 ::aynwhere::anywhere
 ::anwyhere::anywhere
-::anyhwere::anywhere
 ::anywehre::anywhere
 ::anywhree::anywhere
 ::icrcuit::circuit
@@ -52090,7 +50574,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::colud::cloud
 ::cluod::cloud
 ::rdeams::dreams
-::derams::dreams
 ::draems::dreams
 ::dremas::dreams
 ::ehllo::hello
@@ -52288,7 +50771,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::emre::mere
 ::mree::mere
 ::ahving::having
-::hvaing::having
 ::haivng::having
 ::havnig::having
 ::aHttie::Hattie
@@ -52330,7 +50812,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dney::deny
 ::osmeone::someone
 ::smoeone::someone
-::soemone::someone
 ::somoene::someone
 ::somenoe::someone
 ::ofundation::foundation
@@ -52466,7 +50947,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ercord::record
 ::rceord::record
 ::reocrd::record
-::recrod::record
 ::dadict::addict
 ::adidct::addict
 ::addcit::addict
@@ -52526,13 +51006,11 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Mornoe::Monroe
 ::Monore::Monroe
 ::nuderstand::understand
-::udnerstand::understand
 ::unedrstand::understand
 ::undrestand::understand
 ::undesrtand::understand
 ::undertsand::understand
 ::undersatnd::understand
-::understnad::understand
 ::amkeup::makeup
 ::mkaeup::makeup
 ::maekup::makeup
@@ -52735,7 +51213,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::stragiht::straight
 ::straihgt::straight
 ::omst::most
-::msot::most
 ::odors::doors
 ::doros::doors
 ::odgs::dogs
@@ -52862,7 +51339,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::taers::tears
 ::teras::tears
 ::rpovide::provide
-::porvide::provide
 ::prvoide::provide
 ::proivde::provide
 ::provdie::provide
@@ -52882,7 +51358,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::oNel::Noel
 ::Neol::Noel
 ::lpace::place
-::palce::place
 ::plcae::place
 ::awlked::walked
 ::wlaked::walked
@@ -53089,9 +51564,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::praallel::parallel
 ::paarllel::parallel
 ::parlalel::parallel
-::paralell::parallel
-::omre::more
-::mroe::more
 ::aRndall::Randall
 ::Rnadall::Randall
 ::Radnall::Randall
@@ -54017,7 +52489,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::logner::longer
 ::lonegr::longer
 ::asys::says
-::syas::says
 ::voer::over
 ::oevr::over
 ::ySdney::Sydney
@@ -54177,7 +52648,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::parodn::pardon
 ::ihmself::himself
 ::hmiself::himself
-::hismelf::himself
 ::himeslf::himself
 ::himslef::himself
 ::ewed::weed
@@ -54457,7 +52927,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::gaol::goal
 ::etmporarily::temporarily
 ::tmeporarily::temporarily
-::tepmorarily::temporarily
 ::temoprarily::temporarily
 ::temproarily::temporarily
 ::tempoarrily::temporarily
@@ -54503,7 +52972,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::punchnig::punching
 ::rgoups::groups
 ::gorups::groups
-::gruops::groups
 ::gropus::groups
 ::ocmfort::comfort
 ::cmofort::comfort
@@ -54553,8 +53021,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::onise::noise
 ::niose::noise
 ::nosie::noise
-::hwole::whole
-::wohle::whole
 ::whloe::whole
 ::nivite::invite
 ::ivnite::invite
@@ -54586,7 +53052,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::evrsion::version
 ::vresion::version
 ::vesrion::version
-::verison::version
 ::versoin::version
 ::ersist::resist
 ::rseist::resist
@@ -54732,7 +53197,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::eexcuted::executed
 ::exceuted::executed
 ::exeucted::executed
-::exectued::executed
 ::execuetd::executed
 ::hcaos::chaos
 ::cahos::chaos
@@ -54763,7 +53227,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::csience::science
 ::sicence::science
 ::sceince::science
-::scinece::science
 ::sciecne::science
 ::obmber::bomber
 ::bmober::bomber
@@ -54884,7 +53347,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::eblieving::believing
 ::bleieving::believing
 ::beileving::believing
-::beleiving::believing
 ::beliveing::believing
 ::belieivng::believing
 ::believnig::believing
@@ -54984,7 +53446,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::arther::rather
 ::rtaher::rather
 ::rahter::rather
-::ratehr::rather
 ::otol::tool
 ::iktten::kitten
 ::ktiten::kitten
@@ -55710,7 +54171,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::erlieve::relieve
 ::rleieve::relieve
 ::reileve::relieve
-::releive::relieve
 ::relivee::relieve
 ::hwitelighter::whitelighter
 ::wihtelighter::whitelighter
@@ -55852,14 +54312,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::fcuked::fucked
 ::fukced::fucked
 ::fucekd::fucked
-::toher::other
-::ohter::other
-::otehr::other
 ::rdess::dress
 ::derss::dress
 ::drses::dress
 ::niteresting::interesting
-::itneresting::interesting
 ::inetresting::interesting
 ::intreesting::interesting
 ::inteersting::interesting
@@ -55905,11 +54361,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::resopnsible::responsible
 ::respnosible::responsible
 ::resposnible::responsible
-::responisble::responsible
 ::responsbile::responsible
 ::responsilbe::responsible
 ::ehight::height
-::hieght::height
 ::hegiht::height
 ::heihgt::height
 ::otast::toast
@@ -56092,8 +54546,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tgoether::together
 ::toegther::together
 ::togteher::together
-::togehter::together
-::togetehr::together
 ::ocoking::cooking
 ::cokoing::cooking
 ::cooikng::cooking
@@ -56211,7 +54663,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Dalals::Dallas
 ::rbief::brief
 ::biref::brief
-::breif::brief
 ::lcueless::clueless
 ::culeless::clueless
 ::cleuless::clueless
@@ -56456,7 +54907,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::wakco::wacko
 ::osmething::something
 ::smoething::something
-::soemthing::something
 ::somtehing::something
 ::somehting::something
 ::sometihng::something
@@ -56499,7 +54949,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Preu's::Prue's
 ::Pru'es::Prue's
 ::eprspective::perspective
-::prespective::perspective
 ::pesrpective::perspective
 ::perpsective::perspective
 ::persepctive::perspective
@@ -56700,7 +55149,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::uneblievable::unbelievable
 ::unbleievable::unbelievable
 ::unbeilevable::unbelievable
-::unbeleivable::unbelievable
 ::unbeliveable::unbelievable
 ::unbelieavble::unbelievable
 ::unbelievbale::unbelievable
@@ -56869,7 +55317,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Aiadn::Aidan
 ::raound::around
 ::aorund::around
-::aruond::around
 ::aronud::around
 ::ksipped::skipped
 ::sikpped::skipped
@@ -57124,7 +55571,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::intsalled::installed
 ::insatlled::installed
 ::instlaled::installed
-::instaleld::installed
 ::lcay::clay
 ::caly::clay
 ::aGnz::Ganz
@@ -57232,9 +55678,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::passinoate::passionate
 ::passioante::passionate
 ::passiontae::passionate
-::hwich::which
-::wihch::which
-::whcih::which
 ::ocntents::contents
 ::cnotents::contents
 ::cotnents::contents
@@ -57327,7 +55770,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ailve::alive
 ::alvie::alive
 ::efature::feature
-::faeture::feature
 ::fetaure::feature
 ::feautre::feature
 ::featrue::feature
@@ -57361,7 +55803,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::brinigng::bringing
 ::bringnig::bringing
 ::niterest::interest
-::itnerest::interest
 ::inetrest::interest
 ::intreest::interest
 ::inteerst::interest
@@ -57384,7 +55825,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::otward::toward
 ::twoard::toward
 ::toawrd::toward
-::towrad::toward
 ::ocolest::coolest
 ::coloest::coolest
 ::cooelst::coolest
@@ -57423,7 +55863,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::trmap::tramp
 ::wsear::swear
 ::sewar::swear
-::swaer::swear
 ::dajourned::adjourned
 ::ajdourned::adjourned
 ::adojurned::adjourned
@@ -57842,7 +56281,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::olnely::lonely
 ::lnoely::lonely
 ::loenly::lonely
-::lonley::lonely
 ::aVughn::Vaughn
 ::Vuaghn::Vaughn
 ::Vaguhn::Vaughn
@@ -58013,7 +56451,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::osuls::souls
 ::suols::souls
 ::solus::souls
-::elast::least
 ::laest::least
 ::lesat::least
 ::uGnther::Gunther
@@ -58087,7 +56524,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::edsigned::designed
 ::dseigned::designed
 ::deisgned::designed
-::desgined::designed
 ::desinged::designed
 ::desigend::designed
 ::ocffeehouse::coffeehouse
@@ -58126,7 +56562,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::blnode::blonde
 ::blodne::blonde
 ::inece::niece
-::neice::niece
 ::nicee::niece
 ::niterfere::interfere
 ::itnerfere::interfere
@@ -58222,7 +56657,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::etenral::eternal
 ::eteranl::eternal
 ::ugarantee::guarantee
-::gaurantee::guarantee
 ::guraantee::guarantee
 ::guaarntee::guarantee
 ::guarnatee::guarantee
@@ -58331,7 +56765,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::faimliar::familiar
 ::famliiar::familiar
 ::famiilar::familiar
-::familair::familiar
 ::acsting::casting
 ::csating::casting
 ::catsing::casting
@@ -58406,7 +56839,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bsut::bust
 ::ebtween::between
 ::bteween::between
-::bewteen::between
 ::betewen::between
 ::ojdy::jody
 ::jdoy::jody
@@ -58488,7 +56920,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lfip::flip
 ::filp::flip
 ::ewird::weird
-::wierd::weird
 ::werid::weird
 ::ugide::guide
 ::giude::guide
@@ -58545,7 +56976,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::xeplain::explain
 ::epxlain::explain
 ::exlpain::explain
-::expalin::explain
 ::explian::explain
 ::oRry's::Rory's
 ::Rroy's::Rory's
@@ -58646,7 +57076,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::torturnig::torturing
 ::sasault::assault
 ::asasult::assault
-::assualt::assault
 ::assalut::assault
 ::esrvant::servant
 ::srevant::servant
@@ -58663,11 +57092,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cnetury::century
 ::cetnury::century
 ::cenutry::century
-::centruy::century
 ::hcance::chance
 ::cahnce::chance
 ::chnace::chance
-::chacne::chance
 ::icnnamon::cinnamon
 ::cninamon::cinnamon
 ::cinanmon::cinnamon
@@ -58849,7 +57276,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::afil::fail
 ::fial::fail
 ::acusing::causing
-::cuasing::causing
 ::casuing::causing
 ::cauisng::causing
 ::causnig::causing
@@ -58934,7 +57360,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sasociate::associate
 ::asosciate::associate
 ::asscoiate::associate
-::assoicate::associate
 ::assocaite::associate
 ::associtae::associate
 ::oppping::popping
@@ -58959,7 +57384,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::aminly::mainly
 ::mianly::mainly
 ::manily::mainly
-::mailny::mainly
 ::nuconscious::unconscious
 ::ucnonscious::unconscious
 ::unocnscious::unconscious
@@ -59051,7 +57475,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::emotoin::emotion
 ::erplacement::replacement
 ::rpelacement::replacement
-::relpacement::replacement
 ::repalcement::replacement
 ::replcaement::replacement
 ::replaecment::replacement
@@ -59173,7 +57596,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ilaison::liaison
 ::laiison::liaison
 ::liiason::liaison
-::liasion::liaison
 ::liaiosn::liaison
 ::tuterly::utterly
 ::utetrly::utterly
@@ -59218,7 +57640,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::acrtic::arctic
 ::artcic::arctic
 ::arcitc::arctic
-::hwile::while
 ::wihle::while
 ::whlie::while
 ::ehlluva::helluva
@@ -59342,9 +57763,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::comimt::commit
 ::naother::another
 ::aonther::another
-::antoher::another
-::anohter::another
-::anotehr::another
 ::erthink::rethink
 ::rtehink::rethink
 ::rehtink::rethink
@@ -59447,7 +57865,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::porject::project
 ::prjoect::project
 ::proejct::project
-::projcet::project
 ::rpoduction::production
 ::porduction::production
 ::prdouction::production
@@ -59678,7 +58095,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::concusison::concussion
 ::concussoin::concussion
 ::olve::love
-::lvoe::love
 ::arnge::range
 ::rnage::range
 ::ragne::range
@@ -59693,7 +58109,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::partenr::partner
 ::lcearer::clearer
 ::celarer::clearer
-::claerer::clearer
 ::cleraer::clearer
 ::cleaerr::clearer
 ::neding::ending
@@ -59794,7 +58209,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::hooikng::hooking
 ::hooknig::hooking
 ::htan::than
-::tahn::than
 ::nimates::inmates
 ::imnates::inmates
 ::inamtes::inmates
@@ -59891,7 +58305,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::assohle::asshole
 ::asshloe::asshole
 ::asme::same
-::smae::same
 ::rbains::brains
 ::barins::brains
 ::brians::brains
@@ -59973,7 +58386,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pressuirng::pressuring
 ::pressurnig::pressuring
 ::rtunk::trunk
-::turnk::trunk
 ::trnuk::trunk
 ::rGetel::Gretel
 ::Gertel::Gretel
@@ -60034,7 +58446,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::shcedule::schedule
 ::scehdule::schedule
 ::schdeule::schedule
-::scheudle::schedule
 ::schedlue::schedule
 ::eprsonnel::personnel
 ::presonnel::personnel
@@ -60134,7 +58545,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::raelistic::realistic
 ::relaistic::realistic
 ::reailstic::realistic
-::realsitic::realistic
 ::realitsic::realistic
 ::realisitc::realistic
 ::wseet::sweet
@@ -60217,7 +58627,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::comemrcial::commercial
 ::commrecial::commercial
 ::commecrial::commercial
-::commerical::commercial
 ::commercail::commercial
 ::ottal::total
 ::ttoal::total
@@ -60300,7 +58709,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::inupt::input
 ::opison::poison
 ::pioson::poison
-::posion::poison
 ::poiosn::poison
 ::owrn::worn
 ::wron::worn
@@ -60316,7 +58724,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Josepihne::Josephine
 ::Josephnie::Josephine
 ::ocmputer::computer
-::cmoputer::computer
 ::copmuter::computer
 ::comupter::computer
 ::comptuer::computer
@@ -60430,10 +58837,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::gvoernment::government
 ::goevrnment::government
 ::govrenment::government
-::govenrment::government
 ::govermnent::government
 ::governemnt::government
-::governmnet::government
 ::imssing::missing
 ::msising::missing
 ::misisng::missing
@@ -60455,11 +58860,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::clwas::claws
 ::vaailable::available
 ::aavilable::available
-::avialable::available
-::avaliable::available
 ::avaialble::available
 ::availbale::available
-::availalbe::available
 ::papreciates::appreciates
 ::aprpeciates::appreciates
 ::apperciates::appreciates
@@ -60509,7 +58911,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cuhnk::chunk
 ::chnuk::chunk
 ::alst::last
-::lsat::last
 ::rtusted::trusted
 ::tursted::trusted
 ::trsuted::trusted
@@ -60556,7 +58957,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::carriyng::carrying
 ::carrynig::carrying
 ::asves::saves
-::svaes::saves
 ::saevs::saves
 ::amtter::matter
 ::mtater::matter
@@ -60667,8 +59067,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::holidngs::holdings
 ::holdnigs::holdings
 ::holdigns::holdings
-::nkow::know
-::konw::know
 ::aKy's::Kay's
 ::Kya's::Kay's
 ::Ka'ys::Kay's
@@ -60818,7 +59216,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::evnironment::environment
 ::enivronment::environment
 ::envrionment::environment
-::enviornment::environment
 ::envirnoment::environment
 ::enviromnent::environment
 ::environemnt::environment
@@ -60852,7 +59249,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::unfortuantely::unfortunately
 ::unfortuntaely::unfortunately
 ::unfortunaetly::unfortunately
-::unfortunatley::unfortunately
 ::eRggie::Reggie
 ::Rgegie::Reggie
 ::Regige::Reggie
@@ -60890,7 +59286,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::reiebr::reiber
 ::elarns::learns
 ::laerns::learns
-::lerans::learns
 ::leanrs::learns
 ::mAerica::America
 ::Aemrica::America
@@ -60944,7 +59339,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::portein::protein
 ::prtoein::protein
 ::proetin::protein
-::protien::protein
 ::lAex::Alex
 ::Aelx::Alex
 ::opund::pound
@@ -60997,7 +59391,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::uadience::audience
 ::aduience::audience
 ::auidence::audience
-::audeince::audience
 ::audinece::audience
 ::audiecne::audience
 ::oClumbus::Columbus
@@ -61035,7 +59428,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::descriebd::described
 ::ofcus::focus
 ::fcous::focus
-::foucs::focus
 ::eclebrating::celebrating
 ::cleebrating::celebrating
 ::ceelbrating::celebrating
@@ -61126,7 +59518,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::caniddate::candidate
 ::canddiate::candidate
 ::candiadte::candidate
-::candidtae::candidate
 ::tich::itch
 ::icth::itch
 ::ubbbles::bubbles
@@ -61194,8 +59585,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::asile::aisle
 ::ailse::aisle
 ::rgeat::great
-::gerat::great
-::graet::great
 ::olrd::lord
 ::lrod::lord
 ::ocncentrate::concentrate
@@ -61212,15 +59601,12 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::drvoe::drove
 ::xeample::example
 ::eaxmple::example
-::exmaple::example
-::exapmle::example
 ::examlpe::example
 ::xetra::extra
 ::etxra::extra
 ::exrta::extra
 ::iwthout::without
 ::wtihout::without
-::wihtout::without
 ::witohut::without
 ::withuot::without
 ::yLman::Lyman
@@ -61272,7 +59658,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::scholos::schools
 ::odn't::don't
 ::dno't::don't
-::do'nt::don't
 ::aHrvey::Harvey
 ::Hravey::Harvey
 ::Havrey::Harvey
@@ -61321,7 +59706,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::idng::ding
 ::dnig::ding
 ::awnt::want
-::wnat::want
 ::apssport::passport
 ::psasport::passport
 ::paspsort::passport
@@ -61430,7 +59814,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rfee::free
 ::fere::free
 ::rdeam::dream
-::deram::dream
 ::draem::dream
 ::ymstery::mystery
 ::msytery::mystery
@@ -61545,7 +59928,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::exqusiite::exquisite
 ::exquiiste::exquisite
 ::exquistie::exquisite
-::ened::need
 ::rgavy::gravy
 ::garvy::gravy
 ::grvay::gravy
@@ -61666,8 +60048,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::prescriptoin::prescription
 ::ucstomers::customers
 ::csutomers::customers
-::cutsomers::customers
-::cusotmers::customers
 ::custmoers::customers
 ::custoemrs::customers
 ::customres::customers
@@ -61795,7 +60175,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::psasword::password
 ::paswsord::password
 ::passowrd::password
-::passwrod::password
 ::aVnessa's::Vanessa's
 ::Vnaessa's::Vanessa's
 ::Vaenssa's::Vanessa's
@@ -61846,7 +60225,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::surivved::survived
 ::survvied::survived
 ::survievd::survived
-::ugess::guess
 ::geuss::guess
 ::guses::guess
 ::aprtial::partial
@@ -62267,7 +60645,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Huhges::Hughes
 ::Hugehs::Hughes
 ::ipeces::pieces
-::peices::pieces
 ::picees::pieces
 ::pieecs::pieces
 ::rcacked::cracked
@@ -62702,11 +61079,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mmumy::mummy
 ::ilked::liked
 ::lkied::liked
-::liekd::liked
 ::osunds::sounds
 ::suonds::sounds
 ::sonuds::sounds
-::soudns::sounds
 ::hcewing::chewing
 ::cehwing::chewing
 ::chweing::chewing
@@ -62737,7 +61112,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::repsonse::response
 ::resopnse::response
 ::respnose::response
-::resposne::response
 ::ofllowed::followed
 ::flolowed::followed
 ::fololwed::followed
@@ -62981,9 +61355,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::swicth::switch
 ::ebcause::because
 ::bceause::because
-::beacuse::because
-::becuase::because
-::becasue::because
 ::ilmitations::limitations
 ::lmiitations::limitations
 ::liimtations::limitations
@@ -63066,7 +61437,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::amrriage::marriage
 ::mrariage::marriage
 ::marirage::marriage
-::marraige::marriage
 ::marrigae::marriage
 ::ilnk::link
 ::lnik::link
@@ -63114,10 +61484,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::adujst::adjust
 ::adjsut::adjust
 ::rpoblems::problems
-::porblems::problems
 ::prbolems::problems
 ::prolbems::problems
-::probelms::problems
 ::problmes::problems
 ::idamond::diamond
 ::daimond::diamond
@@ -63256,7 +61624,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::secrued::secured
 ::secuerd::secured
 ::acuse::cause
-::cuase::cause
 ::casue::cause
 ::lsides::slides
 ::sildes::slides
@@ -63285,7 +61652,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::awrad::award
 ::xeciting::exciting
 ::ecxiting::exciting
-::exicting::exciting
 ::exctiing::exciting
 ::exciitng::exciting
 ::excitnig::exciting
@@ -63333,7 +61699,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Amnada::Amanda
 ::Amadna::Amanda
 ::imssed::missed
-::msised::missed
 ::misesd::missed
 ::dEdie's::Eddie's
 ::Edide's::Eddie's
@@ -63445,7 +61810,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pneis::penis
 ::peins::penis
 ::nistance::instance
-::isntance::instance
 ::intsance::instance
 ::insatnce::instance
 ::instnace::instance
@@ -63554,7 +61918,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pirnts::prints
 ::prnits::prints
 ::pritns::prints
-::ocuntry::country
 ::cuontry::country
 ::conutry::country
 ::coutnry::country
@@ -63713,7 +62076,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::agerement::agreement
 ::agremeent::agreement
 ::agreeemnt::agreement
-::agreemnet::agreement
 ::iMlan::Milan
 ::Mlian::Milan
 ::Mialn::Milan
@@ -63830,7 +62192,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tutroing::tutoring
 ::tutoirng::tutoring
 ::tutornig::tutoring
-::rwite::write
 ::wirte::write
 ::wrtie::write
 ::acmpus::campus
@@ -63879,7 +62240,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Csasie::Cassie
 ::Casise::Cassie
 ::poerator::operator
-::oeprator::operator
 ::opreator::operator
 ::opeartor::operator
 ::opertaor::operator
@@ -63905,12 +62265,10 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::delightufl::delightful
 ::ceho::echo
 ::ehco::echo
-::ocuntries::countries
 ::cuontries::countries
 ::conutries::countries
 ::coutnries::countries
 ::counrties::countries
-::countires::countries
 ::countreis::countries
 ::rpactical::practical
 ::parctical::practical
@@ -63939,7 +62297,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::literatrue::literature
 ::tsrategy::strategy
 ::srtategy::strategy
-::startegy::strategy
 ::strtaegy::strategy
 ::straetgy::strategy
 ::stratgey::strategy
@@ -63956,7 +62313,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::fouhgt::fought
 ::lceared::cleared
 ::celared::cleared
-::claered::cleared
 ::cleraed::cleared
 ::cleaerd::cleared
 ::nelighten::enlighten
@@ -63975,7 +62331,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cnosidered::considered
 ::cosnidered::considered
 ::conisdered::considered
-::consdiered::considered
 ::consiedred::considered
 ::considreed::considered
 ::consideerd::considered
@@ -64147,8 +62502,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::emotioanl::emotional
 ::ededs::deeds
 ::dedes::deeds
-::abck::back
-::bcak::back
 ::rtapper::trapper
 ::tarpper::trapper
 ::trpaper::trapper
@@ -64184,7 +62537,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dian'es::diane's
 ::rbiefly::briefly
 ::birefly::briefly
-::breifly::briefly
 ::brifely::briefly
 ::brielfy::briefly
 ::csratched::scratched
@@ -64197,7 +62549,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::usrely::surely
 ::sruely::surely
 ::suerly::surely
-::surley::surely
 ::iNcole::Nicole
 ::Nciole::Nicole
 ::Niocle::Nicole
@@ -64247,7 +62598,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Haeys::Hayes
 ::ytpes::types
 ::tpyes::types
-::tyeps::types
 ::edcorate::decorate
 ::dceorate::decorate
 ::deocrate::decorate
@@ -64361,7 +62711,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mathced::matched
 ::matcehd::matched
 ::umst::must
-::msut::must
 ::negaged::engaged
 ::egnaged::engaged
 ::enagged::engaged
@@ -64407,7 +62756,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::laways::always
 ::awlays::always
 ::alawys::always
-::alwyas::always
 ::uBster::Buster
 ::Bsuter::Buster
 ::Butser::Buster
@@ -64514,7 +62862,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::defenidng::defending
 ::defendnig::defending
 ::hsow::show
-::sohw::show
 ::obught::bought
 ::buoght::bought
 ::boguht::bought
@@ -64736,7 +63083,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::addiitonal::additional
 ::additoinal::additional
 ::additinoal::additional
-::additioanl::additional
 ::tsripped::stripped
 ::srtipped::stripped
 ::stirpped::stripped
@@ -64806,7 +63152,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::passenegrs::passengers
 ::passengres::passengers
 ::edal::deal
-::dael::deal
 ::lcamp::clamp
 ::calmp::clamp
 ::clmap::clamp
@@ -65448,7 +63793,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rtey::trey
 ::tery::trey
 ::otwn::town
-::twon::town
 ::amyor::mayor
 ::myaor::mayor
 ::maoyr::mayor
@@ -65646,7 +63990,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::coeds::codes
 ::nkown::known
 ::konwn::known
-::knwon::known
 ::ubll::bull
 ::blul::bull
 ::tIalian::Italian
@@ -65674,7 +64017,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::oirginally::originally
 ::orgiinally::originally
 ::oriignally::originally
-::orignially::originally
 ::origianlly::originally
 ::originlaly::originally
 ::uantie::auntie
@@ -65691,7 +64033,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Rasmey::Ramsey
 ::Ramesy::Ramsey
 ::osup::soup
-::suop::soup
 ::ocrny::corny
 ::crony::corny
 ::conry::corny
@@ -65728,7 +64069,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::evidnece::evidence
 ::evidecne::evidence
 ::ocast::coast
-::caost::coast
 ::cosat::coast
 ::awrren::warren
 ::wraren::warren
@@ -65826,7 +64166,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ohmes::homes
 ::hmoes::homes
 ::hoems::homes
-::ovid::void
 ::viod::void
 ::agined::gained
 ::gianed::gained
@@ -65840,7 +64179,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ergular::regular
 ::rgeular::regular
 ::reuglar::regular
-::regluar::regular
 ::regualr::regular
 ::tatacked::attacked
 ::atatcked::attacked
@@ -65898,7 +64236,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::explosvies::explosives
 ::explosievs::explosives
 ::nitroduced::introduced
-::itnroduced::introduced
 ::inrtoduced::introduced
 ::intorduced::introduced
 ::intrdouced::introduced
@@ -66076,7 +64413,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::docuemntary::documentary
 ::documnetary::documentary
 ::documetnary::documentary
-::documenatry::documentary
 ::documentray::documentary
 ::ufnd::fund
 ::fnud::fund
@@ -66178,10 +64514,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::enedy::needy
 ::nedey::needy
 ::hcanges::changes
-::cahnges::changes
 ::chnages::changes
 ::chagnes::changes
-::chanegs::changes
 ::efelings::feelings
 ::feleings::feelings
 ::feeilngs::feelings
@@ -66253,7 +64587,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::abcks::backs
 ::bcaks::backs
 ::bakcs::backs
-::owrks::works
 ::wroks::works
 ::wokrs::works
 ::sisue::issue
@@ -66288,12 +64621,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bupmer::bumper
 ::bumepr::bumper
 ::ocpy::copy
-::cpoy::copy
 ::ablance::balance
 ::blaance::balance
-::baalnce::balance
 ::balnace::balance
-::balacne::balance
 ::osphomore::sophomore
 ::spohomore::sophomore
 ::sohpomore::sophomore
@@ -66315,7 +64645,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dupms::dumps
 ::sasaulted::assaulted
 ::asasulted::assaulted
-::assualted::assaulted
 ::assaluted::assaulted
 ::assautled::assaulted
 ::assauletd::assaulted
@@ -66418,7 +64747,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::constatnly::constantly
 ::constanlty::constantly
 ::htank::thank
-::tahnk::thank
 ::thnak::thank
 ::acns::cans
 ::cnas::cans
@@ -66509,7 +64837,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::birt::brit
 ::ehart::heart
 ::haert::heart
-::herat::heart
 ::nIdia::India
 ::Idnia::India
 ::Inida::India
@@ -66647,7 +64974,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::improtant::important
 ::impotrant::important
 ::imporatnt::important
-::importnat::important
 ::esnse::sense
 ::snese::sense
 ::sesne::sense
@@ -66793,7 +65119,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::caniddates::candidates
 ::canddiates::candidates
 ::candiadtes::candidates
-::candidtaes::candidates
 ::candidaets::candidates
 ::hcanging::changing
 ::cahnging::changing
@@ -66887,8 +65212,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::smoewhere::somewhere
 ::soemwhere::somewhere
 ::somwehere::somewhere
-::somehwere::somewhere
-::somewehre::somewhere
 ::somewhree::somewhere
 ::rcis::cris
 ::cirs::cris
@@ -66985,8 +65308,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::counsleor::counselor
 ::counseolr::counselor
 ::awnts::wants
-::wnats::wants
-::watns::wants
 ::htis'll::this'll
 ::tihs'll::this'll
 ::thsi'll::this'll
@@ -67024,11 +65345,8 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sinecrely::sincerely
 ::sincreely::sincerely
 ::sinceerly::sincerely
-::sincerley::sincerely
-::enxt::next
 ::nxet::next
 ::nito::into
-::itno::into
 ::ocunsel::counsel
 ::cuonsel::counsel
 ::conusel::counsel
@@ -67175,7 +65493,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Dnony::Donny
 ::oscial::social
 ::scoial::social
-::soical::social
 ::socail::social
 ::eten::teen
 ::erquired::required
@@ -67386,7 +65703,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::isssy::sissy
 ::ssisy::sissy
 ::tsill::still
-::sitll::still
 ::stlil::still
 ::atrget::target
 ::traget::target
@@ -67594,7 +65910,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::croporation::corporation
 ::coproration::corporation
 ::coropration::corporation
-::corproation::corporation
 ::corpoartion::corporation
 ::corportaion::corporation
 ::corporaiton::corporation
@@ -67759,7 +66074,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::applciations::applications
 ::appliactions::applications
 ::applictaions::applications
-::applicaitons::applications
 ::applicatoins::applications
 ::applicatinos::applications
 ::ebyond::beyond
@@ -67785,8 +66099,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::jnugle::jungle
 ::jugnle::jungle
 ::junlge::jungle
-::iwth::with
-::wtih::with
 ::ifghts::fights
 ::fgihts::fights
 ::fihgts::fights
@@ -67885,8 +66197,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bcaked::backed
 ::bakced::backed
 ::bacekd::backed
-::hwen::when
-::wehn::when
 ::seteem::esteem
 ::etseem::esteem
 ::esetem::esteem
@@ -67963,7 +66273,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::exhiibt::exhibit
 ::onthing::nothing
 ::ntohing::nothing
-::nohting::nothing
 ::notihng::nothing
 ::nothnig::nothing
 ::esrver::server
@@ -67993,7 +66302,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::etch::tech
 ::tceh::tech
 ::asve::save
-::svae::save
 ::eldge::ledge
 ::ldege::ledge
 ::legde::ledge
@@ -68001,9 +66309,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mdeium::medium
 ::meidum::medium
 ::meduim::medium
-::htese::these
-::tehse::these
-::thsee::these
 ::albs::labs
 ::lbas::labs
 ::aMureen::Maureen
@@ -68111,7 +66416,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bakcground::background
 ::bacgkround::background
 ::backrgound::background
-::backgorund::background
 ::backgruond::background
 ::backgronud::background
 ::afshion::fashion
@@ -68543,7 +66847,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::clien'ts::client's
 ::rgief::grief
 ::giref::grief
-::greif::grief
 ::oDyle::Doyle
 ::Dyole::Doyle
 ::Dolye::Doyle
@@ -68567,7 +66870,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::acme::came
 ::cmae::came
 ::idrectly::directly
-::driectly::directly
 ::dierctly::directly
 ::dircetly::directly
 ::diretcly::directly
@@ -68687,8 +66989,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Britsow::Bristow
 ::Brisotw::Bristow
 ::lcear::clear
-::celar::clear
-::claer::clear
 ::rodeal::ordeal
 ::odreal::ordeal
 ::oredal::ordeal
@@ -68894,7 +67194,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bsaic::basic
 ::baisc::basic
 ::etsting::testing
-::tseting::testing
 ::tetsing::testing
 ::tesitng::testing
 ::testnig::testing
@@ -68921,7 +67220,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::exprets::experts
 ::expetrs::experts
 ::ifles::files
-::fiels::files
 ::hceering::cheering
 ::cehering::cheering
 ::chereing::cheering
@@ -68948,7 +67246,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::miuns::minus
 ::erturn::return
 ::rteurn::return
-::reutrn::return
 ::retrun::return
 ::lese's::else's
 ::esle's::else's
@@ -69219,7 +67516,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::atlked::talked
 ::tlaked::talked
 ::takled::talked
-::talekd::talked
 ::rgeedy::greedy
 ::geredy::greedy
 ::gredey::greedy
@@ -69340,7 +67636,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::deis::dies
 ::erlations::relations
 ::rleations::relations
-::realtions::relations
 ::reltaions::relations
 ::relaitons::relations
 ::relatoins::relations
@@ -69464,8 +67759,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::otnight::tonight
 ::tnoight::tonight
 ::toinght::tonight
-::tongiht::tonight
-::tonihgt::tonight
 ::nsake::snake
 ::sanke::snake
 ::snkae::snake
@@ -69529,7 +67822,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::chapmagne::champagne
 ::chamapgne::champagne
 ::champgane::champagne
-::champange::champagne
 ::maulet::amulet
 ::aumlet::amulet
 ::amluet::amulet
@@ -69673,11 +67965,9 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::acecnt::accent
 ::accnet::accent
 ::adtabase::database
-::dtaabase::database
 ::daatbase::database
 ::datbaase::database
 ::dataabse::database
-::databsae::database
 ::ivsitor::visitor
 ::vsiitor::visitor
 ::viistor::visitor
@@ -69720,7 +68010,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::cnosciousness::consciousness
 ::cosnciousness::consciousness
 ::concsiousness::consciousness
-::consicousness::consciousness
 ::conscoiusness::consciousness
 ::consciuosness::consciousness
 ::consciosuness::consciousness
@@ -69770,7 +68059,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::siganl::signal
 ::nuhappy::unhappy
 ::uhnappy::unhappy
-::unahppy::unhappy
 ::unhpapy::unhappy
 ::pseaker::speaker
 ::sepaker::speaker
@@ -69805,9 +68093,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Dnenis::Dennis
 ::Denins::Dennis
 ::epople::people
-::poeple::people
 ::pepole::people
-::peolpe::people
 ::lfoat::float
 ::folat::float
 ::flaot::float
@@ -69830,9 +68116,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::acpital::capital
 ::cpaital::capital
 ::caiptal::capital
-::captial::capital
 ::capiatl::capital
-::amde::made
 ::mdae::made
 ::aMrge::Marge
 ::Mrage::Marge
@@ -69982,8 +68266,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::frigde::fridge
 ::lamost::almost
 ::amlost::almost
-::alomst::almost
-::almsot::almost
 ::olud::loud
 ::luod::loud
 ::lcaw::claw
@@ -70010,7 +68292,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ocla::cola
 ::cloa::cola
 ::iwndows::windows
-::wnidows::windows
 ::widnows::windows
 ::winodws::windows
 ::windwos::windows
@@ -70093,7 +68374,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pruchase::purchase
 ::pucrhase::purchase
 ::purhcase::purchase
-::purcahse::purchase
 ::purchsae::purchase
 ::usrveillance::surveillance
 ::sruveillance::surveillance
@@ -70152,8 +68432,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::fcaial::facial
 ::faical::facial
 ::facail::facial
-::htey::they
-::tehy::they
 ::aMxine::Maxine
 ::Mxaine::Maxine
 ::Maixne::Maxine
@@ -70365,7 +68643,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::milloinaire::millionaire
 ::millinoaire::millionaire
 ::millioanire::millionaire
-::millioniare::millionaire
 ::millionarie::millionaire
 ::wseaty::sweaty
 ::sewaty::sweaty
@@ -70457,7 +68734,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Cadlilac::Cadillac
 ::Cadilalc::Cadillac
 ::esize::seize
-::sieze::seize
 ::sezie::seize
 ::xeperience::experience
 ::epxerience::experience
@@ -70597,7 +68873,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::dirll::drill
 ::drlil::drill
 ::usre::sure
-::srue::sure
 ::iLllian::Lillian
 ::Llilian::Lillian
 ::Lililan::Lillian
@@ -70673,7 +68948,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pnealty::penalty
 ::peanlty::penalty
 ::penlaty::penalty
-::penatly::penalty
 ::lsaying::slaying
 ::salying::slaying
 ::slyaing::slaying
@@ -70737,7 +69011,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::everythnig::everything
 ::ifnally::finally
 ::fnially::finally
-::fianlly::finally
 ::finlaly::finally
 ::awrriors::warriors
 ::wrariors::warriors
@@ -71018,7 +69291,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::awhlie::awhile
 ::itmes::times
 ::tmies::times
-::tiems::times
 ::atlent::talent
 ::tlaent::talent
 ::taelnt::talent
@@ -71124,7 +69396,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::panites::panties
 ::panteis::panties
 ::poen::open
-::oepn::open
 ::utcked::tucked
 ::tcuked::tucked
 ::tukced::tucked
@@ -71352,7 +69623,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sasociates::associates
 ::asosciates::associates
 ::asscoiates::associates
-::assoicates::associates
 ::assocaites::associates
 ::associtaes::associates
 ::associaets::associates
@@ -71364,7 +69634,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sohut::shout
 ::shuot::shout
 ::aguge::gauge
-::guage::gauge
 ::gague::gauge
 ::uBndy::Bundy
 ::Bnudy::Bundy
@@ -71373,7 +69642,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tohught::thought
 ::thuoght::thought
 ::thoguht::thought
-::thouhgt::thought
 ::wsell::swell
 ::sewll::swell
 ::swlel::swell
@@ -71411,7 +69679,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Lorranie::Lorraine
 ::poportunity::opportunity
 ::opoprtunity::opportunity
-::opprotunity::opportunity
 ::oppotrunity::opportunity
 ::opporutnity::opportunity
 ::opportnuity::opportunity
@@ -71514,8 +69781,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::exicted::excited
 ::exctied::excited
 ::excietd::excited
-::htat::that
-::taht::that
 ::rcack::crack
 ::carck::crack
 ::crcak::crack
@@ -71537,7 +69802,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pamyents::payments
 ::payemnts::payments
 ::paymnets::payments
-::paymetns::payments
 ::opckets::pockets
 ::pcokets::pockets
 ::pokcets::pockets
@@ -71591,9 +69855,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::aprpopriate::appropriate
 ::apporpriate::appropriate
 ::apprporiate::appropriate
-::approrpiate::appropriate
 ::appropirate::appropriate
-::appropraite::appropriate
 ::appropritae::appropriate
 ::emet::meet
 ::ebin::bein
@@ -71847,7 +70109,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::applciation::application
 ::appliaction::application
 ::applictaion::application
-::applicaiton::application
 ::applicatoin::application
 ::rEica::Erica
 ::Eirca::Erica
@@ -71856,7 +70117,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rsetaurant::restaurant
 ::retsaurant::restaurant
 ::resaturant::restaurant
-::restuarant::restaurant
 ::restaruant::restaurant
 ::restauarnt::restaurant
 ::restaurnat::restaurant
@@ -71869,7 +70129,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sweeite::sweetie
 ::sisues::issues
 ::isuses::issues
-::isseus::issues
 ::yhsterical::hysterical
 ::hsyterical::hysterical
 ::hytserical::hysterical
@@ -71980,7 +70239,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::storke::stroke
 ::strkoe::stroke
 ::lese::else
-::esle::else
 ::aBrney::Barney
 ::Braney::Barney
 ::Banrey::Barney
@@ -72098,33 +70356,762 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::bnet::bent
 ::usck::suck
 ::scuk::suck
-
-;-------------------------------------------------------------------------------
+; from https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines#The_Machine-Readable_List
+::abilityes::abilities
+::abilties::abilities
+::abilty::ability
+::abondon::abandon
+::abouta::about
+::aboutit::about
+::aboutthe::about
+::abondoned::abandoned
+::abondoning::abandoning
+::abondons::abandons
+::abreviate::abbreviate
+::abreviated::abbreviated
+::abreviation::abbreviation
+::absail::abseil
+::absailing::abseiling
+::abudance::abundance
+::acident::accident
+::accomadate::accommodate
+::accomadated::accommodated
+::accomadates::accommodates
+::accomadating::accommodating
+::accomadation::accommodation
+::accomadations::accommodations
+::accrediation::accreditation
+::accredidation::accreditation
+::acheived::achieved
+::acheivement::achievement
+::acheivements::achievements
+::acheives::achieves
+::acheiving::achieving
+::acheivment::achievement
+::acheivments::achievements
+::achievment::achievement
+::achievments::achievements
+::achived::achieved
+::ackward::awkward
+::acquaintence::acquaintance
+::acquaintences::acquaintances
+::addional::additional
+::addionally::additionally
+::additionaly::additionally
+::additonal::additional
+::additonally::additionally
+::adquire::acquire
+::adquired::acquired
+::adquires::acquires
+::adquiring::acquiring
+::adressing::addressing
+::affort::afford
+::agina::again
+::agravate::aggravate
+::agricultue::agriculture
+::agriculure::agriculture
+::aircrafts'::aircraft's
+::aisian::asian
+::aka::a
+::allign::align
+::alligned::aligned
+::alltime::all
+::alltogether::altogether
+::alot::a
+::amature::armature
+::amunition::ammunition
+::andd::and
+::anouncement::announcement
+::anthropolgist::anthropologist
+::anthropolgy::anthropology
+::antiapartheid::anti
+::anyother::any
+::apenines::apennines
+::apon::upon
+::appenines::apennines
+::appereance::appearance
+::appereances::appearances
+::aproval::approval
+::aquaduct::aqueduct
+::aquisition::acquisition
+::archaelogical::archaeological
+::archaelogists::archaeologists
+::archaelogy::archaeology
+::archaoelogy::archeology
+::archaology::archeology
+::archeaologist::archeologist
+::archeaologists::archeologists
+::archetect::architect
+::archetects::architects
+::archimedian::archimedean
+::architecht::architect
+::archtype::archetype
+::archtypes::archetypes
+::arguement::argument
+::arguements::arguments
+::arogant::arrogant
+::arogent::arrogant
+::arrengement::arrangement
+::arrengements::arrangements
+::asfar::as
+::asociated::associated
+::assasin::assassin
+::assasinate::assassinate
+::assasinated::assassinated
+::assasinates::assassinates
+::assasination::assassination
+::assasinations::assassinations
+::assasined::assassinated
+::assasins::assassins
+::assymetric::asymmetric
+::assymetrical::asymmetrical
+::asthetical::aesthetical
+::aswell::as
+::atempting::attempting
+::athenean::athenian
+::atheneans::athenians
+::atribute::attribute
+::atributed::attributed
+::atributes::attributes
+::attaindre::attainder
+::auromated::automated
+::availablity::availability
+::avengence::a
+::becames::becomes
+::beeing::being
+::beggin::begin
+::behavour::behavior
+::belives::believes
+::Bernouilli::Bernoulli
+::beteen::between
+::beween::between
+::bigining::beginning
+::biginning::beginning
+::Blitzkreig::Blitzkrieg
+::boaut::bout
+::Bonnano::Bonanno
+::boook::book
+::bradcast::broadcast
+::Brasillian::Brazilian
+::Britian::Britain
+::Brittish::British
+::Buddah::Buddha
+::Buddist::Buddhist
+::buring::burying
+::busines::business
+::busineses::business
+::caculater::calculator
+::calaber::caliber
+::calculater::calculator
+::calulater::calculator
+::Cambrige::Cambridge
+::Capetown::Cape
+::Carmalite::Carmelite
+::Carnagie::Carnegie
+::Carnagie::Mellon::Carnegie
+::carnege::carnage
+::carnige::carnage
+::Carnigie::Carnegie
+::Carnigie::Mellon::Carnegie
+::Carribbean::Caribbean
+::Carribean::Caribbean
+::carryng::carrying
+::Carthagian::Carthaginian
+::catagories::categories
+::catagorized::categorized
+::catagory::category
+::Cataline::Catiline
+::catapillar::caterpillar
+::catapillars::caterpillars
+::catapiller::caterpillar
+::catapillers::caterpillars
+::catepillar::caterpillar
+::catepillars::caterpillars
+::catergorize::categorize
+::catergorized::categorized
+::caterpilar::caterpillar
+::caterpilars::caterpillars
+::caterpiller::caterpillar
+::caterpillers::caterpillars
+::catterpillar::caterpillar
+::catterpillars::caterpillars
+::Ceasar::Caesar
+::Celcius::Celsius
+::censur::censor
+::centuties::centuries
+::centuty::century
+::cervial::cervical
+::Champange::Champagne
+::chasr::chaser
+::cheifs::chiefs
+::choclate::chocolate
+::Cincinatti::Cincinnati
+::Cincinnatti::Cincinnati
+::cmo::com
+::co::incided::coincided
+::Coca::Cola::Coca
+::comision::commission
+::comisioned::commissioned
+::comisioner::commissioner
+::comisioning::commissioning
+::comisions::commissions
+::compatabilities::compatibilities
+::compatability::compatibility
+::compatable::compatible
+::compatablities::compatibilities
+::compatablity::compatibility
+::compatiblities::compatibilities
+::compatiblity::compatibility
+::competion::competition
+::completedthe::completed
+::comprable::comparable
+::conditionsof::conditions
+::Conneticut::Connecticut
+::contstruction::construction
+::contians::contains
+::contibute::contribute
+::contibuted::contributed
+::contibutes::contributes
+::contigent::contingent
+::continential::continental
+::controversey::controversy
+::coorperation::cooperation
+::cornmitted::committed
+::councellor::councillor
+::councellors::councillors
+::countrie's::countries
+::coverted::converted
+::cpoy::coy
+::critising::criticising
+::critisising::criticising
+::critisism::criticism
+::critisisms::criticisms
+::critisize::criticise
+::critisized::criticised
+::critisizes::criticises
+::critisizing::criticising
+::critized::criticized
+::critizing::criticizing
+::crowm::crown
+::crticised::criticised
+::crutial::crucial
+::dacquiri::daiquiri
+::dammage::damage
+::Dardenelles::Dardanelles
+::daugher::daughter
+::deparmental::departmental
+::deparments::departments
+::deram::dram
+::develope::develop
+::developement::development
+::dictionarys::dictionaries
+::dimunitive::diminutive
+::directoty::directory
+::diversed::diverse
+::divinition::divination
+::dum::dumb
+::doub::doubt
+::Dravadian::Dravidian
+::dyas::dryas
+::efford::effort
+::effords::efforts
+::elction::election
+::electic::eclectic
+::electon::election
+::embarass::embarrass
+::embarassed::embarrassed
+::embarassing::embarrassing
+::embarassment::embarrassment
+::emition::emission
+::emminent::eminent
+::emminently::eminently
+::empirial::empirical
+::emporer::emperor
+::enameld::enameled
+::enlargment::enlargement
+::enlargments::enlargements
+::Enlish::English
+::enthusiatic::enthusiastic
+::enviorment::environment
+::enviormental::environmental
+::enviormentally::environmentally
+::enviorments::environments
+::enviroment::environment
+::enviromental::environmental
+::enviromentalist::environmentalist
+::enviromentally::environmentally
+::enviroments::environments
+::equalibrium::equilibrium
+::equelibrium::equilibrium
+::erally::orally
+::erested::arrested
+::ethose::those
+::Europian::European
+::Europians::Europeans
+::Eurpean::European
+::eventhough::even
+::everytime::every
+::everyting::everything
+::expatriot::expatriate
+::extint::extinct
+::extraterrestial::extraterrestrial
+::extraterrestials::extraterrestrials
+::eyasr::years
+::faciliate::facilitate
+::faciliated::facilitated
+::faciliates::facilitates
+::Farenheit::Fahrenheit
+::fatc::fact
+::Febuary::February
+::femminist::feminist
+::fiel::feel
+::fiels::feels
+::firts::flirts
+::fleed::fled
+::Flemmish::Flemish
+::flourine::fluorine
+::flourishment::flourishing
+::fomr::from
+::fontrier::fontier
+::Formalhaut::Fomalhaut
+::formidible::formidable
+::Foundland::Newfoundland
+::Fransiscan::Franciscan
+::Fransiscans::Franciscans
+::fullfill::fulfill
+::fullfilled::fulfilled
+::futhroc::futhark
+::gae::game
+::Galations::Galatians
+::Gameboy::Game
+::ganerate::generate
+::garantee::guarantee
+::garanteed::guaranteed
+::garantees::guarantees
+::gardai::gardaí
+::gauarana::guaraná
+::Ghandi::Gandhi
+::glamourous::glamorous
+::Godounov::Godunov
+::gogin::going
+::Gothenberg::Gothenburg
+::Gottleib::Gottlieb
+::Guaduloupe::Guadalupe
+::Guadulupe::Guadalupe
+::Guatamala::Guatemala
+::Guatamalan::Guatemalan
+::guerrila::guerrilla
+::guerrilas::guerrillas
+::Guilia::Giulia
+::Guilio::Giulio
+::Guiness::Guinness
+::Guiseppe::Giuseppe
+::Habsbourg::Habsburg
+::halarious::hilarious
+::Hallowean::Hallowe'en
+::harasment::harassment
+::harasments::harassments
+::Hatian::Haitian
+::headquarer::headquarter
+::Heidelburg::Heidelberg
+::hertiage::heritage
+::histocompatability::histocompatibility
+::hitsingles::hit
+::holf::hold
+::homestate::home
+::humer::humor
+::humerous::humorous
+::humurous::humorous
+::hvea::have
+::hyjack::hijack
+::hyjacking::hijacking
+::idesa::ideas
+::Ihaca::Ithaca
+::imaginery::imaginary
+::imanent::eminent
+::imigrant::emigrant
+::imigrated::emigrated
+::imigration::emigration
+::iminent::eminent
+::immitate::imitate
+::immitated::imitated
+::immitating::imitating
+::immitator::imitator
+::impliment::implement
+::implimented::implemented
+::impressario::impresario
+::incompatabilities::incompatibilities
+::incompatability::incompatibility
+::incompatable::incompatible
+::incompatablities::incompatibilities
+::incompatablity::incompatibility
+::incompatiblities::incompatibilities
+::incompatiblity::incompatibility
+::incoroporated::incorporated
+::indentical::identical
+::indespensable::indispensable
+::indespensible::indispensable
+::indisputible::indisputable
+::indisputibly::indisputably
+::inheritage::heritage
+::inpending::impending
+::inpenetrable::impenetrable
+::insitution::institution
+::insitutions::institutions
+::inspite::in
+::interbread::interbreed
+::intercontinential::intercontinental
+::intered::interred
+::intrument::instrument
+::intrumental::instrumental
+::intruments::instruments
+::inumerable::enumerable
+::Israelies::Israelis
+::Janurary::January
+::Japanes::Japanese
+::Johanine::Johannine
+::Juadaism::Judaism
+::Juadism::Judaism
+::knwo::know
+::labatory::lavatory
+::leanr::lean
+::lible::libel
+::lieuenant::lieutenant
+::lightyear::light
+::lightyears::light
+::liscense::license
+::lisence::license
+::literaly::literally
+::Lybia::Libya
+::maching::machine
+::magizine::magazine
+::magisine::magazine
+::Malcom::Malcolm
+::maneouvre::manoeuvre
+::maneouvred::manoeuvred
+::maneouvres::manoeuvres
+::maneouvring::manoeuvring
+::manouver::maneuver
+::manouverability::maneuverability
+::manouverable::maneuverable
+::manouvers::maneuvers
+::manuever::maneuver
+::manuevers::maneuvers
+::Massachussets::Massachusetts
+::Massachussetts::Massachusetts
+::massmedia::mass
+::mear::wear
+::Mediteranean::Mediterranean
+::meranda::veranda
+::Michagan::Michigan
+::miligram::milligram
+::millitant::militant
+::minsitry::ministry
+::Misouri::Missouri
+::Missisipi::Mississippi
+::Missisippi::Mississippi
+::Monserrat::Montserrat
+::Montnana::Montana
+::moreso::more
+::Morisette::Morissette
+::Morrisette::Morissette
+::mortage::mortgage
+::muscels::mussels
+::Mythraic::Mithraic
+::Naploeon::Napoleon
+::Napolean::Napoleon
+::Napoleonian::Napoleonic
+::Nazereth::Nazareth
+::negociate::negotiate
+::negociation::negotiation
+::negociations::negotiations
+::neigborhood::neighborhood
+::neigbour::neighbour
+::neigbouring::neighbouring
+::neigbours::neighbours
+::ninties::s
+::noone::no
+::noticible::noticeable
+::Novermber::November
+::Nullabour::Nullarbor
+::Nuremburg::Nuremberg
+::ocasion::occasion
+::ocasional::occasional
+::ocasionally::occasionally
+::ocasionaly::occasionally
+::ocasioned::occasioned
+::ocasions::occasions
+::occurance::occurrence
+::occurances::occurrences
+::officals::officials
+::offred::offered
+::olther::other
+::onot::note
+::organistion::organisation
+::originall::original
+::otherwordly::otherworldly
+::oublisher::publisher
+::oustanding::outstanding
+::overthere::over
+::Palistian::Palestinian
+::Palistinian::Palestinian
+::Palistinians::Palestinians
+::Papanicalou::Papanicolaou
+::parisitic::parasitic
+::particually::particularly
+::pblisher::publisher
+::peacefuland::peaceful
+::peaple::people
+::peaples::peoples
+::peformed::performed
+::Peloponnes::Peloponnesus
+::pensle::pencil
+::peretrator::perpetrator
+::perfomance::performance
+::performes::performed
+::perpertrated::perpetrated
+::persan::person
+::personel::personnel
+::Pharoah::Pharaoh
+::Philipines::Philippines
+::Phillipine::Philippine
+::Phillipines::Philippines
+::Phillippines::Philippines
+::Phonecian::Phoenecian
+::piblisher::publisher
+::poenis::penis
+::populer::popular
+::porshan::portion
+::porshon::portion
+::portait::portrait
+::Portugese::Portuguese
+::portugues::Portuguese
+::positon::position
+::possibilty::possibility
+::possiblities::possibilities
+::possiblity::possibility
+::Postdam::Potsdam
+::potrait::portrait
+::ppublisher::publisher
+::Premonasterians::Premonstratensians
+::principlaity::principality
+::principaly::principality
+::principial::principal
+::principly::principally
+::prinicipal::principal
+::privalege::privilege
+::privaleges::privileges
+::priveledges::privileges
+::profesion::profusion
+::progidy::prodigy
+::progrom::pogrom
+::progroms::pogroms
+::prominately::prominently
+::provisiosn::provision
+::pubisher::publisher
+::publiaher::publisher
+::publicher::publisher
+::publiser::publisher
+::publisger::publisher
+::publisheed::published
+::publisherr::publisher
+::publishher::publisher
+::publishor::publisher
+::publishre::publisher
+::publissher::publisher
+::publlisher::publisher
+::publusher::publisher
+::Pucini::Puccini
+::Puertorrican::Puerto
+::Puertorricans::Puerto
+::pulisher::publisher
+::puplisher::publisher
+::qtuie::quite
+::Queenland::Queensland
+::reccomend::recommend
+::reccomendations::recommendations
+::reccomended::recommended
+::reccomending::recommending
+::receivedfrom::received
+::recepient::recipient
+::recepients::recipients
+::reciever::receiver
+::recievers::receivers
+::recieves::receives
+::recived::received
+::recivership::receivership
+::recompence::recompense
+::reconnaisance::reconnaissance
+::recordproducer::record
+::recquired::required
+::referece::reference
+::refereces::references
+::referemce::reference
+::referemces::references
+::referencs::references
+::referenece::reference
+::refereneced::referenced
+::refereneces::references
+::refernce::reference
+::referrences::references
+::reffering::referring
+::reliablity::reliability
+::rennovate::renovate
+::rennovated::renovated
+::rennovating::renovating
+::rennovation::renovation
+::repatition::repetition
+::repblic::republic
+::repblican::republican
+::repblicans::republicans
+::repblics::republics
+::repectively::respectively
+::repeition::repetition
+::reponse::response
+::reponsible::responsible
+::repubic::republic
+::repubican::republican
+::repubicans::republicans
+::repubics::republics
+::republi::republic
+::republian::republican
+::republians::republicans
+::republis::republics
+::repulic::republic
+::repulican::republican
+::repulicans::republicans
+::repulics::republics
+::requirment::requirement
+::residental::residential
+::responnsibilty::responsibility
+::responsibilites::responsibilities
+::responsiblities::responsibilities
+::responsiblity::responsibility
+::ressurect::resurrect
+::ressurected::resurrected
+::ressurection::resurrection
+::restarant::restaurant
+::restarants::restaurants
+::restraunt::restraint
+::resturants::restaurants
+::resturaunts::restaurants
+::rference::reference
+::rferences::references
+::rised::raised
+::Rockerfeller::Rockefeller
+::Russion::Russian
+::Sacremento::Sacramento
+::Sanhedrim::Sanhedrin
+::Saterday::Saturday
+::Saterdays::Saturdays
+::saveing::saving
+::scientis::scientist
+::secceeded::seceded
+::seceed::succeed
+::seceeded::succeeded
+::seperate::separate
+::seperated::separated
+::seperately::separately
+::seperates::separates
+::seperating::separating
+::seperation::separation
+::seperatism::separatism
+::seperatist::separatist
+::sepulcre::sepulchre
+::sevice::service
+::shadasloo::shadaloo
+::shadoloo::shadaloo
+::shamen::shaman
+::sheat::sheath
+::shortwhile::short
+::shoudln::should
+::shouldnt::should
+::sinse::sines
+::Sionist::Zionist
+::Sionists::Zionists
+::Sixtin::Sistine
+::Skagerak::Skagerrak
+::slighly::slightly
+::slippy::slippery
+::smealting::smelting
+::sotyr::satyr
+::sould::could
+::specif::specific
+::spects::aspects
+::stomache::stomach
+::structual::structural
+::subcatagories::subcategories
+::subcatagory::subcategory
+::subdivisio::subdivision
+::sudent::student
+::sudents::students
+::superceeded::superseded
+::suprassing::surpassing
+::surley::surly
+::surrended::surrounded
+::tempalte::template
+::tempaltes::templates
+::tennisplayer::tennis
+::testomony::testimony
+::thast::that
+::theather::theater
+::ther::there
+::theyre::they're
+::throught::thought
+::timeschedule::time
+::tiome::time
+::toke::took
+::Tolkein::Tolkien
+::tornadoe::tornado
+::tortise::tortoise
+::tothe::to
+::tourch::torch
+::trigered::triggered
+::troups::troupes
+::turnk::turnkey
+::Tuscon::Tucson
+::tution::tuition
+::twelth::twelfth
+::ublisher::publisher
+::Ukranian::Ukrainian
+::unbeknowst::unbeknownst
+::unforseen::unforeseen
+::UnitesStates::UnitedStates
+::univerity::university
+::unmanouverable::unmaneuverable
+::unsed::used
+::upto::up
+::vigeur::vigueur
+::villin::villi
+::virtualy::virtually
+::volumne::volume
+::weild::wield
+::wholy::wholly
+::wich::which
+::willk::will
+::withh::with
+::yaerly::yearly
+::yearm::year
+::Yementite::Yemenite
+::yrea::year
+::yotube::youtube
 ; Anything below this point was added to the script by the user via the Win+H hotkey.
 ; Added by Conrad
-;-------------------------------------------------------------------------------
-::daniel::Daniel
 ::etc::etc.
 ::mr::Mr 
 ::e.g::e.g.
 ::ou::OU
-::poland::Poland
 ::firefox::Firefox
 ::ebooks::eBooks 
 ::autoit::autoIt
 ::sripts::scripts
 ::sript::script
-::mary::Mary
-::olivia::Olivia
-::emaning::meaning
 ::literes::liters
 ::yt::YouTube
 ::self employment::self-employment
 ::advancehow::advance how 
 ::gmail ::Gmail ;with extra space, so that it doesn't get replaced in email addresses
 ::english::English
-::alex::Alex
-::paul::Paul
 ::lucie::Lucie
 ;::  :: ;removes double space if done by mistake, but then it affects browsing and stuff...
 ::quora::Quora
@@ -72132,33 +71119,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Coz::Because
 ::Coz,::Because,
 ::coz,::because,
-::daniel::Daniel
-::etc::etc.
-::mr::Mr 
-::e.g::e.g.
-::ou::OU
-::poland::Poland
-::firefox::Firefox
-::ebooks::eBooks 
-::autoit::autoIt
-::sripts::scripts
-::sript::script
-::mary::Mary
-::olivia::Olivia
-::emaning::meaning
-::literes::liters
-::yt::YouTube
-::self employment::self-employment
-::advancehow::advance how 
-::english::English
-::alex::Alex
-::paul::Paul
-::lucie::Lucie
 ;::  :: ;removes double space if done by mistake
-::quora::Quora
-::coz::because
-::Coz::Because
-::Coz,::Because,
 ::valentine::Valentine
 ::catholic::Catholic
 ::christianity::Christianity
@@ -72177,7 +71138,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::thinkpad::ThinkPad
 ::portinion::portion
 ::easly::easily
-::likley::likely
 ::yp::YP
 ::hermes::Hermes
 ::ralph::Ralph
@@ -72190,7 +71150,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::don'::don't
 ::appripiately::appropriately
 ::you'e::you're
-::hte::the
 ::they'e::they're
 ::pc::PC
 ::text books::textbooks
@@ -72204,7 +71163,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 :: i:: I
 ::i::I
 ::pls::please
-::tset::test
 ::edinburgh::Edinburgh
 ::jan::Jan
 ::btls::bottles
@@ -72213,7 +71171,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ful::full
 ::placce::place
 ::fre::free
-::fornt::front
 ::bllue::blue
 ::lisst::list
 ::chreck::check
@@ -72223,8 +71180,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tshirt::t-shirt
 ::kepe::keep
 ::develp::develop
-::perosn::person
-::amybe::maybe
 ::won'::won't
 ::yees::yes
 ::lets say::let's say
@@ -72234,8 +71189,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::abd::and
 ::perhasps::perhaps
 ::aboce::above
-::famliy::family
-::gorup::group
 ::proposng::proposing
 ::schedulding::scheduling
 ::produc::product
@@ -72247,7 +71200,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::oilvia::Olivia
 ::new York::New York
 ::new york::New York
-::odes::does
 ::Unncessary::Unnecessary
 ::shouldn’::shouldn’t
 ::custommers::customers
@@ -72260,7 +71212,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::colapsible::collapsible
 ::unnecessarly::unnecessarily
 ::smoth::smooth
-::somehting::something
 ::stoped::stopped
 ::ofcourse::of course
 ::byut::but
@@ -72270,12 +71221,34 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::nutella::Nutella
 ::thtp::http
 ::untiil::until
-::evrey::every
 ::thre::three
 ::oof::of
 ::tto::to
 ::aa::a
-::jsut::just
 ::ti::it
-::theyre::they're
 ::em::me
+::nwm::nvm
+::a nd::and
+::havin::having
+::leith::Leith
+::asda::Asda
+::mcdonald::McDonald
+::disney::Disney
+::ibm::IBM
+::facebook::Facebook
+::eh6::eh65py
+::esp::esp.
+::mr::Mr.
+::ms.::Ms.
+::ar::are
+::tiltying::tilting
+::asap::as soon as possible
+::lwo::low
+
+::stil::still
+::agai::again
+::anoyed::annoyed
+::phd::PhD
+::anoying::annoying 
+::becase::because
+::ebooks::eBooks
