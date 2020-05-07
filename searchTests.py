@@ -9,8 +9,8 @@ inputFile = set(line.strip() for line in open(
 outputFile = open("outputBetterSearch.txt", "a")
 
 for line in inputFile:
-    if len(line) > 3:  # that's correct, as it counts with \n char
-        for i in range(0, len(line)-2):  # that's correct
+    if len(line) > 2:  # that's correct, as it counts with \n char
+        for i in range(0, len(line)-1):  # that's correct
             if line[i] != line[i+1]:  # that's correct
                 outputSearch = line[:i]+line[i+1] + \
                     line[i]+line[i+2:]
