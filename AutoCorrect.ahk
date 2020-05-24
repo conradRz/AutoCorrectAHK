@@ -1,5 +1,8 @@
 ;------------------------------------------------------------------------------
 ; CHANGELOG:
+;
+; May 24 2020: Date and time shortcuts from the Excel software added. Now Ctrl+; inserts current date
+;		and Ctrl+Shift+; inserts current time globally. It doesn't cause problem when used in Excel
 ; 
 ; April 05 2020: https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines#The_Machine-Readable_List
 ;				added
@@ -65,7 +68,9 @@
 ;   To Do
 ;   Settings
 ;   AUto-COrrect TWo COnsecutive CApitals (commented out by default)
-;   Win+H code
+;   Ctrl+; to insert current date
+;   Ctrl+Shift+; to insert current time (24h mode, use lowercase hh for 12 hour mode)
+;   Win+A code
 ;   Fix for -ign instead of -ing
 ;   Word endings
 ;   Word beginnings
@@ -120,6 +125,22 @@ Hoty:
         SendInput % "{Left}{BS}+" . SubStr(A_PriorHotKey,3,1) . "{Right}"
 Return
 */
+
+;------------------------------------------------------------------------------
+; Ctrl+; to insert current date
+;------------------------------------------------------------------------------
+^;::
+FormatTime, CurrentDateTime,, dd/MM/yy
+SendInput %CurrentDateTime%
+return
+;------------------------------------------------------------------------------
+; Ctrl+Shift+; to insert current time (24h mode, use lowercase hh for 12
+;     hour mode)
+;------------------------------------------------------------------------------
+^+;::
+FormatTime, CurrentTime,, HH:mm
+SendInput %CurrentTime%
+return
 
 ;------------------------------------------------------------------------------
 ; Win+A to enter misspelling correction.  It will be added to this script.
@@ -5614,7 +5635,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::edward::Edward
 ::abraham::Abraham
 ::patrick::Patrick
-::grant::Grant
+;::grant::Grant
 ::karter::Karter
 ::hayden::Hayden
 ::richard::Richard
@@ -5658,7 +5679,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::charlie::Charlie
 ::kyrie::Kyrie
 ::thiago::Thiago
-::brian::Brian
+;::brian::Brian
 ::kenneth::Kenneth
 ::andres::Andres
 ::lukas::Lukas
@@ -5771,7 +5792,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::caiden::Caiden
 ::gage::Gage
 ::atlas::Atlas
-::major::Major
+;::major::Major
 ::devin::Devin
 ::edwin::Edwin
 ::angelo::Angelo
@@ -20286,7 +20307,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::rutland::Rutland
 ::warwick::Warwick
 ::newport::Newport
-::reading::Reading
+;::reading::Reading
 ::baldwin::Baldwin
 ::altoona::Altoona
 ::wooster::Wooster
@@ -27228,7 +27249,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ajmer::Ajmer
 ::akola::Akola
 ::aland::Aland
-::along::Along
+;::along::Along
 ::alwar::Alwar
 ::ambad::Ambad
 ::ambah::Ambah
@@ -38744,7 +38765,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::feesl::feels
 ::rBian::Brian
 ::Biran::Brian
-::Brain::Brian
+;::Brain::Brian
 ::Brina::Brian
 ::omld::mold
 ::mlod::mold
@@ -50813,7 +50834,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::creatiev::creative
 ::ebat::beat
 ::baet::beat
-::beta::beat
+;::beta::beat
 ::afscinating::fascinating
 ::fsacinating::fascinating
 ::facsinating::fascinating
@@ -77925,7 +77946,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::somethign's::something's
 ::somethin'gs::something's
 ::somethings'::something's
-::rogan::organ
+;::rogan::organ
 ::ogran::organ
 ::oragn::organ
 ::orgna::organ
@@ -81631,7 +81652,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tiltying::tilting
 ::asap::as soon as possible
 ::lwo::low
-
 ::stil::still
 ::agai::again
 ::anoyed::annoyed
@@ -81644,3 +81664,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::no the::on the
 ::checkin::check-in
 ::ens::end
+::ro::or
+::everyday::every day
+;::meaning::meanning
