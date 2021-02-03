@@ -80,7 +80,7 @@
 ;   Personal hotkeys of github user: denolfe
 ;	Permutations generated from the wordlist
 ;	from https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines#The_Machine-Readable_List
-;   Hotstrings added to the script by the user via the Win+H hotkey
+;   Hotstrings added to the script by the user via the Win+A hotkey
 ;------------------------------------------------------------------------------
 
 ;------------------------------------------------------------------------------
@@ -97,6 +97,9 @@
 ;		ddouble, moneyy, but then make sure there are no repetition with 
 ;		normal wordlist.
 ;	- Fix two consecutive letters in a word e.g. LEtter, TEst
+; 	- Work through https://s3.wp.wsu.edu/uploads/sites/1350/2017/05/errorsRTF.txt
+;	- figure out automating -ing endings to one character, maybe AltGr?
+; 	- automatically convert a to an if there in a need?
 ;------------------------------------------------------------------------------
 
 ;------------------------------------------------------------------------------
@@ -126,11 +129,13 @@ Hoty:
 Return
 */
 
+SetCapsLockState, AlwaysOff ;just as it says
+
 ;------------------------------------------------------------------------------
 ; Ctrl+; to insert current date
 ;------------------------------------------------------------------------------
 ^;::
-FormatTime, CurrentDateTime,, dd/MM/yy
+FormatTime, CurrentDateTime,, dd/MMM/yy
 SendInput %CurrentDateTime%
 return
 ;------------------------------------------------------------------------------
@@ -6056,7 +6061,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::jimmy::Jimmy
 ::lionel::Lionel
 ::reece::Reece
-::ty::Ty
+;::ty::Ty
 ::chris::Chris
 ::forrest::Forrest
 ::korbin::Korbin
@@ -6290,7 +6295,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kody::Kody
 ::yahir::Yahir
 ::brodie::Brodie
-::trace::Trace
+; ::trace::Trace
 ::darwin::Darwin
 ::tadeo::Tadeo
 ::bentlee::Bentlee
@@ -6322,7 +6327,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::mayson::Mayson
 ::alfred::Alfred
 ::duncan::Duncan
-::junior::Junior
+;::junior::Junior
 ::kendall::Kendall
 ::zavier::Zavier
 ::koda::Koda
@@ -6824,7 +6829,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::luciana::Luciana
 ::kelsey::Kelsey
 ::nadia::Nadia
-::amber::Amber
+;::amber::Amber
 ::gia::Gia
 ::yaretzi::Yaretzi
 ::carmen::Carmen
@@ -7215,7 +7220,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::karlee::Karlee
 ::aubriella::Aubriella
 ::tinley::Tinley
-::dream::Dream
+;::dream::Dream
 ::claudia::Claudia
 ::corinne::Corinne
 ::erica::Erica
@@ -17372,7 +17377,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::altadena::Altadena
 ::alhambra::Alhambra
 ::adelanto::Adelanto
-::surprise::Surprise
+; ::surprise::Surprise
 ::san luis::San Luis
 ::rio rico::Rio Rico
 ::prescott::Prescott
@@ -17383,7 +17388,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::branford::Branford
 ::wheeling::Wheeling
 ::waukesha::Waukesha
-::superior::Superior
+;::superior::Superior
 ::onalaska::Onalaska
 ::kaukauna::Kaukauna
 ::appleton::Appleton
@@ -20249,7 +20254,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::pahrump::Pahrump
 ::fernley::Fernley
 ::roswell::Roswell
-::liberal::Liberal
+;::liberal::Liberal
 ::durango::Durango
 ::clifton::Clifton
 ::yucaipa::Yucaipa
@@ -22550,7 +22555,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::viersen::Viersen
 ::waltrop::Waltrop
 ::warburg::Warburg
-::wedding::Wedding
+;::wedding::Wedding
 ::wegberg::Wegberg
 ::werdohl::Werdohl
 ::westend::Westend
@@ -23516,7 +23521,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::searcy::Searcy
 ::rogers::Rogers
 ::pelham::Pelham
-::mobile::Mobile
+;::mobile::Mobile
 ::hoover::Hoover
 ::dothan::Dothan
 ::bugiri::Bugiri
@@ -25337,7 +25342,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::sevran::Sevran
 ::sèvres::Sèvres
 ::seynod::Seynod
-::stains::Stains
+;::stains::Stains
 ::tarbes::Tarbes
 ::thiais::Thiais
 ::toulon::Toulon
@@ -26320,7 +26325,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::largo::Largo
 ::doral::Doral
 ::davie::Davie
-::cocoa::Cocoa
+;::cocoa::Cocoa
 ::brent::Brent
 ::cabot::Cabot
 ::busia::Busia
@@ -26597,7 +26602,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kursk::Kursk
 ::liski::Liski
 ::livny::Livny
-::marks::Marks
+;::marks::Marks
 ::murom::Murom
 ::nytva::Nytva
 ::ochër::Ochër
@@ -28298,7 +28303,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::kent::Kent
 ::orem::Orem
 ::lehi::Lehi
-::bend::Bend
+;::bend::Bend
 ::elko::Elko
 ::kuna::Kuna
 ::erie::Erie
@@ -28332,7 +28337,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ojus::Ojus
 ::lutz::Lutz
 ::iona::Iona
-::bear::Bear
+;::bear::Bear
 ::arua::Arua
 ::gulu::Gulu
 ::lira::Lira
@@ -28369,7 +28374,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lice::Lice
 ::söke::Söke
 ::soma::Soma
-::tire::Tire
+;::tire::Tire
 ::urla::Urla
 ::usak::Usak
 ::béja::Béja
@@ -28827,7 +28832,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::tema::Tema
 ::gori::Gori
 ::hale::Hale
-::bath::Bath
+;::bath::Bath
 ::bury::Bury
 ::hull::Hull
 ::rhyl::Rhyl
@@ -29932,7 +29937,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::oredal::ordeal
 ::ordael::ordeal
 ::ordela::ordeal
-::usb::sub
+;::usb::sub
 ::sbu::sub
 ::ocnfidentiality::confidentiality
 ::cnofidentiality::confidentiality
@@ -51004,7 +51009,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::blacokut::blackout
 ::blackuot::blackout
 ::blackotu::blackout
-::bAby::Abby
+;::bAby::Abby
 ::Abyb::Abby
 ::emnd::mend
 ::mned::mend
@@ -52281,7 +52286,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Mdeina::Medina
 ::Meidna::Medina
 ::Mednia::Medina
-::Median::Medina
+;::Median::Medina
 ::diea::idea
 ::ieda::idea
 ::idae::idea
@@ -61155,7 +61160,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::interivew::interview
 ::interveiw::interview
 ::interviwe::interview
-::cat::act
+;::cat::act
 ::atc::act
 ::ocnfirmation::confirmation
 ::cnofirmation::confirmation
@@ -67383,7 +67388,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Luul::Lulu
 ::ifled::filed
 ::flied::filed
-::field::filed
+;::field::filed
 ::filde::filed
 ::rByant's::Bryant's
 ::Byrant's::Bryant's
@@ -68424,7 +68429,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::fsih::fish
 ::fihs::fish
 ::aGry::Gary
-::Gray::Gary
+;::Gray::Gary
 ::Gayr::Gary
 ::ifts::fits
 ::ftis::fits
@@ -69884,7 +69889,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::siklls::skills
 ::sklils::skills
 ::skilsl::skills
-::isn::sin
+;::isn::sin
 ::sni::sin
 ::ebef::beef
 ::befe::beef
@@ -72635,7 +72640,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::travle::travel
 ::aPris::Paris
 ::Prais::Paris
-::Pairs::Paris
+;::Pairs::Paris
 ::Parsi::Paris
 ::iNna::Nina
 ::Nnia::Nina
@@ -81505,13 +81510,13 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yotube::youtube
 ; Anything below this point was added to the script by the user via the Win+H hotkey.
 ; Added by Conrad
-::etc::etc.
+;::etc::etc.
 ::mr::Mr 
-::e.g::e.g.
+::e.g::for example
 ::ou::OU
 ::firefox::Firefox
 ::ebooks::eBooks 
-::autoit::autoIt
+::autoit::AutoIt
 ::sripts::scripts
 ::sript::script
 ::literes::liters
@@ -81527,7 +81532,6 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Coz::Because
 ::Coz,::Because,
 ::coz,::because,
-;::  :: ;removes double space if done by mistake
 ::valentine::Valentine
 ::catholic::Catholic
 ::christianity::Christianity
@@ -81592,7 +81596,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::yees::yes
 ::lets say::let's say
 ::let say::let's say
-::eg::e.g.
+::eg::for example
 ::cahncer::chance
 ::abd::and
 ::perhasps::perhaps
@@ -81667,3 +81671,159 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ro::or
 ::everyday::every day
 ;::meaning::meanning
+::Lets assume::Let's assume
+::lets assume::let's assume
+::youll::you'll
+::itll::it'll
+::Walet::Wallet
+::walet::wallet
+:*?R0:,::,{Space} ;Send the replacement text raw; that is, without translating {Enter} to Enter, ^c to Control+C, etc. This option is put into effect automatically for hotstrings that have a continuation section. Use R0 to turn this option back off.
+;:*?R0:.::.{Space}
+:*?R0:;::;{Space}
+::wont::won't
+
+;--------------------PERIOD
+:*c?:.a::. A
+:*c?:.b::. B
+:*c?:.c::. C
+:*c?:.d::. D
+:*c?:.e::. E
+:*c?:.f::. F
+:*c?:.g::. G
+:*c?:.h::. H
+:*c?:.i::. I
+:*c?:.j::. J
+:*c?:.k::. K
+:*c?:.l::. L
+:*c?:.m::. M
+:*c?:.n::. N
+:*c?:.o::. O
+:*c?:.p::. P
+:*c?:.q::. Q
+:*c?:.r::. R
+:*c?:.s::. S
+:*c?:.t::. T
+:*c?:.u::. U
+:*c?:.v::. V
+:*c?:.w::. W
+:*c?:.x::. X
+:*c?:.y::. Y
+:*c?:.z::. Z
+;--------------------QUESTION MARK
+:*c?:?a::? A
+:*c?:?b::? B
+:*c?:?c::? C
+:*c?:?d::? D
+:*c?:?e::? E
+:*c?:?f::? F
+:*c?:?g::? G
+:*c?:?h::? H
+:*c?:?i::? I
+:*c?:?j::? J
+:*c?:?k::? K
+:*c?:?l::? L
+:*c?:?m::? M
+:*c?:?n::? N
+:*c?:?o::? O
+:*c?:?p::? P
+:*c?:?q::? Q
+:*c?:?r::? R
+:*c?:?s::? S
+:*c?:?t::? T
+:*c?:?u::? U
+:*c?:?v::? V
+:*c?:?w::? W
+:*c?:?x::? X
+:*c?:?y::? Y
+:*c?:?z::? Z
+;--------------------EXCLAM
+:*c?:!a::! A
+:*c?:!b::! B
+:*c?:!c::! C
+:*c?:!d::! D
+:*c?:!e::! E
+:*c?:!f::! F
+:*c?:!g::! G
+:*c?:!h::! H
+:*c?:!i::! I
+:*c?:!j::! J
+:*c?:!k::! K
+:*c?:!l::! L
+:*c?:!m::! M
+:*c?:!n::! N
+:*c?:!o::! O
+:*c?:!p::! P
+:*c?:!q::! Q
+:*c?:!r::! R
+:*c?:!s::! S
+:*c?:!t::! T
+:*c?:!u::! U
+:*c?:!v::! V
+:*c?:!w::! W
+:*c?:!x::! X
+:*c?:!y::! Y
+:*c?:!z::! Z
+;------------------------------------------------------------------------------
+::onlly::only
+::ilustrates::illustrates
+::pricy::pricey
+::arent::aren't
+::conrad::Conrad
+::oposed::opposed
+::nick::username
+::nickname::username
+::lifes::lives
+::fi::if
+
+#space::Suspend  ; Assign the toggle-suspend function to WIN+SPACE combination, useful in other scripts.
+
+::nrsvp::No response or acknowledgement is necessary (to save our time spent typing/reading/receiving notification).
+::og::go
+::jews::Jews
+::ron::Ron
+::whats::what's
+::msged::messaged
+::traying::trying
+::info::information
+::etc::and so on
+::ofc::of course
+::imo::in my opinion
+::Indians::Indians
+::germans::Germans
+::en mase::en masse
+::sth::something
+::irl::in real life
+CapsLock::Send {BackSpace}
+::phds::PhDs
+::phd::PhD
+::ty::thank you
+::Ty::Thank you
+::msgs::messages
+::msg::message
+::catched::caught
+::mentaly::mentally 
+::afaik::as far as I know
+::sun dried::sundried
+::vs::as opposed to
+::gf::girlfriend
+::innapriopriate::inappropriate
+::cinamon::cinnamon
+::approx::approximately
+::Approx::Approximately
+::shape of form::shape or form
+::unresponsible::irresponsible
+::iphone::iPhone
+::hes::he's
+::max::maximum
+::$F4::Send, {F4}
+::pic::pictrue
+::pics::pictures
+::greek::Greek
+::masive::massive
+::disconect::disconnect
+::no enough::not enough
+::unusuall::unusual
+::vegs::vegetables
+::asimilated::assimilated
+::--::—
+::ods::odds 
