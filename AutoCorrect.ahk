@@ -1,5 +1,7 @@
 ;------------------------------------------------------------------------------
 ; CHANGELOG:
+; 
+; May 02 2021: Balabolka software shortcut for disabling/enabling audio readout of clipboard now global across all software
 ;
 ; May 24 2020: Date and time shortcuts from the Excel software added. Now Ctrl+; inserts current date
 ;		and Ctrl+Shift+; inserts current time globally. It doesn't cause problem when used in Excel
@@ -68,6 +70,7 @@
 ;   To Do
 ;   Settings
 ;   AUto-COrrect TWo COnsecutive CApitals (commented out by default)
+;   Balabolka software shortcut for disabling/enabling audio readout of clipboard global across all software
 ;   Ctrl+; to insert current date
 ;   Ctrl+Shift+; to insert current time (24h mode, use lowercase hh for 12 hour mode)
 ;   Win+A code
@@ -131,6 +134,13 @@ Return
 
 SetCapsLockState, AlwaysOff ;just as it says
 
+;------------------------------------------------------------------------------
+; Makes Balabolka software shortcut for disabling/enabling audio readout 
+; of clipboard global across all software
+;------------------------------------------------------------------------------
+^+w::
+ControlSend, ahk_parent, ^+w, Balabolka
+return
 ;------------------------------------------------------------------------------
 ; Ctrl+; to insert current date
 ;------------------------------------------------------------------------------
@@ -5521,7 +5531,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::caleb::Caleb
 ::josiah::Josiah
 ::christian::Christian
-::hunter::Hunter
+;::hunter::Hunter
 ::eli::Eli
 ::jonathan::Jonathan
 ::connor::Connor
@@ -20291,7 +20301,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::benicia::Benicia
 ::belmont::Belmont
 ::barstow::Barstow
-::banning::Banning
+;::banning::Banning
 ::atwater::Atwater
 ::artesia::Artesia
 ::arcadia::Arcadia
@@ -30244,7 +30254,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::spto::spot
 ::eLna::Lena
 ::Lnea::Lena
-::Lean::Lena
+;::Lean::Lena
 ::oDnny::Donny
 ::Dnony::Donny
 ::Donyn::Donny
@@ -81815,7 +81825,7 @@ CapsLock::Send {BackSpace}
 ::iphone::iPhone
 ::hes::he's
 ::max::maximum
-::$F4::Send, {F4}
+::$F4::Send, {F4} ; BIOS related issue in thinkpads, leave it as it is, otherwise f4 won't work
 ::pic::pictrue
 ::pics::pictures
 ::greek::Greek
@@ -81827,3 +81837,6 @@ CapsLock::Send {BackSpace}
 ::asimilated::assimilated
 ::--::—
 ::ods::odds 
+::aditional::additional
+::ww2::World War II
+::jewlry::jewelry
