@@ -1,6 +1,9 @@
 ;------------------------------------------------------------------------------
 ; CHANGELOG:
 ; 
+; 
+; May 25 2021: Most frequent duplicate word pairs added
+;
 ; May 02 2021: Balabolka software shortcut for disabling/enabling audio readout of clipboard now global across all software
 ;
 ; May 24 2020: Date and time shortcuts from the Excel software added. Now Ctrl+; inserts current date
@@ -59,6 +62,7 @@
 ; 
 ; http://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings
 ; http://en.wikipedia.org/wiki/Wikipedia:Typo
+; https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/Repetitions#Most_frequent_duplicate_word_pairs
 ; Microsoft Office autocorrect list
 ; Script by jaco0646 http://www.autohotkey.com/forum/topic8057.html
 ; OpenOffice autocorrect list
@@ -69,6 +73,7 @@
 ; 
 ;   To Do
 ;   Settings
+; 	Frequent duplicate word pairs
 ;   AUto-COrrect TWo COnsecutive CApitals (commented out by default)
 ;   Balabolka software shortcut for disabling/enabling audio readout of clipboard global across all software
 ;   Ctrl+; to insert current date
@@ -106,10 +111,104 @@
 ;------------------------------------------------------------------------------
 
 ;------------------------------------------------------------------------------
+; Frequent duplicate word pairs
+;------------------------------------------------------------------------------
+::please please::please
+::the the::the
+::it it::it
+::that that::that
+::etc etc::etc
+::giggidy giggidy::giggidy
+::very very::very
+::you you::you
+::is is::is
+::many many::many
+::a a::a
+::in in::in
+::to to::to
+::really really::really
+::had had::had
+::no no::no
+::use use::use
+::this this::this
+::and and::and
+::text text::text
+::none none::none
+::much much::much
+::of of::of
+::on on::on
+::there there::there
+::far far::far
+::so so::so
+::long long::long
+::yes yes::yes
+::for for::for
+::as as::as
+::was was::was
+::at at::at
+::are are::are
+::we we::we
+::not not::not
+::one one::one
+::great great::great
+::be be::be
+::her her::her
+::do do::do
+::go go::go
+::yeah yeah::yeah
+::film film::film
+::from from::from
+::with with::with
+::bye bye::bye
+::well well::well
+::late late::late
+::by by::by
+::have have::have
+::all all::all
+::hey hey::hey
+::way way::way
+::an an::an
+::highway highway::highway
+::bad bad::bad
+::never never::never
+::about about::about
+::list list::list
+::delete delete::delete
+::or or::or
+::now now::now
+::wild wild::wild
+::name name::name
+::time time::time
+::ok ok::ok
+::us us::us
+::plus plus::plus
+::new new::new
+::more more::more
+::here here::here
+::people people::people
+::user user::user
+::hi hi::hi
+::has has::has
+::money money::money
+::they they::they
+::what what::what
+::talk talk::talk
+::always always::always
+::why why::why
+::other other::other
+::but but::but
+::surprise surprise::surprise
+::if if::if
+
+;------------------------------------------------------------------------------
 ; Settings
 ;------------------------------------------------------------------------------
 #NoEnv ; For security
 #SingleInstance force
+#KeyHistory 0
+ListLines Off ; ListLines and #KeyHistory are functions used to "log your keys". Disable them as they're only useful for debugging purposes. 
+SetBatchLines, -1 ; The default SetBatchLines value makes your script sleep 10 milliseconds every line. Make it -1 to not sleep (but remember to include at least one Sleep in your loops, if any!) 
+
 
 ;------------------------------------------------------------------------------
 ; AUto-COrrect TWo COnsecutive CApitals.
@@ -138,9 +237,9 @@ SetCapsLockState, AlwaysOff ;just as it says
 ; Makes Balabolka software shortcut for disabling/enabling audio readout 
 ; of clipboard global across all software
 ;------------------------------------------------------------------------------
-^+w::
-ControlSend, ahk_parent, ^+w, Balabolka
-return
+;^+w::
+;ControlSend, ahk_parent, ^+w, Balabolka
+;return
 ;------------------------------------------------------------------------------
 ; Ctrl+; to insert current date
 ;------------------------------------------------------------------------------
@@ -5774,7 +5873,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::maximiliano::Maximiliano
 ::anderson::Anderson
 ::ronan::Ronan
-::lane::Lane
+;::lane::Lane
 ::cristian::Cristian
 ::titus::Titus
 ::travis::Travis
@@ -6081,7 +6180,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::leonard::Leonard
 ::alvin::Alvin
 ::issac::Issac
-::bo::Bo
+;::bo::Bo
 ::quincy::Quincy
 ::mack::Mack
 ::samson::Samson
@@ -23469,7 +23568,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::ankeny::Ankeny
 ::wilton::Wilton
 ::irving::Irving
-::humble::Humble
+; ::humble::Humble
 ::groves::Groves
 ::frisco::Frisco
 ::euless::Euless
@@ -28322,7 +28421,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::lodi::Lodi
 ::galt::Galt
 ::brea::Brea
-::bell::Bell
+; ::bell::Bell
 ::yuma::Yuma
 ::mesa::Mesa
 ::eloy::Eloy
@@ -28794,7 +28893,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::wadi::Wadi
 ::wani::Wani
 ::yafo::Yafo
-::cork::Cork
+;::cork::Cork
 ::naas::Naas
 ::batu::Batu
 ::bima::Bima
@@ -35132,7 +35231,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::Kan'es::Kane's
 ::Kanes'::Kane's
 ::rPue::Prue
-::Pure::Prue
+;::Pure::Prue
 ::Preu::Prue
 ::rtial::trial
 ::tiral::trial
@@ -39349,7 +39448,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 ::folsk::folks
 ::afst::fast
 ::fsat::fast
-::fats::fast
+;::fats::fast
 ::esemed::seemed
 ::semeed::seemed
 ::seeemd::seemed
@@ -81787,7 +81886,7 @@ return  ; This makes the above hotstrings do nothing so that they override the i
 
 #space::Suspend  ; Assign the toggle-suspend function to WIN+SPACE combination, useful in other scripts.
 
-::nrsvp::No response or acknowledgement is necessary (to save our time spent typing/reading/receiving notification).
+::nrsvp::No response or acknowledgement is necessary (to save our time spent typing/reading/receiving notification) :)
 ::og::go
 ::jews::Jews
 ::ron::Ron
@@ -81835,8 +81934,1578 @@ CapsLock::Send {BackSpace}
 ::unusuall::unusual
 ::vegs::vegetables
 ::asimilated::assimilated
-::--::—
-::ods::odds 
+:*R0:--::—{space 1}
+::ods::odds
 ::aditional::additional
-::ww2::World War II
+::ww1::World War 1
+::ww2::World War 2
 ::jewlry::jewelry
+::i.e.::in other words
+::i.e::in other words
+::asian::Asian
+::asians::Asians
+::christians::Christians
+::precut::pre-cut
+::therasus::thesaurus
+::recupperate::recuperate
+; :*R0:(::(){left 1} ; R: Send the replacement text raw; that is, without translating {Enter} to Enter, ^c to Ctrl+C, etc. This option is put into effect automatically for hotstrings that have a continuation section. Use R0 to turn this option back off.
+:b0?*R0:(::{left 1} {right 1}){left 1}
+:b0?*R0:"::{left 1} {right 1}"{left 1}
+:b0?*R0:[::{left 1} {right 1}]{left 1} 
+:b0?*R0:{::{left 1} {right 1}{}}{left 1} ; that's the correct way to do it, as { is a special character and needs to be escaped
+:*:conrad@::conrad.rzuc@gmail.com
+::theyd::they'd
+::enforcment::enforcement
+::drawed::drawn
+::a unusual::an unusual
+::straight away::straightaway
+::an an::an
+::of of::of
+::a 11::an 11
+::a 11th::an 11th
+::a 11th century::an 11th-century
+::a 18::an 18
+::a 1800::an 1800
+::a 18th::an 18th
+::a 18th century::an 18th-century
+::a 8::an 8
+::a 80::an 80
+::a 800::an 800
+::a 8000::an 8000
+::a 80th::an 80th
+::a 81::an 81
+::a 82::an 82
+::a 83::an 83
+::a 84::an 84
+::a 85::an 85
+::a 86::an 86
+::a 87::an 87
+::a 88::an 88
+::a 89::an 89
+::a 8th::an 8th
+::a 8th century::an 8th-century
+::a abbreviation::an abbreviation
+::a ABC::an ABC
+::a absolute::an absolute
+::a abstract::an abstract
+::a accident::an accident
+::a accidental::an accidental
+::a account::an account
+::a acoustic::an acoustic
+::a acronym::an acronym
+::a acting::an acting
+::a action::an action
+::a active::an active
+::a actor::an actor
+::a actress::an actress
+::a actual::an actual
+::a additional::an additional
+::a advanced::an advanced
+::a affair::an affair
+::a affiliate::an affiliate
+::a African::an African
+::a album::an album
+::a Algerian::an Algerian
+::a alias::an alias
+::a alien::an alien
+::a alternative::an alternative
+::a AM::an AM
+::a amateur::an amateur
+::a American::an American
+::a amount::an amount
+::a analog::an analog
+::a analogue::an analogue
+::a ancient::an ancient
+::a angle::an angle
+::a Angolan::an Angolan
+::a annual::an annual
+::a another::another
+::a answer::an answer
+::a antenna::an antenna
+::a anti::an anti
+::a Arabian::an Arabian
+::a Arabic::an Arabic
+::a Argentine::an Argentine
+::a Armenian::an Armenian
+::a Asian::an Asian
+::a assistant::an assistant
+::a associate::an associate
+::a ATM::an ATM
+::a Australian::an Australian
+::a Austrian::an Austrian
+::a average::an average
+::a dominate::a dominant
+::a early::an early
+::a effective::an effective
+::a Egyptian::an Egyptian
+::a eight::an eight
+::a eighteen::an eighteen
+::a eighteenth::an eighteenth
+::a eighth::an eighth
+::a eighty::an eighty
+::a electric::an electric
+::a electronic::an electronic
+::a eleven::an eleven
+::a eleventh::an eleventh
+::a elite::an elite
+::a embedded::an embedded
+::a English::an English
+::a entire::an entire
+::a EP::an EP
+::a epic::an epic
+::a episode::an episode
+::a equal::an equal
+::a estimate::an estimate
+::a Ethiopian::an Ethiopian
+::a ethnic::an ethnic
+::a example::an example
+::a extra::an extra
+::a FM::an FM
+::a forward by::a foreword by
+::a heir::an heir
+::a honor::an honor
+::a hour::an hour
+::a impact::an impact
+::a important::an important
+::a independent::an independent
+::a Indian::an Indian
+::a individual::an individual
+::a Indonesian::an Indonesian
+::a indoor::an indoor
+::a information::an information
+::a initiative::an initiative
+::a intelligent::an intelligent
+::a interesting::an interesting
+::a interim::an interim
+::a interior::an interior
+::a intermediate::an intermediate
+::a international::an international
+::a Internet::an Internet
+::a intersection::an intersection
+::a interview::an interview
+::a introduction::an introduction
+::a Iranian::an Iranian
+::a Iraqi::an Iraqi
+::a Irish::an Irish
+::a iron::an iron
+::a island::an island
+::a Israeli::an Israeli
+::a issue::an issue
+::a Italian::an Italian
+::a lock out::a lockout
+::a lose::a loss
+::a manufacture::a manufacturer
+::a MLB::an MLB
+::a MRI::an MRI
+::a NBA::an NBA
+::a NBC::an NBC
+::a NFL::an NFL
+::a numbers of::a number of
+::a ocean::an ocean
+::a offensive::an offensive
+::a official::an official
+::a Ohio::an Ohio
+::a oil::an oil
+::a old::an old
+::a Olympic::an Olympic
+::a one of the::one of the
+::a online::an online
+::a only a::only a
+::a open::an open
+::a opinion::an opinion
+::a opposite::an opposite
+::a organization::an organization
+::a original::an original
+::a orthodox::an orthodox
+::a other::an other
+::a outbreak::an outbreak
+::a outdoor::an outdoor
+::a outside::an outside
+::a overtime::an overtime
+::a owner::an owner
+::a run in::a run-in
+::a set up::a setup
+::a several::several
+::a simple as::as simple as
+::a two months::a two-month
+::a ultimate::an ultimate
+::a undercover::an undercover
+::a underground::an underground
+::a unfortunate::an unfortunate
+::a unusual::an unusual
+::a upgrade::an upgrade
+::a upper::an upper
+::a urban::an urban
+::a work out::a workout
+::Aboriginal decent::Aboriginal descent
+::about who to::about whom to
+::according a::according to a
+::affect on::effect on
+::affect upon::effect upon
+::affects of::effects of
+::African decent::African descent
+::after along time::after a long time
+::after been::after being
+::after quite awhile::after quite a while
+::against who::against whom
+::ago since::since
+::agree in principal::agree in principle
+::agreement in principal::agreement in principle
+::Air Canada Center::Air Canada Centre
+::airplane hanger::airplane hangar
+::Albanian decent::Albanian descent
+::all for not::all for naught
+::all it's::all its
+::all though::although
+::all tolled::all told
+::allot of::a lot of
+::alma matter::alma mater
+::along side::alongside
+::along time::a long time
+::also know as::also known as
+::also know by::also known by
+::also know for::also known for
+::alter boy::altar boy
+::alter server::altar server
+::American decent::American descent
+::among others things::among other things
+::amongst others things::amongst other things
+::an 10::a 10
+::an 12::a 12
+::an affect::an effect
+::an another::another
+::an British::a British
+::an Canadian::a Canadian
+::an European::a European
+::an half::a half
+::an halt::a halt
+::an hand::a hand
+::an Hawaiian::a Hawaiian
+::an head::a head
+::an heart::a heart
+::an helicopter::a helicopter
+::an hero::a hero
+::an high::a high
+::an historian::a historian
+::an historic::a historic
+::an historical::a historical
+::an history::a history
+::an hospital::a hospital
+::an hotel::a hotel
+::an humanitarian::a humanitarian
+::an large::a large
+::an larger::a larger
+::an law::a law
+::an lawyer::a lawyer
+::an local::a local
+::an Malaysian::a Malaysian
+::an new::a new
+::an nine::a nine
+::an ninth::a ninth
+::an non::a non
+::an number::a number
+::an other::another
+::an pair::a pair
+::an player::a player
+::an popular::a popular
+::an pre-::a pre-
+::an Scottish::a Scottish
+::an second::a second
+::an series::a series
+::an seven::a seven
+::an seventh::a seventh
+::an six::a six
+::an sixteen::a sixteen
+::an sixth::a sixth
+::an special::a special
+::an species::a species
+::an specific::a specific
+::an statement::a statement
+::an ten::a ten
+::an union::a union
+::an unit::a unit
+::an Unix::a Unix
+::an USB::a USB
+::and etc::etc
+::and so fourth::and so forth
+::another wise::an otherwise
+::any where::anywhere
+::anyways::anyway
+::apart for::apart from
+::apart form::apart from
+::are aloud to::are allowed to
+::are build::are built
+::are can::can
+::are drew::are drawn
+::are have::have
+::are know as::are known as
+::are know by::are known by
+::are know for::are known for
+::are know to::are known to
+::are lain::are laid
+::are lead by::are led by
+::are meet::are met
+::are ran by::are run by
+::are renown::are renowned
+::are setup::are set up
+::are set-up::are set up
+::are shutdown::are shut down
+::are shutout::are shut out
+::are suppose to::are supposed to
+::are the dominate::are the dominant
+::are use to::are used to
+::Armenian decent::Armenian descent
+::as a resulted::as a result
+::as apposed to::as opposed to
+::as back up::as backup
+::as followed::as follows
+::as oppose to::as opposed to
+::Asian decent::Asian descent
+::aside form::aside from
+::assume the reigns::assume the reins
+::assume the roll::assume the role
+::at the alter::at the altar
+::at the reigns::at the reins
+::at then end::at the end
+::away form::away from
+::back and fourth::back and forth
+::back drop::backdrop
+::back in forth::back and forth
+::back peddle::backpedal
+::back round::background
+::badly effected::badly affected
+::baited breath::bated breath
+::barb wire::barbed wire
+::bare in mind::bear in mind
+::based off::based on
+::based off of::based on
+::based out of::based in
+::basic principal::basic principle
+::be apart of::be a part of
+::be build::be built
+::be cause::because
+::be drew::be drawn
+::be know as::be known as
+::be lain::be laid
+::be lead by::be led by
+::be loathe to::be loath to
+::be ran::be run
+::be rebuild::be rebuilt
+::be rode::be ridden
+::be send::be sent
+::be setup::be set up
+::be set-up::be set up
+::be shutdown::be shut down
+::be use to::be used to
+::be ware::beware
+::became it's::became its
+::became know::became known
+::because of it's::because of its
+::because of the fact that::because
+::been a while::been awhile
+::been accustom to::been accustomed to
+::been already been::already been
+::been build::been built
+::been it's::been its
+::been know::been known
+::been lain::been laid
+::been lead by::been led by
+::been loathe to::been loath to
+::been mislead::been misled
+::been ran::been run
+::been rebuild::been rebuilt
+::been reportedly been::reportedly been
+::been rode::been ridden
+::been send::been sent
+::been setup::been set up
+::been show on::been shown on
+::been shutdown::been shut down
+::been use to::been used to
+::before hand::beforehand
+::before it's::before its
+::began it's::began its
+::behind it's::behind its
+::being build::being built
+::being it's::being its
+::being lain::being laid
+::being lead by::being led by
+::being loathe to::being loath to
+::being ran::being run
+::being rode::being ridden
+::being setup::being set up
+::being set-up::being set up
+::being show on::being shown on
+::being shutdown::being shut down
+::being use to::being used to
+::below it's::below its
+::beneath it's::beneath its
+::beside it's::beside its
+::besides it's::besides its
+::better know as::better known as
+::better know for::better known for
+::better that::better than
+::better then::better than
+::between he and::between him and
+::between I and::between me and
+::between it's::between its
+::between she and::between her and
+::between they and::between them and
+::beyond it's::beyond its
+::both for both::for both
+::both it's::both its
+::both of both::of both
+::both of it's::both of its
+::both of them is::both of them are
+::both of who::both of whom
+::boy's baseball::boys' baseball
+::boy's basketball::boys' basketball
+::boy's bathroom::boys' bathroom
+::boy's bowling::boys' bowling
+::boy's cross country::boys' cross country
+::boy's diving::boys' diving
+::boy's doubles::boys' doubles
+::boy's fencing::boys' fencing
+::boy's football::boys' football
+::boy's golf::boys' golf
+::boy's gymnastics::boys' gymnastics
+::boy's hockey::boys' hockey
+::boy's ice hockey::boys' ice hockey
+::boy's lacrosse::boys' lacrosse
+::boy's restroom::boys' restroom
+::boy's school::boys' school
+::boy's singles::boys' singles
+::boy's soccer::boys' soccer
+::boy's sports::boys' sports
+::boy's swimming::boys' swimming
+::boy's team::boys' team
+::boy's tennis::boys' tennis
+::boy's track::boys' track
+::boy's volleyball::boys' volleyball
+::boy's wrestling::boys' wrestling
+::brake away::break away
+::breath fire::breathe fire
+::breathe a sign of relief::breathe a sigh of relief
+::brew haha::brouhaha
+::Brinsley Schwartz::Brinsley Schwarz
+::by fisherman::by fishermen
+::by it's::by its
+::by who's::by whose
+::can been::can be
+::Canadian decent::Canadian descent
+::card shark::card sharp
+::Caribbean decent::Caribbean descent
+::cashiers check::cashier's check
+::cashiers cheque::cashier's cheque
+::certain extend::certain extent
+::chalk full::chock-full
+::Chinese decent::Chinese descent
+::chocked full::chock-full
+::chomping at the bit::champing at the bit
+::commonly know as::commonly known as
+::commonly know for::commonly known for
+::comprised primarily of::composed primarily of
+::comprised principally of::composed principally of
+::comprised solely of::composed solely of
+::constellation prize::consolation prize
+::construction sight::construction site
+::could care less::couldn't care less
+::could spent::could spend
+::current flowing::current
+::current passing::current
+::currently at this time::currently
+::daily regiment::daily regimen
+::de factor::de facto
+::de rigor::de rigueur
+::death nail::death knell
+::deciding on how::deciding how
+::deep-seeded::deep-seated
+::depending of::depending on
+::depending on who you::depending on whom you
+::depending upon who you::depending upon whom you
+::depends of::depends on
+::despite of::despite
+::did gave::did give
+::didn't fair::didn't fare
+::didn't had::didn't have
+::different tact::different tack
+::different to::different from
+::diffuse the situation::defuse the situation
+::diffuse the tension::defuse the tension
+::direct affect::direct effect
+::disc break::disc brake
+::do to::due to
+::doe snot::does not
+::dominate player::dominant player
+::dominate role::dominant role
+::door jam::doorjamb
+::double header::doubleheader
+::down side::downside
+::due to the fact::because
+::each are::each is
+::each has their::each has its
+::easier then::easier than
+::egg yoke::egg yolk
+::either criteria::either criterion
+::either phenomena::either phenomenon
+::electrical current::electric current
+::eluded to::alluded to
+::emergency situation::emergency
+::en mass::en masse
+::even thought::even though
+::even tough::even though
+::exactly the same::the same
+::extract punishment::exact punishment
+::extract revenge::exact revenge
+::eye brow::eyebrow
+::eye lash::eyelash
+::eye lid::eyelid
+::eye sight::eyesight
+::eye sore::eyesore
+::faired as well::fared as well
+::faired badly::fared badly
+::faired better::fared better
+::faired far::fared far
+::faired less::fared less
+::faired little::fared little
+::faired much::fared much
+::faired no better::fared no better
+::faired poorly::fared poorly
+::faired quite::fared quite
+::faired rather::fared rather
+::faired slightly::fared slightly
+::faired somewhat::fared somewhat
+::faired well::fared well
+::faired worse::fared worse
+::faster then::faster than
+::figure head::figurehead
+::filled a lawsuit::filed a lawsuit
+::First Word War::First World War
+::flag ship::flagship
+::follow suite::follow suit
+::for all intensive purposes::for all intents and purposes
+::for along time::for a long time
+::for awhile::for a while
+::for he and::for him and
+::for quite awhile::for quite a while
+::for who::for whom
+::for who to::for whom to
+::fore ground::foreground
+::forego her::forgo her
+::forego his::forgo his
+::forego their::forgo their
+::forgone conclusion::foregone conclusion
+::formerly know as::formerly known as
+::forth place::fourth place
+::free reign::free rein
+::friend chicken::fried chicken
+::from who::from whom
+::full compliment of::full complement of
+::future plans::plans
+::get pass::get past
+::get setup::get set up
+::get use to::get used to
+::gets it's::gets its
+::getting use to::getting used to
+::girl's basketball::girls' basketball
+::girl's bathroom::girls' bathroom
+::girl's bowling::girls' bowling
+::girl's cheerleading::girls' cheerleading
+::girl's cross country::girls' cross country
+::girl's diving::girls' diving
+::girl's doubles::girls' doubles
+::girl's fencing::girls' fencing
+::girl's field hockey::girls' field hockey
+::girl's football::girls' football
+::girl's golf::girls' golf
+::girl's gymnastics::girls' gymnastics
+::girl's hockey::girls' hockey
+::girl's ice hockey::girls' ice hockey
+::girl's lacrosse::girls' lacrosse
+::girl's restroom::girls' restroom
+::girl's school::girls' school
+::girl's singles::girls' singles
+::girl's soccer::girls' soccer
+::girl's softball::girls' softball
+::girl's sports::girls' sports
+::girl's swimming::girls' swimming
+::girl's team::girls' team
+::girl's tennis::girls' tennis
+::girl's track::girls' track
+::girl's volleyball::girls' volleyball
+::girl's wrestling::girls' wrestling
+::going threw::going through
+::got ran::got run
+::got setup::got set up
+::got shutdown::got shut down
+::got shutout::got shut out
+::greater then::greater than
+::ground work::groundwork
+::guest stared::guest-starred
+::had arose::had arisen
+::had awoke::had awoken
+::had be::had been
+::had became::had become
+::had began::had begun
+::had being::had been
+::had ben::had been
+::had bore::had borne
+::had broke::had broken
+::had brung::had brought
+::had came::had come
+::had chose::had chosen
+::had did::had done
+::had drank::had drunk
+::had drew::had drawn
+::had drove::had driven
+::had fell::had fallen
+::had flew::had flown
+::had forbad::had forbidden
+::had forbade::had forbidden
+::had gave::had given
+::had grew::had grown
+::had it's::had its
+::had knew::had known
+::had know::had known
+::had lead the::had led the
+::had lead to::had led to
+::had meet::had met
+::had mislead::had misled
+::had overcame::had overcome
+::had overran::had overrun
+::had overtook::had overtaken
+::had ran::had run
+::had rang::had rung
+::had rode::had ridden
+::had rose::had risen
+::had sang::had sung
+::had saw::had seen
+::had send::had sent
+::had setup::had set up
+::had set-up::had set up
+::had shook::had shaken
+::had shutdown::had shut down
+::had shut-down::had shut down
+::had shutout::had shut out
+::had sit::had sat
+::had sowed::had sown
+::had spend::had spent
+::had spoke::had spoken
+::had sprang::had sprung
+::had swam::had swum
+::had threw::had thrown
+::had thunk::had thought
+::had to much::had too much
+::had to used::had to use
+::had took::had taken
+::had tore::had torn
+::had trod::had trodden
+::had undertook::had undertaken
+::had underwent::had undergone
+::had went::had gone
+::had woke::had woken
+::had wore::had worn
+::had wrote::had written
+::hadn't went::hadn't gone
+::half and hour::half an hour
+::hand the reigns::hand the reins
+::has arose::has arisen
+::has awoke::has awoken
+::has be::has been
+::has been build::has been built
+::has ben::has been
+::has bore::has borne
+::has broke::has broken
+::has brung::has brought
+::has build::has built
+::has came::has come
+::has chose::has chosen
+::has comeback::has come back
+::has did::has done
+::has drank::has drunk
+::has drew::has drawn
+::has drove::has driven
+::has fell::has fallen
+::has flew::has flown
+::has forbad::has forbidden
+::has forbade::has forbidden
+::has gave::has given
+::has having::as having
+::has it's::has its
+::has knew::has known
+::has lead the::has led the
+::has lead to::has led to
+::has meet::has met
+::has mislead::has misled
+::has overcame::has overcome
+::has ran::has run
+::has rang::has rung
+::has sang::has sung
+::has setup::has set up
+::has shook::has shaken
+::has spoke::has spoken
+::has sprang::has sprung
+::has swam::has swum
+::has threw::has thrown
+::has thunk::has thought
+::has took::has taken
+::has trod::has trodden
+::has undertook::has undertaken
+::has underwent::has undergone
+::has went::has gone
+::has woke::has woken
+::has wrote::has written
+::have drank::have drunk
+::have it's::have its
+::have lead to::have led to
+::have mislead::have misled
+::have ran::have run
+::have rang::have rung
+::have sang::have sung
+::have setup::have set up
+::have sprang::have sprung
+::have swam::have swum
+::have took::have taken
+::have underwent::have undergone
+::have went::have gone
+::having became::having become
+::having began::having begun
+::having being::having been
+::having it's::having its
+::having ran::having run
+::having sang::having sung
+::having setup::having set up
+::having swam::having swum
+::having took::having taken
+::having underwent::having undergone
+::having went::having gone
+::hay day::heyday
+::he begun::he began
+::he garnished::he garnered
+::he let's::he lets
+::he seen::he saw
+::he use to::he used to
+::head gear::headgear
+::head quarters::headquarters
+::head stone::headstone
+::head wear::headwear
+::held the reigns::held the reins
+::help and make::help to make
+::hit the breaks::hit the brakes
+::hold onto::hold on to
+::hold the reigns::hold the reins
+::holding the reigns::holding the reins
+::holds the reigns::holds the reins
+::hone in on::home in on
+::house hold::household
+::how ever::however
+::imminent domain::eminent domain
+::in addition also::also
+::in affect::in effect
+::in along time::in a long time
+::in an of itself::in and of itself
+::in another words::in other words
+::in anyway::in any way
+::in awhile::in a while
+::in edition to::in addition to
+::in exchanged for::in exchange for
+::in parenthesis::in parentheses
+::in placed::in place
+::in principal::in principle
+::in quite awhile::in quite a while
+::in stead of::instead of
+::in tact::intact
+::in the long-term::in the long term
+::in the short-term::in the short term
+::in titled::entitled
+::in vein::in vain
+::in view of the fact that::since
+::incase of::in case of
+::inorder to::in order to
+::into affect::into effect
+::into to::into
+::is also is::is also
+::is also know::is also known
+::is capable of being::can be
+::is comprised from::comprises
+::is comprised with::comprises
+::is consider::is considered
+::is contained of::contains
+::is dedicated to providing::provides
+::is focuses::is focused
+::is it's::is its
+::is know::is known
+::is lead by::is led by
+::is loathe to::is loath to
+::is not know::is not known
+::is not only is::is not only
+::is probably is::is probably
+::is ran by::is run by
+::is renown for::is renowned for
+::is schedule to::is scheduled to
+::is set-up::is set up
+::is the fact that::is that
+::is use to::is used to
+::is wants::wants
+::it begun::it began
+::it comprises of::it comprises
+::it effect::its effect
+::it is though that::it is thought that
+::it is though to::it is thought to
+::it lead to::it led to
+::it lied::it lay
+::it self::itself
+::it setup::it set up
+::it set-up::it set up
+::it spend::it spent
+::it use to::it used to
+::it was her who::it was she who
+::it was him who::it was he who
+::it weighted::it weighed
+::it weights::it weighs
+::it's 100th::its 100th
+::it's 11th::its 11th
+::it's 125th::its 125th
+::it's 12th::its 12th
+::it's 13th::its 13th
+::it's 14th::its 14th
+::it's 150th::its 150th
+::it's 15th::its 15th
+::it's 16th::its 16th
+::it's 17th::its 17th
+::it's 18th::its 18th
+::it's 19th::its 19th
+::it's 2::its two
+::it's 2000th::its 2000th
+::it's 200th::its 200th
+::it's 300th::its 300th
+::it's 400th::its 400th
+::it's 500th::its 500th
+::it's 6::its six
+::it's ability::its ability
+::it's advantage::its advantage
+::it's aim::its aim
+::it's anniversary::its anniversary
+::it's annual::its annual
+::it's appearance::its appearance
+::it's A-side::its A-side
+::it's best::its best
+::it's B-side::its B-side
+::it's capital::its capital
+::it's class::its class
+::it's closure::its closure
+::it's construction::its construction
+::it's contents::its contents
+::it's course::its course
+::it's current::its current
+::it's debut::its debut
+::it's doors::its doors
+::it's eastern::its eastern
+::it's end::its end
+::it's entire::its entire
+::it's entirety::its entirety
+::it's final::its final
+::it's first::its first
+::it's former::its former
+::it's fourth::its fourth
+::it's goal::its goal
+::it's highest::its highest
+::it's history::its history
+::it's home::its home
+::it's identity::its identity
+::it's inability::its inability
+::it's inception::its inception
+::it's initial::its initial
+::it's international::its international
+::its is::it is
+::it's junction::its junction
+::it's kind::its kind
+::it's lack::its lack
+::it's last::its last
+::it's latest::its latest
+::it's lead::its lead
+::it's leader::its leader
+::it's length::its length
+::it's lowest::its lowest
+::it's main::its main
+::it's major::its major
+::it's maximum::its maximum
+::it's minimum::its minimum
+::it's money::its money
+::it's name::its name
+::it's national::its national
+::it's north::its north
+::it's northern::its northern
+::it's original::its original
+::it's own::its own
+::it's peak::its peak
+::it's performance::its performance
+::it's period::its period
+::it's popularity::its popularity
+::it's population::its population
+::it's previous::its previous
+::it's price::its price
+::it's primary::its primary
+::it's prime::its prime
+::it's purpose::its purpose
+::it's release::its release
+::it's residents::its residents
+::it's rival::its rival
+::it's second::its second
+::it's sister::its sister
+::it's size::its size
+::it's source::its source
+::it's south::its south
+::it's southern::its southern
+::it's status::its status
+::it's style::its style
+::it's subsidiary::its subsidiary
+::it's successor::its successor
+::it's tail::its tail
+::it's target::its target
+::it's team::its team
+::it's tenth::its tenth
+::it's test::its test
+::it's theme::its theme
+::it's third::its third
+::it's timeslot::its timeslot
+::it's toll::its toll
+::it's total::its total
+::it's type::its type
+::it's usage::its usage
+::it's user::its user
+::it's value::its value
+::it's way::its way
+::it's website::its website
+::it's weight::its weight
+::it's western::its western
+::it's width::its width
+::it's worst::its worst
+::it's yearly::its yearly
+::Jimmy Buffet::Jimmy Buffett
+::Jimmy Hendrix::Jimi Hendrix
+::jive with::jibe with
+::key note::keynote
+::lack there of::lack thereof
+::laid ahead::lay ahead
+::laid dormant::lay dormant
+::laid empty::lay empty
+::laid fallow::lay fallow
+::laid in state::lay in state
+::larger that::larger than
+::larger then::larger than
+::laughing stock::laughingstock
+::law suite::lawsuit
+::lay around::lie around
+::lay low::lie low
+::laying around::lying around
+::laying awake::lying awake
+::laying low::lying low
+::lays atop::lies atop
+::lays beside::lies beside
+::lays in::lies in
+::lays low::lies low
+::lays near::lies near
+::lays on::lies on
+::lead by::led by
+::lead roll::lead role
+::leading roll::leading role
+::less dominate::less dominant
+::less that::less than
+::less then::less than
+::lesser then::less than
+::life time::lifetime
+::lighter then::lighter than
+::lions share::lion's share
+::loose to::lose to
+::loosing effort::losing effort
+::loosing record::losing record
+::loosing season::losing season
+::loosing streak::losing streak
+::loosing team::losing team
+::loosing the::losing the
+::loosing to::losing to
+::lower that::lower than
+::lower then::lower than
+::made an appearance with::appeared with
+::made it's::made its
+::mainly know as::mainly known as
+::mainly know for::mainly known for
+::major roll::major role
+::make an appearance with::appear with
+::make it's::make its
+::makes it way::makes its way
+::making it's::making its
+::manage to win::win
+::managed to get::got
+::managed to make::made
+::managed to win::won
+::managerial reigns::managerial reins
+::maybe be::may be
+::mean while::meanwhile
+::might of::might have
+::minor roll::minor role
+::more dominate::more dominant
+::more that::more than
+::most dominate::most dominant
+::most populace::most populous
+::most well-known::best-known
+::mostly know as::mostly known as
+::mostly know for::mostly known for
+::must of::must have
+::mute point::moot point
+::nation wide::nationwide
+::near by::nearby
+::neither criteria::neither criterion
+::neither phenomena::neither phenomenon
+::Netherland Antilles::Netherlands Antilles
+::new comer::newcomer
+::next store::next-door
+::no where to::nowhere to
+::note worthy::noteworthy
+::now a days::nowadays
+::of it's own::of its own
+::of who to::of whom to
+::oil barron::oil baron
+::on account of the fact that::because
+::on going::ongoing
+::on it's own::on its own
+::one criteria::one criterion
+::one in the same::one and the same
+::one of most::one of the most
+::one phenomena::one phenomenon
+::on-going::ongoing
+::originally born in::born in
+::originally know as::originally known as
+::other then::other than
+::our of::out of
+::out grow::outgrow
+::out of sink::out of sync
+::out side::outside
+::over hear::overhear
+::over heard::overheard
+::over look::overlook
+::over looked::overlooked
+::over looking::overlooking
+::over rated::overrated
+::over saw::oversaw
+::over seas::overseas
+::over see::oversee
+::over who to::over whom to
+::owing to the fact that::because
+::parent's house::parents' house
+::past down::passed down
+::peak his interest::pique his interest
+::per say::per se
+::Phillips Arena::Philips Arena
+::player's union::players' union
+::playoff birth::playoff berth
+::Portland Trailblazers::Portland Trail Blazers
+::premier episode::premiere episode
+::principle action::principal action
+::principle activity::principal activity
+::principle actor::principal actor
+::principle advantage::principal advantage
+::principle advocate::principal advocate
+::principle agent::principal agent
+::principle aim::principal aim
+::principle area::principal area
+::principle artist::principal artist
+::principle assistant::principal assistant
+::principle attraction::principal attraction
+::principle author::principal author
+::principle branch::principal branch
+::principle cast::principal cast
+::principle caste::principal caste
+::principle cause::principal cause
+::principle character::principal character
+::principle church::principal church
+::principle city::principal city
+::principle component::principal component
+::principle composer::principal composer
+::principle goal::principal goal
+::principle group::principal group
+::principle method::principal method
+::principle office::principal office
+::principle officer::principal officer
+::principle owner::principal owner
+::principle photography::principal photography
+::principle source::principal source
+::principle student::principal student
+::principle town::principal town
+::put fourth::put forth
+::rather then::rather than
+::reek havoc::wreak havoc
+::reign in::rein in
+::reigns of power::reins of power
+::reticence to::reluctance to
+::reticent to::reluctant to
+::return back::return
+::role call::roll call
+::roll player::role player
+::runner up::runner-up
+::saddle up to::sidle up to
+::Second Word War::Second World War
+::seperate::separate
+::set backs::setbacks
+::she begun::she began
+::she let's::she lets
+::she seen::she saw
+::short coming::shortcoming
+::shorter then::shorter than
+::shortly there after::shortly thereafter
+::should backup::should back up
+::should not of::should not have
+::should of::should have
+::should've went::should have gone
+::side affect::side effect
+::simply know as::simply known as
+::since it's::since its
+::since many years::for many years
+::since years::for years
+::single handily::single-handedly
+::site lines::sight lines
+::slight of hand::sleight of hand
+::slue of::slew of
+::smaller then::smaller than
+::smarter then::smarter than
+::sneak peak::sneak peek
+::some how::somehow
+::some one::someone
+::some what::somewhat
+::some where::somewhere
+::sometimes know as::sometimes known as
+::soon there after::soon thereafter
+::sooner then::sooner than
+::sophomore album::second album
+::sophomore single::second single
+::spilt among::split among
+::spilt between::split between
+::spilt into::split into
+::spilt up::split up
+::spinal chord::spinal cord
+::spitting image::spit and image
+::split in to::split into
+::sq ft::ft²
+::sq in::in²
+::sq km::km²
+::sq mi::mi²
+::squared feet::square feet
+::squared inches::square inches
+::squared kilometers::square kilometers
+::squared meters::square meters
+::squared miles::square miles
+::stale mate::stalemate
+::staring role::starring role
+::starring roll::starring role
+::stay a while::stay awhile
+::Stevie Ray Vaughn::Stevie Ray Vaughan
+::strike outs::strikeouts
+::stronger then::stronger than
+::suppose to::supposed to
+::take affect::take effect
+::take over the reigns::take over the reins
+::take the reigns::take the reins
+::taken the reigns::taken the reins
+::taking the reigns::taking the reins
+::teacher's union::teachers' union
+::ten times less than::one tenth as much as
+::that him and::that he and
+::that maybe::that may be
+::that's is::that is
+::that's was::that was
+::the 31st of December::44561
+::the affect of::the effect of
+::the affect on::the effect on
+::the affects of::the effects of
+::the all of the::all of the
+::the among the::among the
+::the another::another
+::the any of the::any of the
+::the both of the::both of the
+::the both the::both the
+::the each of the::each of the
+::the extend of::the extent of
+::the her::her
+::the him::him
+::the how the::how the
+::the its::its
+::the lost it::they lost it
+::the lost of::the loss of
+::the lost the::they lost the
+::the many of the::many of the
+::the most of the::most of the
+::the much of the::much of the
+::the one of the::one of the
+::the only the::only the
+::the rational behind::the rationale behind
+::the rational for::the rationale for
+::the several of the::several of the
+::the some of the::some of the
+::the their::their
+::the them::them
+::the these::these
+::the this::this
+::the those::those
+::the two of the::two of the
+::the were::they were
+::the where the::where the
+::their has::there has
+::their have::there have
+::their is::there is
+::their may be::there may be
+::their was::there was
+::their were::there were
+::their would::there would
+::them selves::themselves
+::there after::thereafter
+::there best::their best
+::there by::thereby
+::there fifth::their fifth
+::there final::their final
+::there first::their first
+::there fore::therefore
+::there fourth::their fourth
+::there last::their last
+::there maybe::there may be
+::there new::their new
+::there next::their next
+::there of::thereof
+::there only::their only
+::there own::their own
+::there second::their second
+::there third::their third
+::there where::there were
+::these maybe::these may be
+::these where::these were
+::they begun::they began
+::they garnished::they garnered
+::they includes::they include
+::they player::the player
+::they we're::they were
+::this lead to::this led to
+::this maybe::this may be
+::three in a half::three and a half
+::three times less than::one third as much as
+::through the ringer::through the wringer
+::time outs::timeouts
+::to back fire::to backfire
+::to backoff::to back off
+::to backout::to back out
+::to be build::to be built
+::to be setup::to be set up
+::to breath::to breathe
+::to buildup::to build up
+::to built::to build
+::to chose::to choose
+::to cut of::to cut off
+::to due to::due to
+::to forego::to forgo
+::to goes::to go
+::to grown::to grow
+::to happened::to happen
+::to have lead to::to have led to
+::to he and::to him and
+::to lit::to light
+::to missed the::to miss the
+::to participated::to participate
+::to sent::to send
+::to shut-down::to shut down
+::to some extend::to some extent
+::to spin-off::to spin off
+::to that affect::to that effect
+::to they're::to their
+::to to the::to the
+::to together::together
+::to try and::to try to
+::too be::to be
+::took affect::took effect
+::took and interest::took an interest
+::took awhile::took a while
+::took over the reigns::took over the reins
+::took the reigns::took the reins
+::tot he::to the
+::touchdowns passes::touchdown passes
+::tried to used::tried to use
+::try and achieve::try to achieve
+::try and add::try to add
+::try and answer::try to answer
+::try and attract::try to attract
+::try and avoid::try to avoid
+::try and be::try to be
+::try and beat::try to beat
+::try and become::try to become
+::try and bring::try to bring
+::try and build::try to build
+::try and buy::try to buy
+::try and catch::try to catch
+::try and change::try to change
+::try and come::try to come
+::try and convince::try to convince
+::try and decide::try to decide
+::try and determine::try to determine
+::try and do::try to do
+::try and eat::try to eat
+::try and escape::try to escape
+::try and figure::try to figure
+::try and find::try to find
+::try and fix::try to fix
+::try and forget::try to forget
+::try and gain::try to gain
+::try and get::try to get
+::try and give::try to give
+::try and go::try to go
+::try and help::try to help
+::try and hide::try to hide
+::try and hit::try to hit
+::try and hold::try to hold
+::try and improve::try to improve
+::try and keep::try to keep
+::try and locate::try to locate
+::try and make::try to make
+::try and move::try to move
+::try and obtain::try to obtain
+::try and play::try to play
+::try and prevent::try to prevent
+::try and protect::try to prove
+::try and prove::try to prove
+::try and run::try to run
+::try and see::try to see
+::try and show::try to show
+::try and slow::try to slow
+::try and solve::try to solve
+::try and spare::try to spare
+::try and start::try to start
+::try and stay::try to stay
+::try and stop::try to stop
+::try and support::try to support
+::try and take::try to take
+::try and talk::try to talk
+::try and tell::try to tell
+::try and think::try to think
+::try and turn::try to turn
+::try and understand::try to understand
+::try and use::try to use
+::try and win::try to win
+::turn for the worst::turn for the worse
+::twice as much than::twice as much as
+::two in a half::two and a half
+::two times less than::half as much as
+::two-year anniversary::second anniversary
+::under go::undergo
+::under going::undergoing
+::under gone::undergone
+::under it's::under its
+::under rated::underrated
+::under take::undertake
+::under wear::underwear
+::under went::underwent
+::underneath it's::underneath its
+::United State's::United States'
+::United Stats::United States
+::Unites States::United States
+::unlike it's::unlike its
+::until it's::until its
+::up field::upfield
+::up it's::up its
+::up side::upside
+::up until::until
+::upon it's::upon its
+::use to be::used to be
+::use to have::used to have
+::usually know as::usually known as
+::usually know by::usually known by
+::usually know for::usually known for
+::via it's::via its
+::vise versa::vice versa
+::waived off::waved off
+::warn away::worn away
+::warn down::worn down
+::warn out::worn out
+::was aloud::was allowed
+::was apart of::was a part of
+::was build::was built
+::was cable of::was capable of
+::was came::came
+::was comprised by::comprised
+::was comprised with::comprised
+::was confirm::was confirmed
+::was consider::was considered
+::was cutoff::was cut off
+::was do to::was due to
+::was drank::was drunk
+::was establish::was established
+::was extend::was extended
+::was it's::was its
+::was knew::was known
+::was know::was known
+::was lain::was laid
+::was laying on::was lying on
+::was lead by::was led by
+::was lead to::was led to
+::was leaded by::was led by
+::was loathed to::was loath to
+::was meet by::was met by
+::was meet with::was met with
+::was mislead::was misled
+::was ran::was run
+::was rebuild::was rebuilt
+::was release by::was released by
+::was release on::was released on
+::was reran::was rerun
+::was rode::was ridden
+::was sang::was sung
+::was schedule to::was scheduled to
+::was send::was sent
+::was sentence to::was sentenced to
+::was setup::was set up
+::was shook::was shaken
+::was shoot::was shot
+::was show by::was shown by
+::was show on::was shown on
+::was showed::was shown
+::was spend::was spent
+::was succeed by::was succeeded by
+::was suppose to::was supposed to
+::was the dominate::was the dominant
+::was the fact that::was that
+::was though that::was thought that
+::was tore::was torn
+::was use to::was used to
+::was wrote::was written
+::way side::wayside
+::weather or not::whether or not
+::well know::well known
+::went rouge::went rogue
+::went threw::went through
+::were aloud::were allowed
+::were apart of::were a part of
+::were be::were
+::were began::were begun
+::were build::were built
+::were comprised from::comprised
+::were comprised with::comprised
+::were cutoff::were cut off
+::were drew::were drawn
+::were he was::where he was
+::were it was::where it was
+::were it's::were its
+::were knew::were known
+::were know::were known
+::were lain::were laid
+::were lead by::were led by
+::were leaded by::were led by
+::were meet by::were met by
+::were meet with::were met with
+::were overran::were overrun
+::were ran::were run
+::were rebuild::were rebuilt
+::were reran::were rerun
+::were rode::were ridden
+::were sang::were sung
+::were she was::where she was
+::were showed::were shown
+::were spend::were spent
+::were suppose to::were supposed to
+::were the dominate::were the dominant
+::were took::were taken
+::were tore::were torn
+::were use to::were used to
+::were wrote::were written
+::wether or not::whether or not
+::what lead to::what led to
+::what lied::what lay
+::when into::went into
+::when off::went off
+::when on to::went on to
+::where abouts::whereabouts
+::where being::were being
+::where by::whereby
+::where him::where he
+::where taken::were taken
+::where upon::whereupon
+::whereas as::whereas
+::which breakdown::which break down
+::which had lead::which had led
+::which has lead::which has led
+::which have lead::which have led
+::which in which::in which
+::which maybe::which may be
+::which where::which were
+::while him::while he
+::who had lead::who had led
+::who has lead::who has led
+::who have lead::who have led
+::who he had::whom he had
+::who he knew::whom he knew
+::who he led::whom he led
+::who he married::whom he married
+::who he met::whom he met
+::who he took::whom he took
+::who lead::who led
+::who maybe::who may be
+::who setup::who set up
+::who she met::whom she met
+::who they have::whom they have
+::who they should::whom they should
+::who they signed::whom they signed
+::who to believe::whom to believe
+::who to blame::whom to blame
+::who to call::whom to call
+::who to invite::whom to invite
+::who to send::whom to send
+::who to trust::whom to trust
+::who use to::who used to
+::who where::who were
+::whom also::who also
+::whom else is::who else is
+::whom is::who is
+::whom was::who was
+::who's brother::whose brother
+::who's father::whose father
+::who's first::whose first
+::who's last::whose last
+::who's mother::whose mother
+::who's name::whose name
+::who's opinion::whose opinion
+::who's own::whose own
+::who's parents::whose parents
+::who's previous::whose previous
+::who's team::whose team
+::who's title::whose title
+::who's was::who was
+::whose its::whose
+::wildcard birth::wildcard berth
+::will being::will begin
+::will likely::will probably
+::with along with::along with
+::with be::will be
+::with on of::with one of
+::with out::without
+::with who::with whom
+::within close proximity to::close to
+::within site of::within sight of
+::Wold War::World War
+::working progress::work in progress
+::worse-case scenario::worst-case scenario
+::worst comes to worst::worse comes to worst
+::would fair::would fare
+::would forego::would forgo
+::would of been::would have been
+::would of done::would have done
+::would've have::would have
+::wreck havoc::wreak havoc
+::writers block::writer's block
+::younger that::younger than
+::younger then::younger than
+::totaly::totally
+::nother::nothern
+::america::America
+::Theyre::They're
+::legallity::legality
+::Why it seem::Why it seems
+::intrests::interests
+::rhetohical::rhetorical
+::balck::black
+::666::5311000001021695
+::thorougly::thoroughly
+::Turkey::Turkiye
