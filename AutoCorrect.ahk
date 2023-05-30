@@ -28,11 +28,12 @@
 ;                   too. 
 ;               - Do remember that you can make particular hotstrings context
 ;                   sensitive. 
-;				- 
+;
 ; Sep 13 2007: Added more misspellings.
 ;              Added fix for -ign -> -ing that ignores words like "sign".
 ;              Added word beginnings/endings sections to cover more options.
 ;              Added auto-accents section for words like fiancée, naïve, etc.
+;              Taken over by https://github.com/conradOU
 ; Feb 28 2007: Added other common misspellings based on MS Word AutoCorrect.
 ;              Added optional auto-correction of 2 consecutive capital letters.
 ; Sep 24 2006: Initial release by Jim Biancolo (http://www.biancolo.com)
@@ -49,7 +50,7 @@
 ; misspellings, but only those which are very obviously incorrect.
 ; 
 ; From a suggestion by Tara Gibb, you can add your own corrections to any
-; highlighted word by hitting Win+H. These will be added to a separate file,
+; highlighted word by hitting Win+A. These will be added to a separate file,
 ; so that you can safely update this file without overwriting your changes.
 ; 
 ; Some entries have more than one possible resolution (achive->achieve/archive)
