@@ -8,4 +8,4 @@ auto correct for MS Windows in AHK
 
 Otherwise no GUI
 
-Full changelog and list of corrections/functionality is in the AutoCorrect.ahk file.
+Full changelog and list of corrections/functionality are in the AutoCorrect.ahk file.
